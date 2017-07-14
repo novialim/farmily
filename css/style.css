@@ -62,3 +62,19 @@ i.icon-grey {
 .carousel {
   margin-top: -85px !important;
 }
+
+.userreviewct {
+  margin-left: 70px;
+}
+
+.avatar {
+  max-height: 50px;
+}
+
+.reviewtxt {
+  line-height: 110%;
+}
+
+.cardpaddng {
+  padding-top: 5px;
+}
