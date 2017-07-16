@@ -4,7 +4,7 @@
   "description": "A site to help local farmers maximize their exposure and connect them to consumers",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
