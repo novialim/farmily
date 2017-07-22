@@ -25,6 +25,10 @@
         res.sendFile(path.join(__dirname, 'farmee.html'));
     });
 
+    app.get('/market', function(req, res) {
+        res.sendFile(path.join(__dirname, 'market.html'));
+    });
+
     // Placeholder route for now
     app.get('/shoppinglist', function(req, res) {
         res.sendFile(path.join(__dirname, 'shoppinglist.html'));
