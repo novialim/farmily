@@ -78,3 +78,12 @@ i.icon-grey {
 .cardpaddng {
   padding-top: 5px;
 }
+
+.farmimg {
+  border-radius: 10px;
+}
+
+.farmeeheader {
+  padding-bottom: 5px !important;
+  margin-bottom: 0px !important;
+}
