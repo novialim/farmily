@@ -21,8 +21,8 @@
     });
 
     // Placeholder route for now
-    app.get('/farmee', function(req, res) {
-        res.sendFile(path.join(__dirname, 'farmee.html'));
+    app.get('/farmer', function(req, res) {
+        res.sendFile(path.join(__dirname, 'farmer.html'));
     });
 
     app.get('/market', function(req, res) {
