@@ -1,3 +1,7 @@
+html {
+    font-family: 'Open Sans', GillSans, Calibri, Trebuchet, sans-serif;
+  }
+
 .background {
     background-image: url("../images/ecailles.png") !important;
     background-repeat: repeat !important;
