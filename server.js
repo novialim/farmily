@@ -20,6 +20,10 @@
         res.sendFile(path.join(__dirname, 'index.html'));
     });
 
+    app.get('/contribute', function(req, res) {
+        res.sendFile(path.join(__dirname, 'contribute.html'));
+    });
+
     // Placeholder route for now
     app.get('/farmer', function(req, res) {
         res.sendFile(path.join(__dirname, 'farmer.html'));
