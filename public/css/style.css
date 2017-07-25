@@ -91,3 +91,7 @@ i.icon-grey {
   padding-bottom: 5px !important;
   margin-bottom: 0px !important;
 }
+
+.halfopac {
+  background: rgba(255, 255, 255, 0.6)
+}
