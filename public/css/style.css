@@ -95,3 +95,7 @@ i.icon-grey {
 .halfopac {
   background: rgba(255, 255, 255, 0.6)
 }
+
+.rcorners {
+    border-radius: 25px;
+}
