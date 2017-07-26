@@ -33,6 +33,14 @@
         res.sendFile(path.join(__dirname, 'market.html'));
     });
 
+    app.get('/form', function(req, res) {
+        res.sendFile(path.join(__dirname, 'testform.html'));
+    });
+
+    app.get('/review', function(req, res) {
+        res.sendFile(path.join(__dirname, 'review.html'));
+    });
+
     // Placeholder route for now
     app.get('/shoppinglist', function(req, res) {
         res.sendFile(path.join(__dirname, 'shoppinglist.html'));

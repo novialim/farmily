@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Contribute</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+
+
+    <link rel="stylesheet" href="css/startup-materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-solid-transition">
+      <div class="nav-wrapper">
+       <a href="/" class="brand-logo valign-wrapper"><img class="responsive-img" src="images/logo/farmilywhitehoriV2.png"></a>
+        <!-- <a href="/" class="brand-logo"><i class="icon-diamond"></i>Farmily</a> -->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          
+          <li><a href="aboutus.html">What We Do?</a></li>
+
+          <li><a class="dropdown-button" href="#!" data-activates="pages" data-constrainWidth="false" data-belowOrigin="true">Explore Markets<i class="material-icons right">arrow_drop_down</i></a></li>
+
+          <!-- <li><a href="#explore">Explore Markets</a></li> -->
+          <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+          <li><a href="#topfarms">Top Farmers</a></li>
+          <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+        </ul>
+
+        <ul id="pages" class="dropdown-content">
+          <li><a href="#MarketMap">All Markets</a></li>
+          <li><a href="/">Farmers</a></li>
+        </ul>
+
+        <ul id="addpages" class="dropdown-content">
+          <li><a href="/addfarmer">Add Farmer</a></li>
+          <li><a href="/reviewfarmer">Review Farmer</a></li>
+        </ul>        
+
+        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons white-text">menu</i></a>
+      </div>
+    </nav>
+    <ul id="slide-out" class="side-nav">
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal active">Farmily</a>
+           <!--  <div class="collapsible-body">
+              <ul>
+                <li><a href="horizontal-half.html">Horizontal Halves</a></li>
+                <li><a href="sierra.html">Zoom Out</a></li>
+                <li><a href="circle-reveal.html">Circle Reveal</a></li>
+                <li><a href="phone-wall.html">Phone Wall</a></li>
+                <li><a class="active" href="element-transitions.html">Element Transitions</a></li>
+                <li><a href="basic-elements.html">Basic Elements</a></li>
+                <li><a href="card-shuffle.html">Shuffle</a></li>
+                <li><a href="postcards.html">Postcards</a></li>
+              </ul>
+            </div> -->
+          </li>
+        </ul>
+      </li>
+      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+      <li><a class="waves-effect waves-teal" href="aboutus.html">What We Do?</a></li>
+      <li><a class="waves-effect waves-teal" href="team.html">Explore Markets</a></li>
+      <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+      <li><a class="waves-effect waves-teal" href="docs/about.html">Top Farmers</a></li>
+      <li><a class="waves-effect waves-teal" href="docs/about.html">Contribute</a></li>
+    </ul>
+
+
+<!--   <div class="section header">
+      <div class="background">
+        <img src="images/bg1.jpg" alt="">
+      </div>
+      <div class="header-wrapper row valign-wrapper">
+        <div class="col s12">
+          <h1>Farmily</h1>
+          <span class="tagline">Start Your Wheelbarrow! Welcome to Your Personal Farm to Fork Experience</span>
+          <button class="read-more"><i class="icon-caret-down"></i></button>
+        </div>
+      </div>
+    </div>
+
+
+ -->
+
+      <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+      <!-- START CONTENT -->
+      <section id="content">
+
+        <!--start container-->
+        <div class="container">
+          <div class="section black">
+
+            <p class="caption">Includes predefined classes for easy layout options.</p>
+
+            <div class="divider"></div>
+            <!--Basic Form-->
+            <div id="basic-form" class="section">
+              <div class="row">
+                <div class="col s12 m12 l6">
+                  <div class="card-panel black">
+                    <h4 class="header2">Basic Form</h4>
+                    <div class="row">
+                      <form class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="name" type="text">
+                            <label for="first_name">Name</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="email" type="email">
+                            <label for="email">Email</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input id="password" type="password">
+                            <label for="password">Password</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <textarea id="message" class="materialize-textarea"></textarea>
+                            <label for="message">Message</label>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                <i class="mdi-content-send right"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- Form with placeholder -->
+                <div class="col s12 m12 l6">
+                  <div class="card-panel black">
+                    <h4 class="header2">Form with placeholder</h4>
+                    <div class="row">
+                      <form class="col s12">
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input placeholder="John Doe" id="name2" type="text">
+                            <label for="first_name">Name</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input placeholder="john@domainname.com" id="email2" type="email">
+                            <label for="email">Email</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <input placeholder="YourPassword" id="password2" type="password">
+                            <label for="password">Password</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <textarea placeholder="Oh WoW! Let me check this one too." id="message2" class="materialize-textarea"></textarea>
+                            <label for="message">Message</label>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                                <i class="mdi-content-send right"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form with icon prefixes -->
+            <div class="row">
+              <div class="col s12 m12 l6">
+                <div class="card-panel black">
+                  <h4 class="header2">Form with icon prefixes</h4>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-account-circle prefix"></i>
+                          <input id="name3" type="text">
+                          <label for="first_name">Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-communication-email prefix"></i>
+                          <input id="email3" type="email">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-lock-outline prefix"></i>
+                          <input id="password3" type="password">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-question-answer prefix"></i>
+                          <textarea id="message3" class="materialize-textarea"></textarea>
+                          <label for="message">Message</label>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                              <i class="mdi-content-send right"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- Form with validation -->
+              <div class="col s12 m12 l6">
+                <div class="card-panel black">
+                  <h4 class="header2">Form with validation</h4>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-account-circle prefix"></i>
+                          <input id="name4" type="text" class="validate">
+                          <label for="first_name">Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-communication-email prefix"></i>
+                          <input id="email4" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-lock-outline prefix"></i>
+                          <input id="password5" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="mdi-action-question-answer prefix"></i>
+                          <textarea id="message4" class="materialize-textarea validate" length="120"></textarea>
+                          <label for="message">Message</label>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                              <i class="mdi-content-send right"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inline Form -->
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel black">
+                <div class="row">
+                <form class="col s12">
+                  <h4 class="header2">Inline form</h4>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <i class="mdi-action-account-circle prefix"></i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <i class="mdi-action-lock-outline prefix"></i>
+                      <input id="icon_password" type="password" class="validate">
+                      <label for="icon_password">Password</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <div class="input-field col s12">
+                        <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-lock-open"></i> Login</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Inline form with placeholder -->
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel black">
+                <div class="row">
+                <form class="col s12">
+                  <h4 class="header2">Inline form with placeholder</h4>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <i class="mdi-action-account-circle prefix"></i>
+                      <input placeholder="John Doe" id="icon_prefix2" type="text" class="validate">
+                      <label for="icon_prefix">First Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <i class="mdi-communication-email prefix"></i>
+                      <input placeholder="john@mydomain.com" id="icon_email" type="email" class="validate">
+                      <label for="icon_email">Email</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <div class="input-field col s12">
+                        <button class="btn cyan waves-effect waves-light" type="submit" name="action"><i class="mdi-action-perm-identity"></i> Register</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Form Advance-->          
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel black">
+                <h4 class="header2">Form Advance</h4>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="first_name" type="text">
+                        <label for="first_name">First Name</label>
+                      </div>
+                    
+                      <div class="input-field col s6">
+                        <input id="last_name" type="text">
+                        <label for="last_name">Last Name</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="email5" type="email">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="password6" type="password">
+                        <label for="password">Password</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <select>
+                          <option value="" disabled selected>Choose your profile</option>
+                          <option value="1">Manager</option>
+                          <option value="2">Developer</option>
+                          <option value="3">Business</option>
+                        </select>
+                        <label>Select Profile</label>
+                      </div>                        
+                      <div class="input-field col s6">
+                        <input type="date" class="datepicker">
+                        <label for="dob">DOB</label>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="row">
+                      <div class="file-field input-field col s6">
+                        <input class="file-path validate" type="text"/>
+                        <div class="btn">
+                          <span>Age</span>
+                          <input type="file" />
+                        </div>
+                      </div>
+                      <div class="input-field col s6">                          
+                         <span>Image</span>
+                         <p class="range-field">
+                          <input type="range" id="test5" min="0" max="100" />
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="message5" class="materialize-textarea" length="120"></textarea>
+                        <label for="message">Message</label>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                            <i class="mdi-content-send right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <!-- END CONTENT -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s6 m6">
+            <img class="materialize-logo" src="images/logo/footerfarmilygreen.png" alt="">
+            <p>Made with love by <a href="https://github.com/jhuynh85" target="_blank">Joseph Huynh</a> | <a href="https://github.com/Goosetaculous" target="_blank">Goose aka Joseph Aranez</a> | <a href="https://github.com/novialim" target="_blank">Novia Lim</a></p>
+          </div>
+
+
+      <!--     <div class="col s6 m6">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#!">Blog</a></li>
+              <li><a href="#!">Pricing</a></li>
+              <li><a href="#!">Docs</a></li>
+            </ul>
+          </div>
+          <div class="col s6 m6">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="#!">Community</a></li>
+              <li><a href="#!">Subscribe</a></li>
+              <li><a href="#!">Email</a></li>
+            </ul>
+          </div> -->
+          <div class="col s6 m6">
+            <h5>Contact</h5>
+            <ul>
+<!--               <li><a href="#!">Twitter</a></li>
+              <li><a href="#!">Facebook</a></li> -->
+              <li><a href="https://github.com/novialim/farmily" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <!-- External libraries -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+
+    <!-- Initialization script -->
+    <script src="js/startup.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
