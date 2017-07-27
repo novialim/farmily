@@ -76,7 +76,11 @@ i.icon-grey {
 }
 
 .rcorners {
-    border-radius: 25px;
+  border-radius: 25px;
+}
+
+.minborder {
+  padding: 5px !important;
 }
 
 
