@@ -50,6 +50,9 @@
         res.sendFile(path.join(__dirname, 'shoppinglist.html'));
     });
 
+    // HTML routing to serve different HTML files
+    // require("./app/routes/html-routes.js")(app);
+    
     app.listen(PORT, function() {
         console.log("Server listening on PORT " + PORT);
     });
