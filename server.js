@@ -41,6 +41,10 @@
         res.sendFile(path.join(__dirname, 'review.html'));
     });
 
+    app.get('/write', function(req, res) {
+        res.sendFile(path.join(__dirname, 'writereview.html'));
+    });
+
     // Placeholder route for now
     app.get('/shoppinglist', function(req, res) {
         res.sendFile(path.join(__dirname, 'shoppinglist.html'));
