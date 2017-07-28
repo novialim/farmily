@@ -83,9 +83,51 @@ i.icon-grey {
   padding: 7px !important;
 }
 
+.minpaddingside {
+  padding-left: 7px !important;
+  padding-right: 7px !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
 
-/*Start of Rating*/
+.minmargin {
+  margin: 1px 7px 1px 7px !important;
+}
 
+.updownpad {
+  margin: 7px 1px 7px 1px;
+}
 
+.review-header-small {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #009688;
+}
 
-/*End of Rating*/
+.strong-text {
+  font-weight: bold !important;;
+}
+
+.text-ht-small {
+  line-height: 0.5em;
+}
+
+.cardimg {
+  max-height: 150px;
+}
+
+.farmAddress {
+  font-size: 0.6em;
+}
+
+.textareawrapper {
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.farmerimg {
+  max-height: 100px;
+  border-radius: 5px;
+  padding-top: 7px;
+}
