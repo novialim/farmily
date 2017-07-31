@@ -43,10 +43,14 @@ router.get('/write', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/writereview.html'));
 });
 
-// Placeholder route for now
-router.get('/shoppinglist', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/shoppinglist.html'));
+router.get('/allfarmers', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/allfarmers.html'));
 });
+
+router.get('/addfarmer', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/addfarmer.html'));
+});
+
 
 // router.get('*', function(req, res) {
 //     res.sendFile(path.join(__dirname, '../public/index.html'));
