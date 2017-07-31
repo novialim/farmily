@@ -1,12 +1,21 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var url = require('url');
 
 const express = require("express");
 const router = express.Router();
 
+var scrollAnchor = require("../public/js/scrollAnchor.js");
+
 router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+
+router.get('/aboutus', function(req, res) {
+    // res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.redirect("https://farmily.herokuapp.com/index.html#aboutus");
 });
 
 router.get('/contribute', function(req, res) {
@@ -38,5 +47,9 @@ router.get('/write', function(req, res) {
 router.get('/shoppinglist', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/shoppinglist.html'));
 });
+
+// router.get('*', function(req, res) {
+//     res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
 
 module.exports = router;
