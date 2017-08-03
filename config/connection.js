@@ -7,7 +7,8 @@ var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
 var sequelize = new Sequelize(
-    "farmily",
+    // "farmily",
+    "farmily_db", //Novia: Temp database
     process.env.MYSQL_USER,
     process.env.MYSQL_PW, 
     {
