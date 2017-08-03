@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var marketReview = sequelize.define("marketReview", {
+    var MarketReview = sequelize.define("MarketReview", {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -31,5 +31,5 @@ module.exports = function(sequelize, DataTypes) {
     //         targetKey: "id"
     //     })
     // }
-    return marketReview;
+    return MarketReview;
 };

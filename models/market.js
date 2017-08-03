@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var market = sequelize.define("markets2", {
+    var Market = sequelize.define("Market", {
         market_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -60,5 +60,5 @@ module.exports = function(sequelize, DataTypes) {
     //         foreignKey: "market_id"
     //     })
     // }
-    return market;
+    return Market;
 };
