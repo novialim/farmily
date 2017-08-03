@@ -1,16 +1,12 @@
-/*
-
- */
-
 module.exports = function(sequelize, DataTypes) {
     var market = sequelize.define("markets", {
-        id: {
+        market_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        name: {
+        market_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -34,12 +30,16 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN'),
             allowNull: true
         },
-        open_hour: {
+        openingdaynumeric: {
             type: DataTypes.INTEGER,
             allowNull: true
         },
-        close_hour: {
-            type: DataTypes.INTEGER,
+        openinghours: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        openinghours_extra: {
+            type: DataTypes.STRING,
             allowNull: true
         },
         url: {
@@ -60,6 +60,5 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: "market_id"
         })
     }
-
     return market;
 };
