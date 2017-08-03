@@ -18,11 +18,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        latititude:{
+        latitude:{
             type: DataTypes.DECIMAL(2, 20),
             allowNull: true
         },
-        latititude:{
+        longitude:{
             type: DataTypes.DECIMAL(2, 20),
             allowNull: true
         },
