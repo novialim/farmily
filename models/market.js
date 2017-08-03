@@ -1,13 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
-    var market = sequelize.define("markets", {
-        // Giving the Author model a name of type STRING
-        id: {
+    var market = sequelize.define("markets2", {
+        market_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        name: {
+        market_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -19,24 +18,28 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        latititude:{
-            type: DataTypes.DECIMAL(2, 20),
+        latitude:{
+            type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
-        latititude:{
-            type: DataTypes.DECIMAL(2, 20),
+        longitude:{
+            type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
         opening_day:{
-            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN','ALL','M-F','SAT-SUN'),
+            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN'),
             allowNull: true
         },
-        open_hour: {
+        openingdaynumeric: {
             type: DataTypes.INTEGER,
             allowNull: true
         },
-        close_hour: {
-            type: DataTypes.INTEGER,
+        openinghours: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        openinghours_extra: {
+            type: DataTypes.STRING,
             allowNull: true
         },
         url: {
@@ -49,17 +52,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
+    market.associate =  (models)=>{
+        // market.hasMany(models.vendor,{
+        //     foreignKey: "market_id"
+        // })
+        market.hasMany(models.marketReview,{
+            foreignKey: "market_id"
+        })
+    }
     return market;
 };
-//
-// CREATE TABLE IF NOT EXISTS `mydb`.`market` (
-//     `id` INT NOT NULL AUTO_INCREMENT,
-//     `name` VARCHAR(45) NOT NULL,
-//     `address` VARCHAR(45) NOT NULL,
-//     `latitude` DECIMAL(3,2) NOT NULL,
-//     `longitude` DECIMAL(3,2) NOT NULL,
-//     `hours` INT NOT NULL,
-//     `url` VARCHAR(45) NOT NULL,
-//     `contact` VARCHAR(45) NOT NULL,
-//     PRIMARY KEY (`id`, `name`))
-// ENGINE = InnoDB

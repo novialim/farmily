@@ -1,21 +1,18 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
+/*
+  ROUTES template
+ */
 
-// Dependencies
-// =============================================================
+var db = require("../models")
 
-// Grabbing our models
+module.exports =  function(app){
+    app.get("/",(req,res)=>{
 
-// var db = require("./models");
+    }),
+    app.post("/api/add",(req,res)=>{
 
-// Routes
-// =============================================================
-// module.exports = function(app) {
+    }),
 
-//   // GET route for getting all market locations
-//   app.get("/api/allmarket", function(req, res) {
+    app.put("/api/:id", (req,res)=>{
 
-//   });
-
-// };
+    })
+}

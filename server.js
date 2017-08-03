@@ -1,30 +1,28 @@
-'use strict';
+var express = require("express");
+var bodyParser = require("body-parser");
+//var methodOverride = require("method-override");
+var port = process.env.PORT || 3000;
 
-(function() {
-    const express = require('express');
-    const path = require('path');
-    const bodyParser = require('body-parser');
-    const router = require('./routes/farmily-controller.js');
+var db = require("./models")
 
-    // Routes
-    // =============================================================
-    // require("./routes/api-routes.js")(app);
+var app = express();
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+// Override with POST having ?_method=DELETE
+//app.use(methodOverride("_method"));
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+// Import routes and give the server access to them.
 
-    const app = express();
-    const PORT = process.env.PORT || 3000;
+// Routes
+// =============================================================
+//require("./routes/api-routes.js")(app);
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
-    app.use(bodyParser.text());
-    app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-    // Serve static files
-    app.use(express.static(path.join(__dirname, 'public')));
+db.sequelize.sync().then(()=>{
+    app.listen(port);
+})
 
-    // Load routes
-    app.use('/', router);
-    
-    app.listen(PORT, function() {
-        console.log("Server listening on PORT " + PORT);
-    });
-}());
