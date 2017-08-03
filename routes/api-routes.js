@@ -1,18 +1,18 @@
 /*
-  ROUTES template
+  Routes for /api path
  */
+const express = require("express");
+const router = express.Router();
+const db = require("../models");  // db object for interfacing with SQL tables
 
-var db = require("../models")
+// Route for /api/add
+router.post("/add", (req, res) => {
 
-module.exports =  function(app){
-    app.get("/",(req,res)=>{
+});
 
-    }),
-    app.post("/api/add",(req,res)=>{
+// Route for /api/:id
+router.put("/:id", (req, res) => {
 
-    }),
+});
 
-    app.put("/api/:id", (req,res)=>{
-
-    })
-}
+module.exports = router;
