@@ -6,6 +6,10 @@
     const bodyParser = require('body-parser');
     const router = require('./routes/farmily-controller.js');
 
+    // Routes
+    // =============================================================
+    // require("./routes/api-routes.js")(app);
+
     const app = express();
     const PORT = process.env.PORT || 3000;
 
