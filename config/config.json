@@ -1,9 +1,16 @@
 {
+  // "development": {
+  //   "username": "sswd-admin",
+  //   "password": "admin",
+  //   "database": "farmily_db",
+  //   "host": "54.193.46.136",
+  //   "dialect": "mysql"
+  // },
   "development": {
-    "username": "sswd-admin",
-    "password": "admin",
-    "database": "farmily_db",
-    "host": "54.193.46.136",
+    "username": "svlmlhjgdbv60qwx",
+    "password": "swu0pmi0rq08pr3l",
+    "database": "r9j86xrrany9tm7r",
+    "host": "op2hpcwcbxb1t4z9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
