@@ -675,15 +675,15 @@
 
       function initMap() {
 
-        var borrego_springs = {lat: 33.256194, lng: -116.374353};
+        var poway_market = {lat: 32.9697166, lng: -117.0363314};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: borrego_springs
+          zoom: 9,
+          center: poway_market
         });
         var marker = new google.maps.Marker({
-          position: borrego_springs,
+          position: poway_market,
           map: map,
-          title: "Borrego Springs Chamber of Commerce Certified Farmers\' Market"
+          title: "Poway Certified Farmers\' Market"
         });
 
         console.log(marketdata.length);

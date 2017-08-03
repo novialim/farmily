@@ -1,5 +1,5 @@
-module.exports = function(sequelize, DataTypes) {
-    var market = sequelize.define("markets", {
+module.exports = function (sequelize, DataTypes) {
+    let Market = sequelize.define("Market", {
         market_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -14,20 +14,20 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true
         },
-        address_google:{
+        address_google: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        latitude:{
+        latitude: {
             type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
-        longitude:{
+        longitude: {
             type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
-        opening_day:{
-            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN'),
+        opening_day: {
+            type: DataTypes.ENUM('M', 'T', 'W', 'TH', 'F', 'SAT', 'SUN'),
             allowNull: true
         },
         openingdaynumeric: {
@@ -52,13 +52,14 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    market.associate =  (models)=>{
+    Market.associate = (models) => {
         // market.hasMany(models.vendor,{
         //     foreignKey: "market_id"
         // })
-        market.hasMany(models.marketReview,{
+        Market.hasMany(models.MarketReview, {
             foreignKey: "market_id"
-        })
+        });
     }
-    return market;
+    
+    return Market;
 };
