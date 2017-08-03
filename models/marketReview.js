@@ -20,16 +20,16 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    marketReview.associate =  (models)=>{
-        marketReview.belongsTo(models.market,{
-            targetKey: "market_id"
-        })
-        marketReview.belongsTo(models.user,{
-            targetKey: "id"
-        })
-        market.hasMany(models.reviews,{
-            targetKey: "id"
-        })
-    }
-    return market;
+    // marketReview.associate =  (models)=>{
+    //     marketReview.belongsTo(models.market,{
+    //         targetKey: "market_id"
+    //     })
+    //     marketReview.belongsTo(models.user,{
+    //         targetKey: "id"
+    //     })
+    //     marketReview.hasMany(models.reviews,{
+    //         targetKey: "id"
+    //     })
+    // }
+    return marketReview;
 };
