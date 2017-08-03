@@ -1,6 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
     var market = sequelize.define("markets", {
-        // Giving the Author model a name of type STRING
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -28,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         },
         opening_day:{
-            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN','ALL','M-F','SAT-SUN'),
+            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN'),
             allowNull: true
         },
         open_hour: {
@@ -51,15 +50,3 @@ module.exports = function(sequelize, DataTypes) {
 
     return market;
 };
-//
-// CREATE TABLE IF NOT EXISTS `mydb`.`market` (
-//     `id` INT NOT NULL AUTO_INCREMENT,
-//     `name` VARCHAR(45) NOT NULL,
-//     `address` VARCHAR(45) NOT NULL,
-//     `latitude` DECIMAL(3,2) NOT NULL,
-//     `longitude` DECIMAL(3,2) NOT NULL,
-//     `hours` INT NOT NULL,
-//     `url` VARCHAR(45) NOT NULL,
-//     `contact` VARCHAR(45) NOT NULL,
-//     PRIMARY KEY (`id`, `name`))
-// ENGINE = InnoDB
