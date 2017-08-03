@@ -20,14 +20,17 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         latititude:{
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(2, 20),
             allowNull: true
         },
         latititude:{
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(2, 20),
             allowNull: true
         },
-        opening_day: DataTypes.STRING,
+        opening_day:{
+            type: DataTypes.ENUM('M','T','W','TH','F','SAT','SUN','ALL','M-F','SAT-SUN'),
+            allowNull: true
+        },
         open_hour: {
             type: DataTypes.INTEGER,
             allowNull: true
