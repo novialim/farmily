@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Farmily - Your Personal Farm to Fork Experience</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <link rel="stylesheet" href="css/startup-materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-solid-transition">
+      <div class="nav-wrapper teal">
+       <a href="/" class="brand-logo valign-wrapper"><img class="responsive-img" src="images/logo/farmilywhitehoriV2.png"></a>
+        <!-- <a href="/" class="brand-logo"><i class="icon-diamond"></i>Farmily</a> -->
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          
+          <li><a class="aboutus">What We Do?</a></li>
+
+          <!-- <li><a class="dropdown-button" href="#!" data-activates="pages" data-constrainWidth="false" data-belowOrigin="true">Explore Markets<i class="material-icons right">arrow_drop_down</i></a></li> -->
+
+          <li><a href="/explore">Explore Markets</a></li>
+          <li><a href="/allfarmers">Farmers</a></li>
+          <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+          <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+        </ul>
+
+        <ul id="pages" class="dropdown-content">
+          <li><a href="#MarketMap">All Markets</a></li>
+          <li><a href="/">Farmers</a></li>
+        </ul>
+
+        <ul id="addpages" class="dropdown-content">
+          <li><a href="/addfarmer">Add Farmer</a></li>
+          <li><a href="/review">Review Farmer</a></li>
+        </ul>        
+
+        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons white-text">menu</i></a>
+      </div>
+    </nav>
+    <ul id="slide-out" class="side-nav">
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-teal active">Farmily</a>
+          </li>
+        </ul>
+      </li>
+      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+      <li><a class="waves-effect waves-teal aboutus">What We Do?</a></li>
+      <li><a class="waves-effect waves-teal" href="/explore">Explore Markets</a></li>
+      <li><a class="waves-effect waves-teal" href="/allfarmers">Farmers</a></li>
+      <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+      <li><a class="waves-effect waves-teal" href="/contribute">Contribute</a></li>
+    </ul>
+
+    <div class="section header">
+      <div class="background">
+        <!-- <img src="images/bg1.jpg" alt=""> -->
+      </div>
+      <div class="header-wrapper row">
+          <!-- <h3>My Google Maps Demo</h3> -->
+  
+          <div id="map"></div>
+      </div>
+    </div>
+
+  
+    <!-- <div class="section light full-height">
+      <div class="row">
+        <div class="col s12 m10 offset-m1 center">
+          <h3>My Google Maps Demo</h3>
+
+          <div id="map"></div>
+          
+        </div>
+      </div>
+    </div> -->
+
+   
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s6 m6">
+            <img class="materialize-logo" src="images/logo/footerfarmilygreen.png" alt="">
+            <p>Made with love by <a href="https://github.com/jhuynh85" target="_blank">Joseph Huynh</a> | <a href="https://github.com/Goosetaculous" target="_blank">Goose aka Joseph Aranez</a> | <a href="https://github.com/novialim" target="_blank">Novia Lim</a></p>
+          </div>
+
+
+      <!--     <div class="col s6 m6">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#!">Blog</a></li>
+              <li><a href="#!">Pricing</a></li>
+              <li><a href="#!">Docs</a></li>
+            </ul>
+          </div>
+          <div class="col s6 m6">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="#!">Community</a></li>
+              <li><a href="#!">Subscribe</a></li>
+              <li><a href="#!">Email</a></li>
+            </ul>
+          </div> -->
+          <div class="col s6 m6">
+            <h5>Contact</h5>
+            <ul>
+<!--               <li><a href="#!">Twitter</a></li>
+              <li><a href="#!">Facebook</a></li> -->
+              <li><a href="https://github.com/novialim/farmily" target="_blank">Github</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+
+    <!-- External libraries -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+
+    <!-- Initialization script -->
+    <script src="js/startup.js"></script>
+    <script src="js/init.js"></script>
+
+    <!-- Smooth scrolling effect -->
+    <script type="text/javascript" src="js/smoothScroll.js"></script>
+
+    <script type="text/javascript" src="js/scrollDiv.js"></script>    
+
+
+    <script>
+      function initMap() {
+        var borrego_springs = {lat: 33.256194, lng: -116.374353};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: borrego_springs
+        });
+        var marker = new google.maps.Marker({
+          position: borrego_springs,
+          map: map
+        });
+
+        var imperial_beach = {lat: 32.579736, lng: -117.132327};
+        
+        var marker2 = new google.maps.Marker({
+          position: imperial_beach,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrDqQ79E1EYLojlXWGqfaM4fQ4xHh-ngs&callback=initMap">
+    </script>
+
+  </body>
+</html>

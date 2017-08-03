@@ -138,3 +138,8 @@ i.icon-grey {
   border-radius: 5px;
   padding-top: 7px;
 }
+
+#map {
+  height: 115%;
+  width: 100%;
+}

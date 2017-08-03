@@ -51,6 +51,10 @@ router.get('/addfarmer', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/addfarmer.html'));
 });
 
+router.get('/explore', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/explore.html'));
+});
+
 
 // router.get('*', function(req, res) {
 //     res.sendFile(path.join(__dirname, '../public/index.html'));
