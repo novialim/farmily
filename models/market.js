@@ -1,3 +1,7 @@
+/*
+
+ */
+
 module.exports = function(sequelize, DataTypes) {
     var market = sequelize.define("markets", {
         id: {
@@ -47,6 +51,15 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true
         }
     });
+
+    market.associate =  (models)=>{
+        market.hasMany(models.vendor,{
+            foreignKey: "market_id"
+        })
+        market.hasMany(models.marketVendor,{
+            foreignKey: "market_id"
+        })
+    }
 
     return market;
 };
