@@ -52,13 +52,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    // market.associate =  (models)=>{
-    //     market.hasMany(models.vendor,{
-    //         foreignKey: "market_id"
-    //     })
-    //     market.hasMany(models.marketReview,{
-    //         foreignKey: "market_id"
-    //     })
-    // }
+    market.associate =  (models)=>{
+        // market.hasMany(models.vendor,{
+        //     foreignKey: "market_id"
+        // })
+        market.hasMany(models.marketReview,{
+            foreignKey: "market_id"
+        })
+    }
     return market;
 };
