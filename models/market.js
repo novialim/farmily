@@ -56,7 +56,7 @@ module.exports = function(sequelize, DataTypes) {
         market.hasMany(models.vendor,{
             foreignKey: "market_id"
         })
-        market.hasMany(models.marketVendor,{
+        market.hasMany(models.marketReview,{
             foreignKey: "market_id"
         })
     }
