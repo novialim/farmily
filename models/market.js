@@ -1,17 +1,49 @@
 module.exports = function(sequelize, DataTypes) {
     var market = sequelize.define("market", {
         // Giving the Author model a name of type STRING
-        id: DataTypes.INTEGER,
-        primaryKey: true,
-        name: DataTypes.STRING,
-        address:DataTypes.STRING,
-        latititude:DataTypes.DECIMAL,
-        latititude:DataTypes.DECIMAL,
-        hours: DataTypes.INTEGER,
-        url: DataTypes.STRING,
-        contact: DataTypes.STRING
-
-
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        address_txt: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        address_google:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        latititude:{
+            type: DataTypes.DECIMAL,
+            allowNull: true
+        },
+        latititude:{
+            type: DataTypes.DECIMAL,
+            allowNull: true
+        },
+        opening_day: DataTypes.STRING,
+        open_hour: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        close_hour: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        url: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: true
+        }
     });
 
     return market;
