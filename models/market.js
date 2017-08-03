@@ -19,11 +19,11 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         latitude:{
-            type: DataTypes.DECIMAL(2, 20),
+            type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
         longitude:{
-            type: DataTypes.DECIMAL(2, 20),
+            type: DataTypes.DECIMAL(20, 2),
             allowNull: true
         },
         opening_day:{
