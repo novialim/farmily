@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var market = sequelize.define("market", {
+    var market = sequelize.define("markets", {
         // Giving the Author model a name of type STRING
         id: {
             type: DataTypes.INTEGER,
