@@ -8,7 +8,7 @@
 
     // Routes
     // =============================================================
-    require("./routes/api-routes.js")(app);
+    // require("./routes/api-routes.js")(app);
 
     const app = express();
     const PORT = process.env.PORT || 3000;

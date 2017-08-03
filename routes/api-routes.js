@@ -7,15 +7,15 @@
 
 // Grabbing our models
 
-var db = require("../models");
+// var db = require("./models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+// module.exports = function(app) {
 
-  // GET route for getting all market locations
-  app.get("/api/allmarket", function(req, res) {
+//   // GET route for getting all market locations
+//   app.get("/api/allmarket", function(req, res) {
 
-  });
+//   });
 
-};
+// };
