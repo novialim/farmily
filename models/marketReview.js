@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
         MarketReview.belongsTo(models.User,{
             targetKey: "user_id"
         })
+        MarketReview.hasMany(models.Reviews,{
+            targetKey: "review_id"
+        })
      }
     return MarketReview;
 };

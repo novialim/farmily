@@ -27,6 +27,9 @@ module.exports = function(sequelize, DataTypes) {
         VendorReview.belongsTo(models.User,{
             targetKey: "user_id"
         })
+        VendorReview.hasMany(models.Reviews,{
+            targetKey: "review_id"
+        })
     }
     return VendorReview;
 };

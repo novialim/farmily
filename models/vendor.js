@@ -24,6 +24,10 @@ module.exports = function (sequelize, DataTypes) {
         Vendor.hasMany(models.Market, {
             foreignKey: "market_id"
         });
+
+        Vendor.belongsTo(models.Produce, {
+            foreignKey: "vendor_id"
+        });
     }
 
     return Vendor;
