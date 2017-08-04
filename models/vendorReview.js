@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    var MarketReview = sequelize.define("MarketReview", {
-        id: {
+    var VendorReview = sequelize.define("VendorReview", {
+        vendor_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -14,19 +14,19 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        market_id:{
+        vendor_id:{
             type: DataTypes.INTEGER,
             allowNull: false
         }
     });
 
-    MarketReview.associate =  (models)=>{
-        MarketReview.belongsTo(models.Market,{
-            targetKey: "market_id"
+    VendorReview.associate =  (models)=>{
+        VendorReview.belongsTo(models.Vendor,{
+            targetKey: "vendor_id"
         })
-        MarketReview.belongsTo(models.User,{
+        VendorReview.belongsTo(models.User,{
             targetKey: "user_id"
         })
-     }
-    return MarketReview;
+    }
+    return VendorReview;
 };

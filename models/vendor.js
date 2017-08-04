@@ -1,30 +1,30 @@
-module.exports = function(sequelize, DataTypes) {
-    var Vendor = sequelize.define("Vendor", {
-        id: {
+module.exports = function (sequelize, DataTypes) {
+    let Vendor = sequelize.define("Vendor", {
+        vendor_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
+            allowNull: false,
         },
         vendor_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        vendor_review_id: {
+        market_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        market_id:{
-            type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         }
+
     });
 
-    Vendor.associate =  (models)=>{
-        Vendor.belongsTo(models.Market,{
-            targetKey: "market_id"
-        })
-
+    Vendor.associate = (models) => {
+        Vendor.hasMany(models.VendorReview, {
+            foreignKey: "vendor_id"
+        });
+        Vendor.hasMany(models.Market, {
+            foreignKey: "market_id"
+        });
     }
+
     return Vendor;
 };
