@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <title>Farmily</title>
-    </head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <body>
-        {{{ body }}}
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/startup-materialize.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{> title }}</title>
+</head>
+
+<body>
+    {{> navbar }}
+    {{{ body }}}
+    {{> footer }}
+    <!--Import jQuery before materialize.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <!--editabletable-->
+    <script type="text/javascript" src="js/plugins/editable-table/mindmup-editabletable.js"></script>
+    <script type="text/javascript" src="js/plugins/editable-table/numeric-input-example.js"></script>
+
+    <script type="text/javascript">
+        $('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
+        $('#textAreaEditor').editableTableWidget({
+            editor: $('<textarea>')
+        });
+        window.prettyPrint && prettyPrint();
+    </script>
+
+    <!-- External libraries -->
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+
+    <!-- Initialization script -->
+    <script src="js/startup.js"></script>
+    <script src="js/init.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                padding: 200
+            });
+            autoplay();
+
+            function autoplay() {
+                $('.carousel').carousel('next');
+                setTimeout(autoplay, 4500);
+            }
+        });
+    </script>
+</body>
+
 </html>

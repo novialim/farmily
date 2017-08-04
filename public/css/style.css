@@ -170,6 +170,7 @@ i.icon-grey {
 
 #sidemenucontent {
   clear: left;
+  border-top: 1px solid rgba(82, 199, 184, .5);
   overflow-y: scroll;
   height: 73.5%;
   line-height: 135%;
@@ -193,6 +194,7 @@ i.icon-grey {
 
 figure {
   margin: 0;
+  margin-bottom: 5px;
   width: 100%;
   float: left;
   position: relative;
@@ -203,4 +205,54 @@ figure {
   position: absolute;
   top: -20px;  
   width: 20px;
+}
+
+/* mouse over link */
+.dayclick:hover {
+    color: red;
+    cursor:pointer;
+}
+
+.marketWrapper > *{
+  padding: 0.1em 2em;
+}
+
+.marketHeader {
+  padding: 0 1.0em;
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #47ada0;
+  padding-bottom: 8px;
+}
+
+.marketAddress {
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.marketDays {
+  font-weight: bold;
+}
+
+.marketDay {
+ padding-bottom: 3px; 
+}
+
+.marketSN {
+  color: #E42229;
+  position: relative;
+  float: left;
+  font-size: 1.5em;
+  font-weight: bolder;
+  height: 4.5em;
+  width: 0.2em;
+  padding-left: 10px;
+  padding-right: 20px;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.marketTime {
+  padding-left: 2.3em;
 }
