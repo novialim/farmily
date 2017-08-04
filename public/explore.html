@@ -736,11 +736,22 @@
       // "url": "",
       // "contact": "(619)-449-8427"
 
+        var marketCount = 1;
+
         for (var j = 0; j < marketdata.length; j++) {
           
           if(i==parseInt(marketdata[j].openingdaynumeric-1)){
             // console.log(marketdata[j].opening_day);
             // console.log("variable i is: "+i);
+        
+            var marketWrapper = $('<div>');
+            marketWrapper.addClass('marketWrapper');  
+
+            var marketSN = $('<div>')
+            marketSN.addClass('marketSN');
+            marketSN.text(marketCount); 
+            marketCount++; 
+
 
             var marketName = marketdata[j].market_name;
 
@@ -758,7 +769,7 @@
 
             var market_Day = $('<div>');
             market_Day.addClass('marketDay');
-            market_Day.html("Opens Every " +marketDay);   
+            market_Day.html("Opens Every <span class='marketDays'>" +marketDay+"</span>");   
 
             var marketTime = marketdata[j].openinghours;
 
@@ -766,14 +777,14 @@
             market_Time.addClass('marketTime');
             market_Time.text(marketTime);   
 
+            marketWrapper.append(marketSN);            
+            marketWrapper.append(marketHeader);
+            marketWrapper.append(market_Add);
+            marketWrapper.append(market_Day);
+            marketWrapper.append(market_Time);
+            marketWrapper.append("<br>");
 
-            $('#content-detailimg').append(marketHeader);
-            $('#content-detailimg').append(market_Add);
-            $('#content-detailimg').append(market_Day);
-            $('#content-detailimg').append(market_Time);
-            $('#content-detailimg').append("<br>");
-
-
+            $('#content-detailimg').append(marketWrapper);
 
           }
         }
