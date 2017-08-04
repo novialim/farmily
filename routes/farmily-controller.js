@@ -56,9 +56,14 @@ router.get('/explore', function (req, res) {
 
 // Test page - market page with Handlebars
 router.get('/test', function (req, res) {
-    res.render('marketDetails', {
-        title: 'Test title'
-    });
+    // Test market object
+    let testMarket = {
+        market_name: "Downtown El Cajon Certified Farmers' Market",
+        address_google: "190 E Main St, El Cajon, CA 92020",
+        contact: "(619) 641-7510 x 277"
+    }
+
+    res.render('marketDetails', testMarket);
 });
 
 // router.get('*', function(req, res) {
