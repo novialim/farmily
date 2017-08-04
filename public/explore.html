@@ -650,37 +650,124 @@
       "contact": "(619)-449-8427"
     }
   ];
+       var markers = [];
 
-      function initMap() {
+       function initMap() {
+          var poway_market = {lat: 32.9697166, lng: -117.0363314};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 9,
+            center: poway_market,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.BOTTOM_RIGHT
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            scaleControl: true,
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.BOTTOM_RIGHT
+            },
+            fullscreenControl: true
+          });
 
-        var poway_market = {lat: 32.9697166, lng: -117.0363314};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 9,
-          center: poway_market
-        });
-        var marker = new google.maps.Marker({
-          position: poway_market,
-          map: map,
-          title: "Poway Certified Farmers\' Market"
-        });
 
-        for (var i = 0; i < marketdata.length; i++) {
-          var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
-        
+          var marker = new google.maps.Marker({
+            position: poway_market,
+            map: map,
+            title: "Poway Certified Farmers\' Market"
+          });
 
-          var latitude = marketdata[i].latitude;
-          var longitude = marketdata[i].longitude;
+          for (var i = 0; i < marketdata.length; i++) {
+            var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
+          
 
-          var market = {lat: latitude, lng: longitude};
+            var latitude = marketdata[i].latitude;
+            var longitude = marketdata[i].longitude;
 
-          var marker2 = new google.maps.Marker({
-          position: market,
-          map: map,
-          title: marketdata[i].market_name
-        });
+            var market = {lat: latitude, lng: longitude};
 
+            var marker2 = new google.maps.Marker({
+            position: market,
+            map: map,
+            title: marketdata[i].market_name
+          });
+
+             markers.push(marker2);
 
         }
+
+        showme = function(index) {
+          if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
+            markers[index].setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function(){ markers[index].setAnimation(null); }, 2200);
+          } else {
+            setTimeout(function(){ markers[index].setAnimation(null); }, 750);
+          }
+        }
+
+          var done = false;
+          var chosenIndex ="";
+              
+          $('.marketWrapper').mouseover(function() {
+
+            // on mouseover get the marketid
+            var index = $(this).find(".marketHeader").attr('id');
+
+            mapData(index);
+
+          },
+          // mouse out
+          // function () {
+          //   // first we need to know which <div class="marker"></div> we hovered
+          //   var index = $('#markers_info .marker').index(this);
+          //   markers[index].setIcon(normalIcon());
+          // }
+
+        );
+
+          // lock variable to search lat/long and execute centerMap function once  
+          
+          function mapData(index) {
+
+              getMarketDetails(index);
+              
+          }
+
+          function getMarketDetails(index){
+              console.log(marketdata[index]);
+
+            var latitude = marketdata[index].latitude;
+            var longitude = marketdata[index].longitude;
+
+            var marketName = marketdata[index].market_name;
+
+            centerMap(latitude, longitude, marketName);
+            showme(index);
+
+          }
+           
+          function centerMap(latitude, longitude, marketName){
+            
+            console.log(marketName);
+
+            map.setZoom(13);      // This will trigger a zoom_changed on the map
+            map.setCenter(new google.maps.LatLng(latitude, longitude));
+            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+
+          }
+
+          // map.setZoom(13);      // This will trigger a zoom_changed on the map
+            // map.setCenter(new google.maps.LatLng(37.4419, -122.1419));
+            // map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+            // markers[index].setIcon(highlightedIcon());
+
+
 
         // for (var i = 0; i < results.features.length; i++) {
         //   var coords = results.features[i].geometry.coordinates;
@@ -711,10 +798,9 @@
         //   title: "Imperial Beach Certified Farmers\' Market"
         // });
       }
-    </script>
 
-    <!-- Market content details -->
-    <script>
+    // <!-- Market content details -->
+
     for(var i=0; i<7; i++){
 
         var sidecontentdetail = $('<figure>');
@@ -757,6 +843,7 @@
 
             var marketHeader = $('<div>');
             marketHeader.addClass('marketHeader');
+            marketHeader.attr('id',j);
             marketHeader.text(marketName);  
 
             var marketAddress = marketdata[j].address_txt;
@@ -782,13 +869,33 @@
             marketWrapper.append(market_Add);
             marketWrapper.append(market_Day);
             marketWrapper.append(market_Time);
-            marketWrapper.append("<br>");
+            marketWrapper.append("<br><br>");
 
             $('#content-detailimg').append(marketWrapper);
 
           }
         }
     }
+
+
+      
+        // initiate Google maps
+        // initialize();
+        // make a .hover event
+
+        // function initialize() {
+        //   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        //   for (var i=0; i<markerData.length; i++) {
+        //     markers.push(
+        //       new google.maps.Marker({
+        //         position: new google.maps.LatLng(markerData[i].lat, markerData[i].lng),
+        //         title: markerData[i].title,
+        //         map: map,
+        //         icon: normalIcon()
+        //       })
+        //     );
+        //   }
+        // }
 
     </script>
 
