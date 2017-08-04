@@ -142,4 +142,65 @@ i.icon-grey {
 #map {
   height: 115%;
   width: 100%;
+  top:0px;
+  left:0px;
+  position: fixed;
+}
+
+#sidemenuwrapper {
+  background-color: #FFFFFF;
+  /*border: 2px solid black;*/
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  width: 35%;
+  height: 88%;
+}
+
+#sidemenuheaderPH {
+  background-color: #52c7b8;
+  height: 1.5em;
+}
+
+#sidemenuheader > h4 {
+  font-weight: bolder;
+  padding: 0 0.5em;
+  letter-spacing: 2px;
+}
+
+#sidemenucontent {
+  clear: left;
+  overflow-y: scroll;
+  height: 73.5%;
+  line-height: 135%;
+}
+
+.sidemenudays {
+  float: left;
+  padding: 0.5em 1.2em;
+  width:14%; 
+}
+
+.contentimg {
+  padding: 0;
+  width: 100%
+}
+
+.content-detailimg {
+  padding: 0;
+  width: 100%
+}
+
+figure {
+  margin: 0;
+  width: 100%;
+  float: left;
+  position: relative;
+
+}
+
+.img-caption {
+  position: absolute;
+  top: -20px;  
+  width: 20px;
 }
