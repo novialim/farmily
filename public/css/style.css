@@ -223,6 +223,7 @@ figure {
   font-weight: bolder;
   color: #47ada0;
   padding-bottom: 8px;
+  cursor:pointer;
 }
 
 .marketAddress {
