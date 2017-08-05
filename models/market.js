@@ -51,6 +51,8 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         yelp_id: DataTypes.STRING
+    }, {
+        timestamps: false
     });
 
     Market.associate = (models) => {
