@@ -19,6 +19,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/farmily-controller.js")(app);
+
 
 db.sequelize.sync({ force: true }).then(() => {
     app.listen(port, () => {
