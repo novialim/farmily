@@ -1,0 +1,824 @@
+<div class="black valign-wrapper explore-height">
+
+    <div class="background">
+        <div class="col s12 m12" id="map"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+
+            <div id="sidemenuwrapper" class="black-text">
+                <div class="valign-wrapper" id="sidemenuheaderPH"> </div>
+
+                <div id="sidemenuheader"><h4>San Diego Farmers' Market 2017</h4></div>
+                <div class="sidemenudays"><a class="dayclick">Mon</a></div>
+                <div class="sidemenudays"><a class="dayclick">Tue</a></div>
+                <div class="sidemenudays"><a class="dayclick">Wed</a></div>
+                <div class="sidemenudays"><a class="dayclick">Thur</a></div>
+                <div class="sidemenudays"><a class="dayclick">Fri</a></div>
+                <div class="sidemenudays"><a class="dayclick">Sat</a></div>
+                <div class="sidemenudays"><a class="dayclick">Sun</a></div>
+
+                <div id="sidemenucontent">
+
+                    <div id="content-detailimg">
+                        <div id="weekdays"></div>
+                    </div>
+
+                </div> <!-- End of sidemenucontent -->
+            </div> <!-- End of sidemenuwrapper -->
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+
+<!-- External libraries -->
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/ScrollMagic.min.js"></script>
+<script src="js/animation.gsap.min.js"></script>
+
+<!-- Initialization script -->
+<script src="js/startup.js"></script>
+<script src="js/init.js"></script>
+
+<!-- Smooth scrolling effect -->
+<script type="text/javascript" src="js/smoothScroll.js"></script>
+
+<script type="text/javascript" src="js/scrollDiv.js"></script>
+<script type="text/javascript" src="js/scrollDay.js"></script>
+<script type="text/javascript" src="js/scrollMarket.js"></script>
+
+<!-- Market json -->
+<script>
+
+    var marketdata = [
+        {
+            "market_name": "Borrego Springs Chamber of Commerce Certified Farmers' Market",
+            "address_txt": "Christmas Circle - 700 Palm Canyon Dr & Borrego Springs Rd\nBorrego Springs, California 92004",
+            "address_google": "Christmas Cir Borrego Springs, CA 92004",
+            "latitude": 33.256194,
+            "longitude": -116.3743533,
+            "opening_day": "Friday",
+            "openingdaynumeric": 5,
+            "openinghours": "7:00AM - 12:00PM",
+            "openinghours_extra": "November to April",
+            "url": "http://www.borregospringschamber.com/farmers_market.html",
+            "contact": "(760) 767-5555"
+        },
+        {
+            "market_name": "Imperial Beach Certified Farmers' Market",
+            "address_txt": "Portwood Pier Plaza \n10 Evergreen Ave\nImperial Beach, CA 91932",
+            "address_google": "10 Evergreen Ave, Imperial Beach, CA 91932",
+            "latitude": 32.5797356,
+            "longitude": -117.1323268,
+            "opening_day": "Friday",
+            "openingdaynumeric": 5,
+            "openinghours": "12:00PM - 6:00PM (Oct - Mar)",
+            "openinghours_extra": "12:00PM - 7:30PM (Apr - Sept)",
+            "url": "imperialbeachfarmersmarket.org/",
+            "contact": "(619) 397-1917"
+        },
+        {
+            "market_name": "Rancho Bernardo Certified Farmers' Market & Specialties - Bernardo Winery",
+            "address_txt": "13330 Paseo Del Verano Norte \nSan Diego, California 92128",
+            "address_google": "13330 Paseo Del Verano Norte, San Diego, CA 92128",
+            "latitude": 33.0331061,
+            "longitude": -117.0466347,
+            "opening_day": "Friday",
+            "openingdaynumeric": 5,
+            "openinghours": "9:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 500-1709"
+        },
+        {
+            "market_name": "Horton Plaza Farmers' Market",
+            "address_txt": "225 Broadway - Southside of building on Broadway Circle, San Diego",
+            "address_google": "225 Broadway Cir, San Diego, CA 92101",
+            "latitude": 32.7153196,
+            "longitude": -117.1625253,
+            "opening_day": "Friday",
+            "openingdaynumeric": 5,
+            "openinghours": "11:00AM - 2:00PM",
+            "openinghours_extra": "",
+            "url": "BriansFarmersMarkets.com",
+            "contact": "(619) 795-3363"
+        },
+        {
+            "market_name": "La Mesa Certified Farmers' Market",
+            "address_txt": "Allison Ave & Date Ave\nLa Mesa, CA 91942",
+            "address_google": "Allison Ave & Date Ave\nLa Mesa, CA 91942",
+            "latitude": 32.7660455,
+            "longitude": -117.0223493,
+            "opening_day": "Friday",
+            "openingdaynumeric": 5,
+            "openinghours": "2:00PM - 6:00PM",
+            "openinghours_extra": "1:00PM - 5:00PM (Nov-Feb)",
+            "url": "",
+            "contact": "(619) 249-9395"
+        },
+        {
+            "market_name": "Welk Certified Farmers' Market (Escondido)",
+            "address_txt": "8860 Lawrence Welk Dr \nEscondido, California 92026",
+            "address_google": "8860 Lawerence Welk Dr\nEscondido, CA 92026",
+            "latitude": 33.2325293,
+            "longitude": -117.1433138,
+            "opening_day": "Monday",
+            "openingdaynumeric": 1,
+            "openinghours": "3:00PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 651-3630"
+        },
+        {
+            "market_name": "Del Mar Certified Farmers' Market",
+            "address_txt": "Upper Shores Park- 225 9th Street, Del Mar 92014",
+            "address_google": "225 9th St, Del Mar, CA 92014",
+            "latitude": 32.9529446,
+            "longitude": -117.2632651,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "1:00PM - 4:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 453-9837"
+        },
+        {
+            "market_name": "Pacific Beach Certified Farmers' Market",
+            "address_txt": "4150 Mission Blvd between Reed & Pacific Beach Blvd \nPacific Beach, California 92109",
+            "address_google": "4150 Mission Blvd, San Diego, CA 92109",
+            "latitude": 32.7913197,
+            "longitude": -117.2544418,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "8:00AM - 12:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 741-3763"
+        },
+        {
+            "market_name": "Poway Certified Farmers' Market",
+            "address_txt": "14134 Midland Rd. cross street Temple, Poway, California 92064",
+            "address_google": "14134 Midland Rd, Poway, CA 92064",
+            "latitude": 32.9697166,
+            "longitude": -117.0363314,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "8:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "http://poway.org/456/Farmers-Market",
+            "contact": "(619) 440-5027"
+        },
+        {
+            "market_name": "City Heights Certified Farmers' Market",
+            "address_txt": "On Wightman St. between Fairmount and 43rd St. \nSan Diego, California 92125",
+            "address_google": "4325 Wightman St, San Diego, CA 92105",
+            "latitude": 32.7477558,
+            "longitude": -117.1015704,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "9:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 504-4363"
+        },
+        {
+            "market_name": "Golden Hill Certified Farmers' Market",
+            "address_txt": "B Street between 27th & 28th \nSan Diego, California 92105",
+            "address_google": "2740 B St\nSan Diego, California, CA 92102",
+            "latitude": 32.7179317,
+            "longitude": -117.1348162,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "9:30AM - 1:30PM",
+            "openinghours_extra": "",
+            "url": "BriansFarmersMarkets.com",
+            "contact": "(619) 795-3363"
+        },
+        {
+            "market_name": "PQ Certified Farmers' Market YMCA",
+            "address_txt": "9400 Fairgrove Lane and Salmon River Road\nSan Diego, California 92129",
+            "address_google": "13053-13161 Salmon River Rd\nSan Diego, CA 92129",
+            "latitude": 32.9575291,
+            "longitude": -117.1214217,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "9:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(858) 484-8788"
+        },
+        {
+            "market_name": "Little Italy Mercato Certified Farmers' Market",
+            "address_txt": "West Cedar Street from Kettner to Front Street\nSan Diego, CA 92101",
+            "address_google": "519 W Cedar St, San Diego, CA 92101",
+            "latitude": 32.7219467,
+            "longitude": -117.167558,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "8:00AM - 2:00PM",
+            "openinghours_extra": "",
+            "url": "www.littleitalymercato.com",
+            "contact": "(619) 233-3769"
+        },
+        {
+            "market_name": "Scripps Ranch Certified Farmers' Market",
+            "address_txt": "Innovations Academy\n10380 Spring Canyon Rd (corner of Scripps Poway Pkwy) \nSan Diego, CA 92131",
+            "address_google": "10380 Spring Canyon Rd, San Diego, CA 92131",
+            "latitude": 32.935538,
+            "longitude": -117.095507,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "9:00AM - 1:30PM",
+            "openinghours_extra": "",
+            "url": "www.srfm.org",
+            "contact": "(858)-586-7933"
+        },
+        {
+            "market_name": "Vista Certified Farmers' Market",
+            "address_txt": "County Courthouse  325 S. Melrose Drive, Vista \n(just South of Highway 78), Vista, California 92081",
+            "address_google": "325 S Melrose Dr, Vista, CA 92081",
+            "latitude": 33.1917764,
+            "longitude": -117.2568878,
+            "opening_day": "Saturday",
+            "openingdaynumeric": 6,
+            "openinghours": "8:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "vistafarmersmarket.com",
+            "contact": "(760) 945-7425"
+        },
+        {
+            "market_name": "Hillcrest Certified Farmers' Market & Open Air Bazaar",
+            "address_txt": "3960 Normal St Intersection of Nomal and Lincoln San Diego, CA 92103",
+            "address_google": "3960 Normal St, San Diego, CA 92103",
+            "latitude": 32.7501475,
+            "longitude": -117.1495395,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "9:00AM - 12:00PM",
+            "openinghours_extra": "",
+            "url": "hillcrestfarmersmarket.com",
+            "contact": "(619) 299-3330"
+        },
+        {
+            "market_name": "Leucadia Certified Farmers Market",
+            "address_txt": "Paul Ecke Elementary-185 Union St (cross street Vulcan) \nEncinitas, California 92024",
+            "address_google": "185 Union St, Encinitas, CA 92024",
+            "latitude": 33.057701,
+            "longitude": -117.2971635,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "10:00AM - 2:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(858) 272-7054"
+        },
+        {
+            "market_name": "North San Diego (Sikes Adobe) Certified Farmers Market",
+            "address_txt": "12655 Sunset Dr\nEscondido, CA 92025",
+            "address_google": "12655 Sunset Drive, at the Sikes Adobe Historic Farmstead, Escondido, CA 92025",
+            "latitude": 33.0672852,
+            "longitude": -117.06712,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "10:30AM - 3:30PM",
+            "openinghours_extra": "",
+            "url": "www.northsdfarmersmarket.com",
+            "contact": "(858) 735-5311"
+        },
+        {
+            "market_name": "Rancho Santa Fe Certified Farmers' Market",
+            "address_txt": "Del Rayo Village Center,16079 San Dieguto Rd\nRancho Santa Fe, CA 92091",
+            "address_google": "16079 San Dieguito Rd., Rancho Santa Fe, CA 92091",
+            "latitude": 32.9903868,
+            "longitude": -117.1967977,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "9:30AM - 2:00PM",
+            "openinghours_extra": "",
+            "url": "ranchosantafefarmersmarket.com",
+            "contact": "(619) 743-4263"
+        },
+        {
+            "market_name": "Solana Beach Certified Farmers' Market",
+            "address_txt": "410 S. Cedros Ave \nSolana Beach, California 92075",
+            "address_google": "444 S Cedros Ave, Solana Beach, CA 92075",
+            "latitude": 32.9870612,
+            "longitude": -117.2690132,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "1:00PM - 5:00PM",
+            "openinghours_extra": "",
+            "url": "cedrosdesigndistrict.net",
+            "contact": "(858) 755-0444"
+        },
+        {
+            "market_name": "La Jolla Certified Farmers' Market",
+            "address_txt": "7300 Block Of Girard Ave At Genter St \nLa Jolla, California 92037",
+            "address_google": "7335 Girard Ave, La Jolla, CA 92037",
+            "latitude": 32.8384558,
+            "longitude": -117.2714682,
+            "opening_day": "Sunday",
+            "openingdaynumeric": 7,
+            "openinghours": "9:00AM - 1:30PM",
+            "openinghours_extra": "",
+            "url": "www.lajollamarket.com",
+            "contact": "(858) 454-1699"
+        },
+        {
+            "market_name": "Downtown El Cajon Certified Farmers' Market",
+            "address_txt": "190 E. Main St at Rea Ave.\nEl Cajon, CA 92020",
+            "address_google": "190 E Main St, El Cajon, CA 92020",
+            "latitude": 32.794949,
+            "longitude": -116.9624329,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "3:00PM - 7:30PM (April - Oct)",
+            "openinghours_extra": "3:00PM - 6:00PM (Nov - March)",
+            "url": "",
+            "contact": "(619) 641-7510 x 277"
+        },
+        {
+            "market_name": "Oceanside Certified Farmers' Market & Faire",
+            "address_txt": "Pier View Way & Coast Hwy 101\nOceanside, California 92054",
+            "address_google": "Pier View Way & Coast Hwy 101\nOceanside, California 92054",
+            "latitude": 33.1967616,
+            "longitude": -117.3802623,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "9:00AM - 1:00PM",
+            "openinghours_extra": "",
+            "url": "http://www.oceansidechamber.com/farmers-market.html",
+            "contact": "(619) 249-9395"
+        },
+        {
+            "market_name": "Rancho Bernardo Market",
+            "address_txt": "13330 Paseo Del Verano Norte\nSan Diego, CA 92128",
+            "address_google": "13330 Paseo Del Verano Norte\nSan Diego, CA 92128",
+            "latitude": 33.0331061,
+            "longitude": -117.0466347,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "11:00AM - 2:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(619) 279-0032"
+        },
+        {
+            "market_name": "Liberty Station Farmers' Market",
+            "address_txt": "2820 Historic Decatur Road\nSan Diego, California",
+            "address_google": "2820 Historic Decatur Rd. San Diego, CA 92106",
+            "latitude": 32.7401595,
+            "longitude": -117.2111954,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "2:00PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(858) 272-7054"
+        },
+        {
+            "market_name": "Linda Vista Certified Farmers Market",
+            "address_txt": "Linda Vista Plaza Shopping Center \n6939 Linda Vista Rd \nSan Diego, CA 92111",
+            "address_google": "6939 Linda Vista Rd, San Diego, CA 92111",
+            "latitude": 32.7850927,
+            "longitude": -117.1696345,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "3:00PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 504-4363"
+        },
+        {
+            "market_name": "North Park Certified Farmers' Market",
+            "address_txt": "North Park Way and 30th st\nSan Diego, California 92104",
+            "address_google": "3000 N Park Way, San Diego, CA 92104",
+            "latitude": 32.7473588,
+            "longitude": -117.1300548,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "3:00PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "northparkmarket.com",
+            "contact": "(619) 233-3769"
+        },
+        {
+            "market_name": "Carmel Valley Certified Farmers' Market",
+            "address_txt": "Canyon Crest Academy\n5951 Village Center Loop\nSan Diego, CA 92130",
+            "address_google": "5951 Village Center Loop Rd, San Diego, CA 92130",
+            "latitude": 32.9590757,
+            "longitude": -117.1894334,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "2:30PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(858) 945-5560"
+        },
+        {
+            "market_name": "Valley Center Certified Farmers' Market",
+            "address_txt": "28246 Lilac Rd, & Valley Center Rd\nValley Center, 92082",
+            "address_google": "28246 Lilac Road, Valley Center, California, 92082",
+            "latitude": 33.2214076,
+            "longitude": -117.0390598,
+            "opening_day": "Thursday",
+            "openingdaynumeric": 4,
+            "openinghours": "3:00PM - 7:00PM (Apr - Oct)",
+            "openinghours_extra": "2:00PM - 6:00PM (Nov - Mar)",
+            "url": "",
+            "contact": "(760) 604-7437"
+        },
+        {
+            "market_name": "Otay Ranch Certified Farmers' Market",
+            "address_txt": "2015 Birch Rd and Eastlake Blvd\nChula Vista, California 91915",
+            "address_google": "2015 Birch Rd Chula Vista, CA 91915",
+            "latitude": 32.623489,
+            "longitude": -116.9654569,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "4:00PM - 8:00PM",
+            "openinghours_extra": "Winter Hours 3:00PM to 7:00PM",
+            "url": "",
+            "contact": "(619) 279-0032"
+        },
+        {
+            "market_name": "Coronado Certified Farmers' Market",
+            "address_txt": "1st & B.- Ferry Landing\nCoronado, California 92118",
+            "address_google": "1st St & B Ave, Coronado, CA 92118",
+            "latitude": 32.6977885,
+            "longitude": -117.1700008,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "2:30 pm - 6:00 pm",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(760) 741-3763"
+        },
+        {
+            "market_name": "Escondido Certified Farmers' Market",
+            "address_txt": "262 E Grand at Juniper \nEscondido, California 92025",
+            "address_google": "262 E Grand Ave, Escondido, CA 92025",
+            "latitude": 33.1232106,
+            "longitude": -117.0791272,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "2:30PM - 6:00PM (Oct - May)",
+            "openinghours_extra": "2:30PM - 7:00PM (June - Sept)",
+            "url": "http://www.escondidoarts.org/farmers-market/",
+            "contact": "(760) 480-4101"
+        },
+        {
+            "market_name": "UCSD/La Jolla Certified Farmers' Market at the Price Center",
+            "address_txt": "9500 Gilman Dr by Lymann Ln & Gilman Dr\nLa Jolla, California 92093",
+            "address_google": "9500 Gilman Dr\nLa Jolla, CA 92093",
+            "latitude": 32.8824069,
+            "longitude": -117.2348172,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "10:00AM - 2:00PM",
+            "openinghours_extra": "(Closed 3rd week of June through 3rd week of Sept and 2nd week of Dec through 1st week of Jan)",
+            "url": "",
+            "contact": "(858) 534-4248"
+        },
+        {
+            "market_name": "Pacific Beach Tuesday Certified Farmers Market",
+            "address_txt": "Bayard St from Garnet ave to Hornblend St \nSan Diego, CA 92109",
+            "address_google": "901 Garnet Ave, San Diego, CA 92109",
+            "latitude": 32.796963,
+            "longitude": -117.25367,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "2:00PM - 7:00PM",
+            "openinghours_extra": "",
+            "url": "",
+            "contact": "(619) 233-3769"
+        },
+        {
+            "market_name": "Mira Mesa Certified Farmers' Market",
+            "address_txt": "Mira Mesa High School\n10510 Reagan Road \nSan Diego, CA 92126",
+            "address_google": "10510 Reagan Rd, San Diego, CA 92126",
+            "latitude": 32.9107436,
+            "longitude": -117.1418492,
+            "opening_day": "Tuesday",
+            "openingdaynumeric": 2,
+            "openinghours": "2:30PM - 7:00PM (Closed in January)",
+            "openinghours_extra": "2:30PM - 6:00PM (Nov - Feb)",
+            "url": "",
+            "contact": "(858) 272-7054"
+        },
+        {
+            "market_name": "Carlsbad State Street Certified Farmers' Market",
+            "address_txt": "State St between Carlsbad Village Dr & Grand\nCarlsbad, California 92008",
+            "address_google": "2907 State St, Carlsbad, CA 92008",
+            "latitude": 33.1603869,
+            "longitude": -117.3496736,
+            "opening_day": "Wednesday",
+            "openingdaynumeric": 3,
+            "openinghours": "3:00PM - 7:00PM",
+            "openinghours_extra": "Winter Hours 3:00PM to 6:00PM",
+            "url": "http://www.carlsbad-village.com/events/farmers-market",
+            "contact": "(858) 272-7054"
+        },
+        {
+            "market_name": "Encinitas Station Certified Farmers' Market",
+            "address_txt": "620 Vulcan, corner of Vulcan and E Street in the parking lot of the Pacific Station Amtrak Coaster stop \nEncinitas, California 92024",
+            "address_google": "600 S Vulcan Ave, Encinitas, CA 92024",
+            "latitude": 33.0438183,
+            "longitude": -117.2925599,
+            "opening_day": "Wednesday",
+            "openingdaynumeric": 3,
+            "openinghours": "5:00PM -8:00PM (May - Sept)",
+            "openinghours_extra": "4:00PM - 7:00PM (Oct - April)",
+            "url": "",
+            "contact": "(760) 522-2053"
+        },
+        {
+            "market_name": "Ocean Beach Certified Farmers' Market and Wednesday Night Out",
+            "address_txt": "4900 blck of Newport Between Cable & Bacon\nOcean Beach, California 92107",
+            "address_google": "4900 Newport Ave, San Diego, CA 92107",
+            "latitude": 32.7458016,
+            "longitude": -117.249336,
+            "opening_day": "Wednesday",
+            "openingdaynumeric": 3,
+            "openinghours": "4:00PM - 7:00PM (Oct - Mar)",
+            "openinghours_extra": "4:00PM - 8PM (Apr - Sept)",
+            "url": "www.oceanbeachsandiego.com",
+            "contact": "(619) 279-0032"
+        },
+        {
+            "market_name": "People's Produce Night Certified Farmers' Market",
+            "address_txt": "1655 Euclid Ave., San Diego 92105",
+            "address_google": "1655 Euclid Ave\nSan Diego, California, CA 92105",
+            "latitude": 32.7224279,
+            "longitude": -117.0833573,
+            "opening_day": "Wednesday",
+            "openingdaynumeric": 3,
+            "openinghours": "5:00PM - 8:00PM",
+            "openinghours_extra": "",
+            "url": "www.projectnewvillage.org/ppp-farmers-market",
+            "contact": "(619) 813-9148"
+        },
+        {
+            "market_name": "Santee Certified Farmers' Market",
+            "address_txt": "Corner of Mast and Carlton Hills Blvd\nSantee, CA 92071",
+            "address_google": "9280 Mast Blvd, Santee, CA 92071",
+            "latitude": 32.8511964,
+            "longitude": -116.9995923,
+            "opening_day": "Wednesday",
+            "openingdaynumeric": 3,
+            "openinghours": "3:00PM - 7:00PM",
+            "openinghours_extra": "3:00PM - 6:00PM (Nov - Feb)",
+            "url": "",
+            "contact": "(619)-449-8427"
+        }
+    ];
+    var markers = [];
+
+    function initMap() {
+
+
+        var poway_market = {lat: 32.9697166, lng: -117.0363314};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 9,
+            center: poway_market,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.BOTTOM_RIGHT
+            },
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            scaleControl: true,
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.BOTTOM_RIGHT
+            },
+            fullscreenControl: true
+        });
+
+
+        // var marker = new google.maps.Marker({
+        //   position: poway_market,
+        //   map: map,
+        //   title: "Poway Certified Farmers\' Market"
+        // });
+
+        for (var i = 0; i < marketdata.length; i++) {
+            var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
+
+            var latitude = marketdata[i].latitude;
+            var longitude = marketdata[i].longitude;
+
+            var market = {lat: latitude, lng: longitude};
+
+            var marker2 = new google.maps.Marker({
+                position: market,
+                map: map,
+                title: marketdata[i].market_name,
+                icon: 'images/marker-green.png'
+            });
+
+            markers.push(marker2);
+
+
+            !function outer(i){
+                google.maps.event.addListener(marker2, 'click', function() {
+                    scrollMarket(".mkt"+i);
+                }, false)
+            }(i)
+
+            // google.maps.event.addListener(marker2, 'click', function() {
+            //     // window.location.href = this.url;
+            //
+            // });
+        }
+
+        bounceMe = function(index) {
+            if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
+                markers[index].setAnimation(google.maps.Animation.BOUNCE);
+                setTimeout(function(){ markers[index].setAnimation(null); }, 2200);
+            } else {
+                setTimeout(function(){ markers[index].setAnimation(null); }, 750);
+            }
+        }
+
+        var done = false;
+        var chosenIndex ="";
+
+        $('.marketWrapper').hover(function() {
+
+            // on mouseover get the marketid
+            var index = $(this).find(".marketHeader").attr('id');
+
+            bounceMe(index);
+            // mapData(index);
+
+        });
+
+        $('.marketHeader').click(function() {
+
+            // on mouseover get the marketid
+            var index = $(this).attr('id');
+
+            bounceMe(index);
+            mapData(index);
+
+        });
+
+        // lock variable to search lat/long and execute centerMap function once
+
+        function mapData(index) {
+
+            getMarketDetails(index);
+
+        }
+
+        function getMarketDetails(index){
+            console.log(marketdata[index]);
+
+            var latitude = marketdata[index].latitude;
+            var longitude = marketdata[index].longitude;
+
+            var marketName = marketdata[index].market_name;
+
+            centerMap(latitude, longitude, marketName);
+
+        }
+
+        function centerMap(latitude, longitude, marketName){
+
+            console.log(marketName);
+
+            map.setZoom(12);      // This will trigger a zoom_changed on the map
+            map.setCenter(new google.maps.LatLng(latitude, longitude));
+            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+
+        }
+
+    }
+
+    // <!-- Market content details -->
+
+    for(var i=0; i<7; i++){
+
+        var sidecontentdetail = $('<figure>');
+        var contentimg = '<img class="contentimg day'+i+'" id="day'+i+'" src="images/farmers-market'+i+'.jpg"/>';
+
+        sidecontentdetail.append(contentimg);
+
+        $('#content-detailimg').append(sidecontentdetail);
+
+        // "market_name": "Santee Certified Farmers' Market",
+        // "address_txt": "Corner of Mast and Carlton Hills Blvd\nSantee, CA 92071",
+        // "address_google": "9280 Mast Blvd, Santee, CA 92071",
+        // "latitude": 32.8511964,
+        // "longitude": -116.9995923,
+        // "opening_day": "Wednesday",
+        // "openingdaynumeric": 3,
+        // "openinghours": "3:00PM - 7:00PM",
+        // "openinghours_extra": "3:00PM - 6:00PM (Nov - Feb)",
+        // "url": "",
+        // "contact": "(619)-449-8427"
+
+        var marketCount = 1;
+
+        for (var j = 0; j < marketdata.length; j++) {
+
+            // match day and print
+            if(i==parseInt(marketdata[j].openingdaynumeric-1)){
+                // console.log(marketdata[j].opening_day);
+                // console.log("variable i is: "+i);
+
+                var marketWrapper = $('<div>');
+                marketWrapper.addClass('marketWrapper');
+
+                var marketSN = $('<div>')
+                marketSN.addClass('marketSN');
+                marketSN.text(marketCount);
+                marketCount++;
+
+
+                var marketName = marketdata[j].market_name;
+
+                var marketHeader = $('<div>');
+                marketHeader.addClass('marketHeader');
+                marketHeader.addClass('mkt'+j);
+                marketHeader.attr('id',j);
+                marketHeader.text(marketName);
+
+                var marketAddress = marketdata[j].address_txt;
+
+                var market_Add = $('<div>');
+                market_Add.addClass('marketAddress');
+                market_Add.text(marketAddress);
+
+                var marketDay = marketdata[j].opening_day;
+
+                var market_Day = $('<div>');
+                market_Day.addClass('marketDay');
+                market_Day.html("Opens Every <span class='marketDays'>" +marketDay+"</span>");
+
+                var marketTime = marketdata[j].openinghours;
+
+                var market_Time = $('<div>');
+                market_Time.addClass('marketTime');
+                market_Time.text(marketTime);
+
+                var marketBtn = $("<div>");
+                marketBtn.html('<a class="waves-effect waves-light teal btn btn-small" href="mkt'+j+'">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>');
+
+                marketWrapper.append(marketSN);
+                marketWrapper.append(marketHeader);
+                marketWrapper.append(market_Add);
+                marketWrapper.append(market_Day);
+                marketWrapper.append(market_Time);
+                marketWrapper.append(marketBtn);
+                marketWrapper.append("<br><br>");
+
+                $('#content-detailimg').append(marketWrapper);
+
+            }
+        }
+    }
+
+
+
+    // initiate Google maps
+    // initialize();
+    // make a .hover event
+
+    // function initialize() {
+    //   map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    //   for (var i=0; i<markerData.length; i++) {
+    //     markers.push(
+    //       new google.maps.Marker({
+    //         position: new google.maps.LatLng(markerData[i].lat, markerData[i].lng),
+    //         title: markerData[i].title,
+    //         map: map,
+    //         icon: normalIcon()
+    //       })
+    //     );
+    //   }
+    // }
+
+</script>
+
+
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrDqQ79E1EYLojlXWGqfaM4fQ4xHh-ngs&callback=initMap">
+</script>

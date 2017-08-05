@@ -5,7 +5,11 @@ module.exports =  function(app) {
             res.render("index")
     }),
     app.get("/explore", (req, res) => {
-            res.render("marketDetails")
+            res.render("explore")
+    })
+
+    app.get("/market", (req, res) => {
+        res.render("marketDetails")
     })
 }
 

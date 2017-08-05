@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
         opening_day: {
-            type: DataTypes.ENUM('M', 'T', 'W', 'TH', 'F', 'SAT', 'SUN'),
+            type: DataTypes.ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
             allowNull: true
         },
         openingdaynumeric: {
