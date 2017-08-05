@@ -5,6 +5,17 @@ const url = require('url');
 const scrollAnchor = require("../public/js/scrollAnchor.js");
 const express = require("express");
 const router = express.Router();
+const multer = require('multer');
+
+var uploading = multer({
+  dest: '../public/uploads/',
+  limits: {fileSize: 1000000, files:1},
+});
+
+
+// router.post('/upload', uploading, function(req,res){
+
+// });
 
 // Home page
 // router.get('/', function (req, res) {
