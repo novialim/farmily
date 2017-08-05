@@ -6,6 +6,11 @@ const scrollAnchor = require("../public/js/scrollAnchor.js");
 const express = require("express");
 const router = express.Router();
 
+
+// router.post('/upload', uploading, function(req,res){
+
+// });
+
 // Home page
 // router.get('/', function (req, res) {
 //     res.sendFile(path.join(__dirname, '../public/index.html'));
