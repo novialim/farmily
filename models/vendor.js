@@ -10,6 +10,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+        vendor_contact: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        vendor_text: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         market_id: {
             type: DataTypes.INTEGER,
             allowNull: true
