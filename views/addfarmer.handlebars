@@ -1,0 +1,150 @@
+<!-- Start of content-->
+<div class="section white full-height">
+    <div class="background">
+        <!-- <img src="images/bg4.jpg" alt=""> -->
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Form with placeholder -->
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Add A Farmer</h4>
+                    <div class="row textareawrapper">
+
+
+
+                        <form class="col s12" action="/api/addfarmer/" method="post">
+                            <div class="input-field row white-text">
+                                <label class="white-text"><h6></h6></label>
+                                <select data-placeholder="" id="pickmarket" name="farmer_group" class="chosen-select">
+                                    <option value="" disabled selected>Which Farmer's Market?</option>
+                                    <option value="1">Borrego Springs Chamber of Commerce Certified Farmers' Market</option>
+                                    <option value="2">Imperial Beach Certified Farmers' Market</option>
+                                    <option value="3">Rancho Bernardo Certified Farmers' Market & Specialties - Bernardo Winery</option>
+                                    <option value="4">Horton Plaza Farmers' Market</option>
+                                    <option value="5">La Mesa Certified Farmers' Market</option>
+                                    <option value="6">Welk Certified Farmers' Market (Escondido)</option>
+                                    <option value="7">Del Mar Certified Farmers' Market</option>
+                                    <option value="8">Pacific Beach Certified Farmers' Market</option>
+                                    <option value="9">Poway Certified Farmers' Market</option>
+                                    <option value="10">City Heights Certified Farmers' Market</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6 l6">
+                                    <input placeholder="Farm Boy Produce" id="farmer_name" name="farmer_name" type="text">
+                                    <label for="farmer_name">Farmer's Name</label>
+                                </div>
+
+                                <div class="input-field col s12 m6 l6">
+                                    <input placeholder="323 936 6363" id="contact" name="farmer_contact" type="text">
+                                    <label for="contact">Contact</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea placeholder="In the outer aisles, you’ll find some of the most magnificent fruit you’ve ever seen – apples and oranges and melons and seasonal fruits are all fresh and just plain gorgeous. In the interior aisles, you’ll find great vegetables – potatoes and onions and lettuce and garlic –which are so good that a sizable contingent of local vegetarians won’t shop anywhere else." id="farmerdetail" name="farmer_description" class="materialize-textarea"></textarea>
+                                    <label for="farmerdetail">Tell Us More About This Farmer!</label>
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <!--   <div class="input-field col s12">
+                                    <textarea placeholder="Your review helps others learn about great local farmers." id="message2" class="materialize-textarea"></textarea>
+                                    <label for="message">Message</label>
+                                  </div> -->
+
+                                <!--    <div class="col s12">
+                                               <label>Operating Day</label>
+                                               <input type="date" class="datepicker">
+                                         </div>       -->
+
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn teal waves-effect waves-light right" type="submit" name="action">Submit
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--Write review panel -->
+            <!--           <div class="col s12 m12">
+
+                      <h4>Add A Farmer</h4>
+
+
+
+                        <div class="card full-height">
+                            <div class="card-title minpaddingside">
+                              <div class="row updownpad">
+                                <div class="col s6 m2">
+                                  <span><img class="farmerimg responsive-img" src="images/farmer1.jpg"></span>
+                                </div>
+                                <div class="col s6 m8 farmerheader valign">
+                                  <span id="farmerName" class="left-align">Connelly Farms</span>
+                                  <div id="farmerAddress" class="farmAddress left-align"><i class="material-icons icon-grey">place</i>456 Telford Lane, Ramona, CA</div>
+                                  <div id="farmerAddress" class="farmAddress left-align"><i class="material-icons icon-grey">phone</i>(858) 505-9535</div>
+                                </div>
+                                <div class="col m2"></div>
+
+                              </div>
+                            </div>
+
+                          <div class="card-content minborder full-height minpaddingside">
+                            <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <div id="label" class="strong-text">Your Review</div>
+                                    <div class="textareawrapper">
+                                      <div class="rateyo" id="rateYo1"></div>
+                                      <div class="divider updownpad"></div>
+                                      <textarea id="reviewtext" class="materialize-textarea" placeholder="Your review helps others learn about great local farmers."></textarea>
+                                    </div>
+                                </div>
+                              </div>
+
+
+
+                                  <button class="btn teal waves-effect waves-light" id="signup" type="submit" name="action">Sign Up and Post
+                                        <i class="material-icons right">send</i>
+                                  </button>
+
+                                  <button class="btn teal waves-effect waves-light" id="submit" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                  </button>
+
+
+                            </form>
+                          </div>
+
+                          </div>
+
+                        </div>
+
+                      </div> -->
+
+            <!-- End of Add Farmer panel -->
+
+
+        </div>
+    </div>
+</div>

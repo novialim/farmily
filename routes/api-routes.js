@@ -1,15 +1,21 @@
 const db = require("../models");
 
 module.exports =  function(app){
-    app.post("/api/review/add/:id", (req, res) => {
+    /*
+    farmer == vendor
+     */
+    app.post("/api/addfarmer/", (req, res) => {
+        console.log(req.body)
+        db.Vendor.create({
+            vendor_name: req.body.farmer_name,
+            vendor_contact:req.body.farmer_contact,
+            vendor_text:req.body.farmer_description,
+            market_id: req.body.farmer_group
 
-    });
-
-    app.get("/api/review/", (req, res) => {
-
-    });
-    app.put("/:id", (req, res) => {
-
+        }).then((data)=>{
+            console.log(data)
+            res.json({"success":1})
+        })
     });
 
 }
