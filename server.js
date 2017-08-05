@@ -30,4 +30,6 @@ db.sequelize.sync({ force: true }).then(() => {
         console.log("App listening on PORT " + port);
     });
 });
+
+module.exports.app = app
  

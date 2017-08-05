@@ -5,7 +5,15 @@ module.exports =  function(app){
 
     });
 
-    app.get("/api/review/", (req, res) => {
+    app.get("/api/markets/", (req, res) => {
+        // db.Markets.findAll({
+        //
+        // }).then((data)=>{
+        //
+        //     res.json(data)
+        // })
+
+
 
     });
     app.put("/:id", (req, res) => {
