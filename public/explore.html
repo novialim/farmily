@@ -127,9 +127,11 @@
     <script type="text/javascript" src="js/scrollDiv.js"></script>    
     <script type="text/javascript" src="js/scrollDay.js"></script>  
     <script type="text/javascript" src="js/scrollMarket.js"></script>  
-    
-    <!-- Market json -->
-    <script>
+
+    <script type="text/javascript">
+      
+
+    // <!-- Market json -->
     var marketdata = [
     {
       "market_name": "Borrego Springs Chamber of Commerce Certified Farmers' Market",
@@ -652,165 +654,181 @@
       "contact": "(619)-449-8427"
     }
   ];
-       var markers = [];
-       function initMap() {
-          var poway_market = {lat: 32.9697166, lng: -117.0363314};
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 9,
-            center: poway_market,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                position: google.maps.ControlPosition.BOTTOM_RIGHT
-            },
-            zoomControl: true,
-            zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-            },
-            scaleControl: true,
-            streetViewControl: true,
-            streetViewControlOptions: {
-                position: google.maps.ControlPosition.BOTTOM_RIGHT
-            },
-            fullscreenControl: true
+
+
+var markers = [];
+
+function initMap() {
+
+    var poway_market = {lat: 32.9697166, lng: -117.0363314};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 9,
+      center: poway_market,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+          position: google.maps.ControlPosition.BOTTOM_RIGHT
+      },
+      zoomControl: true,
+      zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_CENTER
+      },
+      scaleControl: true,
+      streetViewControl: true,
+      streetViewControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_RIGHT
+      },
+      fullscreenControl: true
+    });
+
+      // var marker = new google.maps.Marker({
+      //   position: poway_market,
+      //   map: map,
+      //   title: "Poway Certified Farmers\' Market"
+      // });
+      for (var i = 0; i < marketdata.length; i++) {
+          var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
+        
+          var latitude = marketdata[i].latitude;
+          var longitude = marketdata[i].longitude;
+          var market = {lat: latitude, lng: longitude};
+          var marker2 = new google.maps.Marker({
+            position: market,
+            map: map,
+            title: marketdata[i].market_name,
+            icon: 'images/marker-green.png'
           });
-          // var marker = new google.maps.Marker({
-          //   position: poway_market,
-          //   map: map,
-          //   title: "Poway Certified Farmers\' Market"
+          markers.push(marker2);
+           !function outer(i){
+                google.maps.event.addListener(marker2, 'click', function() {
+                    scrollMarket(".mkt"+i);
+                }, false)
+            }(i)
+          // google.maps.event.addListener(marker2, 'click', function() {
+          //     // window.location.href = this.url;
+          //     
           // });
-          for (var i = 0; i < marketdata.length; i++) {
-              var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
-            
-              var latitude = marketdata[i].latitude;
-              var longitude = marketdata[i].longitude;
-              var market = {lat: latitude, lng: longitude};
-              var marker2 = new google.maps.Marker({
-                position: market,
-                map: map,
-                title: marketdata[i].market_name,
-                icon: 'images/marker-green.png'
-              });
-              markers.push(marker2);
-               !function outer(i){
-                    google.maps.event.addListener(marker2, 'click', function() {
-                        scrollMarket(".mkt"+i);
-                    }, false)
-                }(i)
-              // google.maps.event.addListener(marker2, 'click', function() {
-              //     // window.location.href = this.url;
-              //     
-              // });
-          }
-        bounceMe = function(index) {
-          if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
-            markers[index].setAnimation(google.maps.Animation.BOUNCE);
-            setTimeout(function(){ markers[index].setAnimation(null); }, 2200);
-          } else {
-            setTimeout(function(){ markers[index].setAnimation(null); }, 750);
-          }
-        }
-          var done = false;
-          var chosenIndex ="";
-              
-          $('.marketWrapper').hover(function() {
-            // on mouseover get the marketid
-            var index = $(this).find(".marketHeader").attr('id');
-            bounceMe(index);
-            // mapData(index);
-          });
-          $('.marketHeader').click(function() {
-            // on mouseover get the marketid
-            var index = $(this).attr('id');
-            bounceMe(index);
-            mapData(index);
-          });
-          // lock variable to search lat/long and execute centerMap function once  
-          
-          function mapData(index) {
-              getMarketDetails(index);
-              
-          }
-          function getMarketDetails(index){
-              console.log(marketdata[index]);
-            var latitude = marketdata[index].latitude;
-            var longitude = marketdata[index].longitude;
-            var marketName = marketdata[index].market_name;
-            centerMap(latitude, longitude, marketName);
-          }
-           
-          function centerMap(latitude, longitude, marketName){
-            
-            console.log(marketName);
-            map.setZoom(12);      // This will trigger a zoom_changed on the map
-            map.setCenter(new google.maps.LatLng(latitude, longitude));
-            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-          }
       }
-    // <!-- Market content details -->
-    for(var i=0; i<7; i++){
-        var sidecontentdetail = $('<figure>');
-        var contentimg = '<img class="contentimg day'+i+'" id="day'+i+'" src="images/farmers-market'+i+'.jpg"/>';
-        sidecontentdetail.append(contentimg);
-        
-        $('#content-detailimg').append(sidecontentdetail);
-      // "market_name": "Santee Certified Farmers' Market",
-      // "address_txt": "Corner of Mast and Carlton Hills Blvd\nSantee, CA 92071",
-      // "address_google": "9280 Mast Blvd, Santee, CA 92071",
-      // "latitude": 32.8511964,
-      // "longitude": -116.9995923,
-      // "opening_day": "Wednesday",
-      // "openingdaynumeric": 3,
-      // "openinghours": "3:00PM - 7:00PM",
-      // "openinghours_extra": "3:00PM - 6:00PM (Nov - Feb)",
-      // "url": "",
-      // "contact": "(619)-449-8427"
-        var marketCount = 1;
-        for (var j = 0; j < marketdata.length; j++) {
-          
-          // match day and print
-          if(i==parseInt(marketdata[j].openingdaynumeric-1)){
-            // console.log(marketdata[j].opening_day);
-            // console.log("variable i is: "+i);
-        
-            var marketWrapper = $('<div>');
-            marketWrapper.addClass('marketWrapper');  
-            var marketSN = $('<div>')
-            marketSN.addClass('marketSN');
-            marketSN.text(marketCount); 
-            marketCount++; 
-            var marketName = marketdata[j].market_name;
-            var marketHeader = $('<div>');
-            marketHeader.addClass('marketHeader');
-            marketHeader.addClass('mkt'+j);
-            marketHeader.attr('id',j);
-            marketHeader.text(marketName);  
-            var marketAddress = marketdata[j].address_txt;
-            var market_Add = $('<div>');
-            market_Add.addClass('marketAddress');
-            market_Add.text(marketAddress);  
-            var marketDay = marketdata[j].opening_day;
-            var market_Day = $('<div>');
-            market_Day.addClass('marketDay');
-            market_Day.html("Opens Every <span class='marketDays'>" +marketDay+"</span>");   
-            var marketTime = marketdata[j].openinghours;
-            var market_Time = $('<div>');
-            market_Time.addClass('marketTime');
-            market_Time.text(marketTime);   
-            var marketBtn = $("<div>");
-            marketBtn.html('<a class="waves-effect waves-light teal btn btn-small" href="mkt'+j+'">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>');
-            marketWrapper.append(marketSN);            
-            marketWrapper.append(marketHeader);
-            marketWrapper.append(market_Add);
-            marketWrapper.append(market_Day);
-            marketWrapper.append(market_Time);
-            marketWrapper.append(marketBtn);
-            marketWrapper.append("<br><br>");
-            $('#content-detailimg').append(marketWrapper);
-          }
-        }
+    bounceMe = function(index) {
+      if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
+        markers[index].setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function(){ markers[index].setAnimation(null); }, 2200);
+      } else {
+        setTimeout(function(){ markers[index].setAnimation(null); }, 750);
+      }
     }
+      var done = false;
+      var chosenIndex ="";
+          
+      $('.marketWrapper').hover(function() {
+        // on mouseover get the marketid
+        var index = $(this).find(".marketHeader").attr('id');
+        bounceMe(index);
+        // mapData(index);
+      });
+      $('.marketHeader').click(function() {
+        // on mouseover get the marketid
+        var index = $(this).attr('id');
+        bounceMe(index);
+        mapData(index);
+      });
+      // lock variable to search lat/long and execute centerMap function once  
       
+      function mapData(index) {
+          getMarketDetails(index);
+          
+      }
+      function getMarketDetails(index){
+          console.log(marketdata[index]);
+        var latitude = marketdata[index].latitude;
+        var longitude = marketdata[index].longitude;
+        var marketName = marketdata[index].market_name;
+        centerMap(latitude, longitude, marketName);
+      }
+       
+      function centerMap(latitude, longitude, marketName){
+        console.log(marketName);
+        map.setZoom(12);      // This will trigger a zoom_changed on the map
+        map.setCenter(new google.maps.LatLng(latitude, longitude));
+        map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+      }
+  }
+// <!-- Market content details -->
+for(var i=0; i<7; i++){
+    var sidecontentdetail = $('<figure>');
+    var contentimg = '<img class="contentimg day'+i+'" id="day'+i+'" src="images/farmers-market'+i+'.jpg"/>';
+    sidecontentdetail.append(contentimg);
+    
+    $('#content-detailimg').append(sidecontentdetail);
+  // "market_name": "Santee Certified Farmers' Market",
+  // "address_txt": "Corner of Mast and Carlton Hills Blvd\nSantee, CA 92071",
+  // "address_google": "9280 Mast Blvd, Santee, CA 92071",
+  // "latitude": 32.8511964,
+  // "longitude": -116.9995923,
+  // "opening_day": "Wednesday",
+  // "openingdaynumeric": 3,
+  // "openinghours": "3:00PM - 7:00PM",
+  // "openinghours_extra": "3:00PM - 6:00PM (Nov - Feb)",
+  // "url": "",
+  // "contact": "(619)-449-8427"
+    var marketCount = 1;
+    for (var j = 0; j < marketdata.length; j++) {
+      
+      // match day and print
+      if(i==parseInt(marketdata[j].openingdaynumeric-1)){
+        // console.log(marketdata[j].opening_day);
+        // console.log("variable i is: "+i);
+    
+        var marketWrapper = $('<div>');
+        marketWrapper.addClass('marketWrapper');  
+
+        var marketSN = $('<div>')
+        marketSN.addClass('marketSN');
+        marketSN.text(marketCount); 
+        marketCount++; 
+
+        var marketName = marketdata[j].market_name;
+        var marketHeader = $('<div>');
+        marketHeader.addClass('marketHeader');
+        marketHeader.addClass('mkt'+j);
+        marketHeader.attr('id',j);
+        marketHeader.text(marketName);  
+
+        var marketAddress = marketdata[j].address_txt;
+        var market_Add = $('<div>');
+        market_Add.addClass('marketAddress');
+        market_Add.text(marketAddress);  
+
+        var marketDay = marketdata[j].opening_day;
+        var market_Day = $('<div>');
+        market_Day.addClass('marketDay');
+        market_Day.html("Opens Every <span class='marketDays'>" +marketDay+"</span>");   
+
+        var marketTime = marketdata[j].openinghours;
+        var market_Time = $('<div>');
+        market_Time.addClass('marketTime');
+        market_Time.text(marketTime);   
+
+        var marketBtn = $("<div>");
+        marketBtn.html('<a class="waves-effect waves-light teal btn btn-small" href="mkt'+j+'">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>');
+
+        marketWrapper.append(marketSN);            
+        marketWrapper.append(marketHeader);
+        marketWrapper.append(market_Add);
+        marketWrapper.append(market_Day);
+        marketWrapper.append(market_Time);
+        marketWrapper.append(marketBtn);
+        marketWrapper.append("<br><br>");
+        $('#content-detailimg').append(marketWrapper);
+      }
+    }
+  }
+
+
+    </script>
+    
+    <!--
+        // initMap.js takes in market.json, renders text and google maps
         // initiate Google maps
         // initialize();
         // make a .hover event
@@ -827,7 +845,8 @@
         //     );
         //   }
         // }
-    </script>
+     -->
+
 
 
 
