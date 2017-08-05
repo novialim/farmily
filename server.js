@@ -14,6 +14,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Routes
 require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 db.sequelize.sync({ force: true }).then(() => {
     app.listen(port, () => {
         console.log("App listening on PORT " + port);
