@@ -14,7 +14,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         }
+    }, {
+        timestamps: false
     });
+    
     User.associate = (models) => {
         User.hasMany(models.MarketReview, {
             foreignKey: 'user_id'
