@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var VendorReview = sequelize.define("VendorReview", {
         vendor_id: {
             type: DataTypes.INTEGER,
@@ -14,16 +14,24 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        vendor_id:{
+        vendor_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
     });
 
-    VendorReview.associate =  (models)=>{
-        VendorReview.belongsTo(models.Vendor);
-        VendorReview.belongsTo(models.User);
-        VendorReview.hasMany(models.Review);
+    VendorReview.associate = (models) => {
+        VendorReview.belongsTo(models.Vendor, {
+            foreignKey: 'vendor_id',
+            targetKey: 'vendor_id'
+        });
+        VendorReview.belongsTo(models.User, {
+            foreignKey: 'user_id',
+            targetKey: 'user_id'
+        });
+        VendorReview.hasMany(models.Review, {
+            foreignKey: 'vendorReview_id'
+        });
     }
     return VendorReview;
 };
