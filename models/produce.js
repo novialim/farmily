@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Produce = sequelize.define("Produce", {
         vendor_id: {
             type: DataTypes.INTEGER,
@@ -10,8 +10,10 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Produce.associate =  (models)=>{
-        Produce.hasMany(models.Vendor);
+    Produce.associate = (models) => {
+        Produce.hasMany(models.Vendor, {
+            foreignKey: 'produce_id'
+        });
     }
     return Produce;
 };
