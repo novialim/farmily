@@ -11,10 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Produce.associate =  (models)=>{
-        Produce.hasMany(models.Vendor,{
-            targetKey: "vendor_id"
-        })
-
+        Produce.hasMany(models.Vendor);
     }
     return Produce;
 };
