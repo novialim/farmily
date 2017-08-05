@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Review = sequelize.define("Review", {
         review_id: {
             type: DataTypes.INTEGER,
@@ -16,9 +16,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Review.associate =  (models)=>{
-        Review.belongsTo(models.MarketReview);
-        Review.belongsTo(models.VendorReview);
+    Review.associate = (models) => {
+        Review.belongsTo(models.MarketReview, {
+            foreignKey: 'marketReview_id'
+        });
+        Review.belongsTo(models.VendorReview, {
+            foreignKey: 'vendorReview_id'
+        });
     }
     return Review;
 };

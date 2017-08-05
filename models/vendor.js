@@ -18,9 +18,16 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Vendor.associate = (models) => {
-        Vendor.hasMany(models.VendorReview);
-        Vendor.belongsTo(models.Market);
-        Vendor.belongsTo(models.Produce);
+        Vendor.hasMany(models.VendorReview, {
+            foreignKey: 'vendor_id'
+        });
+        Vendor.belongsTo(models.Market, {
+            foreignKey: 'market_id',
+            targetKey: 'market_id'
+        });
+        Vendor.belongsTo(models.Produce, {
+            foreignKey: 'produce_id'
+        });
     }
 
     return Vendor;
