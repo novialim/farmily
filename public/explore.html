@@ -695,7 +695,8 @@
               var marker2 = new google.maps.Marker({
                 position: market,
                 map: map,
-                title: marketdata[i].market_name
+                title: marketdata[i].market_name,
+                icon: 'images/marker-green.png'
               });
 
               markers.push(marker2);
@@ -735,10 +736,10 @@
 
           });
 
-          $('.marketWrapper').click(function() {
+          $('.marketHeader').click(function() {
 
             // on mouseover get the marketid
-            var index = $(this).find(".marketHeader").attr('id');
+            var index = $(this).attr('id');
 
             bounceMe(index);
             mapData(index);
@@ -805,6 +806,7 @@
 
         for (var j = 0; j < marketdata.length; j++) {
           
+          // match day and print
           if(i==parseInt(marketdata[j].openingdaynumeric-1)){
             // console.log(marketdata[j].opening_day);
             // console.log("variable i is: "+i);

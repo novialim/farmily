@@ -6,7 +6,7 @@ function scrollMarket(market) {
 		var scrollTo = $(market);
 
 		container.animate({
-		    scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop() -10
+		    scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
 		}, 'slow');
 	}	
 }
