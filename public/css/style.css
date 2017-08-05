@@ -170,7 +170,7 @@ i.icon-grey {
 
 #sidemenucontent {
   clear: left;
-  border-top: 1px solid rgba(82, 199, 184, .5);
+  border-top: 1px solid rgba(82, 199, 184, .3);
   overflow-y: scroll;
   height: 73.5%;
   line-height: 135%;
