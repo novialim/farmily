@@ -700,7 +700,7 @@
 
         }
 
-        showme = function(index) {
+        bounceMe = function(index) {
           if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
             markers[index].setAnimation(google.maps.Animation.BOUNCE);
             setTimeout(function(){ markers[index].setAnimation(null); }, 2200);
@@ -712,22 +712,25 @@
           var done = false;
           var chosenIndex ="";
               
-          $('.marketWrapper').mouseover(function() {
+          $('.marketWrapper').hover(function() {
 
             // on mouseover get the marketid
             var index = $(this).find(".marketHeader").attr('id');
 
+            bounceMe(index);
+            // mapData(index);
+
+          });
+
+          $('.marketWrapper').click(function() {
+
+            // on mouseover get the marketid
+            var index = $(this).find(".marketHeader").attr('id');
+
+            bounceMe(index);
             mapData(index);
 
-          },
-          // mouse out
-          // function () {
-          //   // first we need to know which <div class="marker"></div> we hovered
-          //   var index = $('#markers_info .marker').index(this);
-          //   markers[index].setIcon(normalIcon());
-          // }
-
-        );
+          });
 
           // lock variable to search lat/long and execute centerMap function once  
           
@@ -746,7 +749,6 @@
             var marketName = marketdata[index].market_name;
 
             centerMap(latitude, longitude, marketName);
-            showme(index);
 
           }
            
@@ -754,7 +756,7 @@
             
             console.log(marketName);
 
-            map.setZoom(10);      // This will trigger a zoom_changed on the map
+            map.setZoom(12);      // This will trigger a zoom_changed on the map
             map.setCenter(new google.maps.LatLng(latitude, longitude));
             map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
 
