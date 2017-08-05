@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 3000;
 const db = require("./models");
+const router = require('./routes/farmily-controller.js');
 
 app.use(express.static("public"));
 
@@ -19,6 +20,10 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+
+app.use('/', router);
+
+
 
 db.sequelize.sync({ force: true }).then(() => {
     app.listen(port, () => {

@@ -7,9 +7,9 @@ const express = require("express");
 const router = express.Router();
 
 // Home page
-router.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
+// router.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
 
 // About us
 router.get('/aboutus', function (req, res) {
@@ -26,9 +26,9 @@ router.get('/farmer', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/farmer.html'));
 });
 
-router.get('/market', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/market.html'));
-});
+// router.get('/market', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../public/market.html'));
+// });
 
 router.get('/form', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/testform.html'));
