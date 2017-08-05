@@ -14,6 +14,10 @@ module.exports = function (app) {
         res.render("addfarmer")
     });
 
+    app.get("/review", (req, res) => {
+        res.render("review")
+    });
+
 
   
 
