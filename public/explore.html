@@ -124,6 +124,7 @@
 
     <script type="text/javascript" src="js/scrollDiv.js"></script>    
     <script type="text/javascript" src="js/scrollDay.js"></script>  
+    <script type="text/javascript" src="js/scrollMarket.js"></script>  
     
     <!-- Market json -->
     <script>
@@ -653,6 +654,8 @@
        var markers = [];
 
        function initMap() {
+
+
           var poway_market = {lat: 32.9697166, lng: -117.0363314};
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
@@ -675,30 +678,40 @@
           });
 
 
-          var marker = new google.maps.Marker({
-            position: poway_market,
-            map: map,
-            title: "Poway Certified Farmers\' Market"
-          });
+          // var marker = new google.maps.Marker({
+          //   position: poway_market,
+          //   map: map,
+          //   title: "Poway Certified Farmers\' Market"
+          // });
 
           for (var i = 0; i < marketdata.length; i++) {
-            var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
-          
+              var trimMarketName = marketdata[i].market_name.replace(/\s/g, '');
+            
+              var latitude = marketdata[i].latitude;
+              var longitude = marketdata[i].longitude;
 
-            var latitude = marketdata[i].latitude;
-            var longitude = marketdata[i].longitude;
+              var market = {lat: latitude, lng: longitude};
 
-            var market = {lat: latitude, lng: longitude};
+              var marker2 = new google.maps.Marker({
+                position: market,
+                map: map,
+                title: marketdata[i].market_name
+              });
 
-            var marker2 = new google.maps.Marker({
-            position: market,
-            map: map,
-            title: marketdata[i].market_name
-          });
+              markers.push(marker2);
 
-             markers.push(marker2);
 
-        }
+               !function outer(i){
+                    google.maps.event.addListener(marker2, 'click', function() {
+                        scrollMarket(".mkt"+i);
+                    }, false)
+                }(i)
+
+              // google.maps.event.addListener(marker2, 'click', function() {
+              //     // window.location.href = this.url;
+              //     
+              // });
+          }
 
         bounceMe = function(index) {
           if (markers[index].getAnimation() != google.maps.Animation.BOUNCE) {
@@ -763,42 +776,6 @@
 
           }
 
-          // map.setZoom(13);      // This will trigger a zoom_changed on the map
-            // map.setCenter(new google.maps.LatLng(37.4419, -122.1419));
-            // map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-
-            // markers[index].setIcon(highlightedIcon());
-
-
-
-        // for (var i = 0; i < results.features.length; i++) {
-        //   var coords = results.features[i].geometry.coordinates;
-        //   var latLng = new google.maps.LatLng(coords[1],coords[0]);
-        //   var marker = new google.maps.Marker({
-        //     position: latLng,
-        //     map: map
-        //   });
-        // }
-
-
-        // var borrego_springs = {lat: 33.256194, lng: -116.374353};
-        // var map = new google.maps.Map(document.getElementById('map'), {
-        //   zoom: 8,
-        //   center: borrego_springs
-        // });
-        // var marker = new google.maps.Marker({
-        //   position: borrego_springs,
-        //   map: map,
-        //   title: "Borrego Springs Chamber of Commerce Certified Farmers\' Market"
-        // });
-
-        // var imperial_beach = {lat: 32.579736, lng: -117.132327};
-        
-        // var marker2 = new google.maps.Marker({
-        //   position: imperial_beach,
-        //   map: map,
-        //   title: "Imperial Beach Certified Farmers\' Market"
-        // });
       }
 
     // <!-- Market content details -->
@@ -845,6 +822,7 @@
 
             var marketHeader = $('<div>');
             marketHeader.addClass('marketHeader');
+            marketHeader.addClass('mkt'+j);
             marketHeader.attr('id',j);
             marketHeader.text(marketName);  
 
@@ -866,11 +844,15 @@
             market_Time.addClass('marketTime');
             market_Time.text(marketTime);   
 
+            var marketBtn = $("<div>");
+            marketBtn.html('<a class="waves-effect waves-light teal btn btn-small" href="mkt'+j+'">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>');
+
             marketWrapper.append(marketSN);            
             marketWrapper.append(marketHeader);
             marketWrapper.append(market_Add);
             marketWrapper.append(market_Day);
             marketWrapper.append(market_Time);
+            marketWrapper.append(marketBtn);
             marketWrapper.append("<br><br>");
 
             $('#content-detailimg').append(marketWrapper);

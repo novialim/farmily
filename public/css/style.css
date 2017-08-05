@@ -257,3 +257,9 @@ figure {
 .marketTime {
   padding-left: 2.3em;
 }
+
+.btn-small {
+    height: 20px;
+    line-height: 20px;
+    padding: 0 0.5rem;
+}
