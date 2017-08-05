@@ -21,15 +21,9 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     VendorReview.associate =  (models)=>{
-        VendorReview.belongsTo(models.Vendor,{
-            targetKey: "vendor_id"
-        })
-        VendorReview.belongsTo(models.User,{
-            targetKey: "user_id"
-        })
-        VendorReview.hasMany(models.Reviews,{
-            targetKey: "review_id"
-        })
+        VendorReview.belongsTo(models.Vendor);
+        VendorReview.belongsTo(models.User);
+        VendorReview.hasMany(models.Review);
     }
     return VendorReview;
 };

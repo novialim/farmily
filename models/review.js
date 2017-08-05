@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Reviews = sequelize.define("Reviews", {
+    var Review = sequelize.define("Review", {
         review_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,13 +16,9 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Reviews.associate =  (models)=>{
-        Reviews.belongsTo(models.MarketReview,{
-            targetKey: "review_id"
-        })
-        Reviews.belongsTo(models.VendorReview,{
-            targetKey: "review_id"
-        })
+    Review.associate =  (models)=>{
+        Review.belongsTo(models.MarketReview);
+        Review.belongsTo(models.VendorReview);
     }
-    return Reviews;
+    return Review;
 };
