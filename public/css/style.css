@@ -263,3 +263,7 @@ figure {
     line-height: 20px;
     padding: 0 0.5rem;
 }
+
+.mapbackground{
+  margin-left: 0;
+}
