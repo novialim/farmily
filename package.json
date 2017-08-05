@@ -33,6 +33,7 @@
     "sequelize": "^4.4.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "yelp-fusion": "^1.0.3"
   }
 }
