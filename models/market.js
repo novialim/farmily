@@ -19,15 +19,15 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         latitude: {
-            type: DataTypes.DECIMAL(20, 2),
+            type: DataTypes.STRING,
             allowNull: true
         },
         longitude: {
-            type: DataTypes.DECIMAL(20, 2),
+            type: DataTypes.STRING,
             allowNull: true
         },
         opening_day: {
-            type: DataTypes.ENUM('M', 'T', 'W', 'TH', 'F', 'SAT', 'SUN'),
+            type: DataTypes.ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
             allowNull: true
         },
         openingdaynumeric: {

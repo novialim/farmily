@@ -1,18 +1,15 @@
-/*
-  Routes for /api path
- */
-const express = require("express");
-const router = express.Router();
-const db = require("../models");  // db object for interfacing with SQL tables
+const db = require("../models");
 
-// Route for /api/add
-router.post("/add", (req, res) => {
+module.exports =  function(app){
+    app.post("/api/review/add/:id", (req, res) => {
 
-});
+    });
 
-// Route for /api/:id
-router.put("/:id", (req, res) => {
+    app.get("/api/review/", (req, res) => {
 
-});
+    });
+    app.put("/:id", (req, res) => {
 
-module.exports = router;
+    });
+
+}
