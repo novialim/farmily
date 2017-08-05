@@ -19,7 +19,6 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }
     });
-
     MarketReview.associate =  (models)=>{
         MarketReview.belongsTo(models.Market);
         MarketReview.belongsTo(models.User);

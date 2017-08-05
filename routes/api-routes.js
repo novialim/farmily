@@ -5,8 +5,14 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");  // db object for interfacing with SQL tables
 
-// Route for /api/add
-router.post("/add", (req, res) => {
+/*
+ Add a review by a user
+ */
+router.post("/api/review/add/:id", (req, res) => {
+
+});
+
+router.get("/api/review/add", (req, res) => {
 
 });
 
