@@ -1,21 +1,19 @@
 const db = require("../models");
 
+
+function createVendor(data,cb){
+    db.Vendor.create(data).then(()=>{
+        cb({"result": "success"})
+    },(error)=>{
+        cb({"result":error})
+    })
+}
+
 module.exports =  function(app){
-    /*
-    farmer == vendor
-     */
     app.post("/api/addfarmer/", (req, res) => {
         console.log(req.body)
-        db.Vendor.create({
-            vendor_name: req.body.farmer_name,
-            vendor_contact:req.body.farmer_contact,
-            vendor_text:req.body.farmer_description,
-            market_id: req.body.farmer_group
-
-        }).then((data)=>{
-            console.log(data)
-            res.json({"success":1})
+        createVendor(req.body,(result)=>{
+            res.json(result)
         })
     });
-
 }

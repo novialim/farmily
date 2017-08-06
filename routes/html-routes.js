@@ -13,13 +13,11 @@ module.exports = function (app) {
     app.get("/addfarmer", (req, res) => {
         res.render("addfarmer")
     });
-
+    //Query vendor
     app.get("/review", (req, res) => {
-        res.render("review")
+        //res.render("review")
+        res.sendFile(path.join(__dirname, '../public/review.html'));
     });
-
-
-  
 
     app.get("/market", (req, res) => {
         res.render("marketDetails")
