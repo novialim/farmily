@@ -12,23 +12,12 @@
                     <h4 class="header2">Add A Farmer</h4>
                     <div class="row textareawrapper">
 
-
-
                         <form class="col s12" action="/api/addfarmer/" method="post">
                             <div class="input-field row white-text">
                                 <label class="white-text"><h6></h6></label>
                                 <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
                                     <option value="" disabled selected>Which Farmer's Market?</option>
-                                    <option value="1">Borrego Springs Chamber of Commerce Certified Farmers' Market</option>
-                                    <option value="2">Imperial Beach Certified Farmers' Market</option>
-                                    <option value="3">Rancho Bernardo Certified Farmers' Market & Specialties - Bernardo Winery</option>
-                                    <option value="4">Horton Plaza Farmers' Market</option>
-                                    <option value="5">La Mesa Certified Farmers' Market</option>
-                                    <option value="6">Welk Certified Farmers' Market (Escondido)</option>
-                                    <option value="7">Del Mar Certified Farmers' Market</option>
-                                    <option value="8">Pacific Beach Certified Farmers' Market</option>
-                                    <option value="9">Poway Certified Farmers' Market</option>
-                                    <option value="10">City Heights Certified Farmers' Market</option>
+                                    {{>addfarmer/marketDropdown markets}}
                                 </select>
                             </div>
                             <div class="row">
@@ -73,17 +62,8 @@
                         </form>
                     </div>
 
-
-
-
-
                 </div>
             </div>
-
-
-
-
-
 
             <!--Write review panel -->
             <!--           <div class="col s12 m12">
