@@ -1,44 +1,44 @@
 <!-- Start of content-->
 <div class="section white full-height">
-  <div class="background">
-    <!-- <img src="images/bg4.jpg" alt=""> -->
-  </div>
+    <div class="background">
+        <!-- <img src="images/bg4.jpg" alt=""> -->
+    </div>
 
-  <div class="container">
-    <div class="row">
-      <!-- Form with placeholder -->
-      <div class="col s12 m12 l12">
-        <div class="card-panel">
-          <h4 class="header2">Add A Farmer</h4>
-          <div class="row textareawrapper">
+    <div class="container">
+        <div class="row">
+            <!-- Form with placeholder -->
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <h4 class="header2">Add A Farmer</h4>
+                    <div class="row textareawrapper">
 
-            <form class="col s12" action="/api/addfarmer/" method="post">
-              <div class="input-field row white-text">
-                <label class="white-text"><h6></h6></label>
-                <select data-placeholder="" id="pickmarket" name="farmer_group" class="chosen-select">
-                  <option value="" disabled selected>Which Farmer's Market?</option>
-                  {{>addfarmer/marketDropdown markets}}
-                </select>
-              </div>
-              <div class="row">
-                <div class="input-field col s12 m6 l6">
-                  <input placeholder="Farm Boy Produce" id="farmer_name" name="farmer_name" type="text">
-                  <label for="farmer_name">Farmer's Name</label>
-                </div>
+                        <form class="col s12" action="/api/addfarmer/" method="post">
+                            <div class="input-field row white-text">
+                                <label class="white-text"><h6></h6></label>
+                                <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
+                                    <option value="" disabled selected>Which Farmer's Market?</option>
+                                    {{>addfarmer/marketDropdown markets}}
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 m6 l6">
+                                    <input placeholder="Farm Boy Produce" id="farmer_name" name="vendor_name" type="text">
+                                    <label for="farmer_name">Farmer's Name</label>
+                                </div>
 
-                <div class="input-field col s12 m6 l6">
-                  <input placeholder="323 936 6363" id="contact" name="farmer_contact" type="text">
-                  <label for="contact">Contact</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
+                                <div class="input-field col s12 m6 l6">
+                                    <input placeholder="323 936 6363" id="contact" name="vendor_contact" type="text">
+                                    <label for="contact">Contact</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
                   <textarea placeholder="In the outer aisles, you’ll find some of the most magnificent fruit you’ve ever seen – apples and oranges and melons and seasonal fruits are all fresh and just plain gorgeous. In the interior aisles, you’ll find great vegetables – potatoes and onions and lettuce and garlic –which are so good that a sizable contingent of local vegetarians won’t shop anywhere else."
-                  id="farmerdetail" name="farmer_description" class="materialize-textarea"></textarea>
-                  <label for="farmerdetail">Tell Us More About This Farmer!</label>
-                </div>
-              </div>
-              <div class="row">
+                            id="farmerdetail" name="vendor_text" class="materialize-textarea"></textarea>
+                                    <label for="farmerdetail">Tell Us More About This Farmer!</label>
+                                </div>
+                            </div>
+                            <div class="row">
 
 
                                 <!--   <div class="input-field col s12">
@@ -51,23 +51,23 @@
                                                <input type="date" class="datepicker">
                                              </div>       -->
 
-                                           </div>
-                                           <div class="row">
-                                            <div class="input-field col s12">
-                                              <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn teal right-align">&nbsp;&nbsp;Login to Add Farmer&nbsp;&nbsp;</a></li>
-                                              <button class="btn teal waves-effect waves-light right" type="submit" name="action" id="addSubmit">Submit
-                                                <i class="mdi-content-send right"></i>
-                                              </button>
-                                            </div>
-                                          </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn teal right-align">&nbsp;&nbsp;Login to Add Farmer&nbsp;&nbsp;</a></li>
+                                    <button class="btn teal waves-effect waves-light right" type="submit" name="action" id="addSubmit">Submit
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
 
-                                        </form>
-                                      </div>
+                        </form>
+                    </div>
 
-                                    </div>
-                                  </div>
+                </div>
+            </div>
 
-                                  <!--Write review panel -->
+            <!--Write review panel -->
             <!--           <div class="col s12 m12">
 
                       <h4>Add A Farmer</h4>
@@ -124,9 +124,9 @@
 
                       </div> -->
 
-                      <!-- End of Add Farmer panel -->
+            <!-- End of Add Farmer panel -->
 
 
-                    </div>
-                  </div>
-                </div>
+        </div>
+    </div>
+</div>

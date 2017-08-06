@@ -1,21 +1,45 @@
 const db = require("../models");
 
-module.exports =  function(app){
-    /*
-    farmer == vendor
-     */
-    app.post("/api/addfarmer/", (req, res) => {
-        console.log(req.body)
-        db.Vendor.create({
-            vendor_name: req.body.farmer_name,
-            vendor_contact:req.body.farmer_contact,
-            vendor_text:req.body.farmer_description,
-            market_id: req.body.farmer_group
 
-        }).then((data)=>{
-            console.log(data)
-            res.json({"success":1})
+function createVendor(data,cb){
+    db.Vendor.create(data).then(()=>{
+        cb({"result": "success"})
+    },(error)=>{
+        cb({"result":error})
+    })
+}
+
+function showVendor(id,cb){
+    id ? obj = {vendor_id : id}: obj={}
+    db.Vendor.findAll({
+        include: [{
+            model: db.Market,
+            as: "Market"
+        }],
+        where:  obj
+    }).then((result)=>{
+        cb({"result": result})
+    },(error)=>{
+        cb({"result":error})
+    })
+}
+
+module.exports =  function(app){
+    app.post("/api/addfarmer/", (req, res) => {
+        createVendor(req.body,(result)=>{
+            res.json(result)
         })
     });
+    app.get("/api/viewfarmer/:id?", (req, res) => {
+        showVendor(req.params.id,(result)=>{
+            res.json(result)
+        })
+    });
+    app.get("/api/market/:id?", (req, res) => {
+        showVendor(req.params.id,(result)=>{
+            res.json(result)
+        })
+    });
+
 
 }
