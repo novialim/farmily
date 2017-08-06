@@ -1,0 +1,37 @@
+/* Logged In, Logged Out */
+
+.signOut,
+#addSubmit,
+#submitReview {
+    visibility: hidden;
+    display: none;
+}
+
+.logged-in .signOut,
+.logged-in #addSubmit,
+.logged-in #submitReview {
+    visibility: visible;
+    display: inline-block;
+}
+
+.logged-in .loginbtn {
+    visibility: hidden;
+    display: none;
+}
+
+
+
+
+/*#signOut,
+      #displayJobs,
+      #signOutSide,
+      .save-wrap { 
+            visibility: hidden;
+            display: none;
+      }
+      #signInWithGithubSide,
+      #signInWithGithub { 
+            visibility: visible;
+            display: inline-block;
+      }
+*/

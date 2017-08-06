@@ -11,9 +11,13 @@
     <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
 
 
+
+
     <link rel="stylesheet" href="css/startup-materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery.rateyo.min.css"/>
+
+    <link href="css/condition.css" rel="stylesheet">
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -35,7 +39,9 @@
           <li><a href="/allfarmers">Farmers</a></li>
           <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
           <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+
+          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut" id="signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
         </ul>
 
         <ul id="pages" class="dropdown-content">
@@ -59,7 +65,9 @@
           </li>
         </ul>
       </li>
-      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+
+      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
       <li><a class="waves-effect waves-teal" href="/aboutus">What We Do?</a></li>
       <li><a class="waves-effect waves-teal" href="/explore">Explore Markets</a></li>
       <li><a class="waves-effect waves-teal" href="/allfarmers">Farmers</a></li>
@@ -127,12 +135,13 @@
                   </div>
 
                     
-                    
-                      <button class="btn teal waves-effect waves-light" id="signup" type="submit" name="action">Sign Up and Post
-                            <i class="material-icons right">send</i>
-                      </button>
+                      <span class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn teal">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></span>
 
-                      <button class="btn teal waves-effect waves-light" id="submit" type="submit" name="action">Submit
+                      <!-- <button class="btn teal waves-effect waves-light loginbtn" id="signup">Login and Post
+                            <i class="material-icons right">send</i>
+                      </button> -->
+
+                      <button class="btn teal waves-effect waves-light" id="submitReview" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                       </button>  
                 
@@ -199,6 +208,10 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
+
+    <!-- firebase login -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="js/login.js"></script>
 
     <!-- External libraries -->
     <script src="js/imagesloaded.pkgd.min.js"></script>
