@@ -18,7 +18,7 @@ function showVendor(id,cb){
         }],
         where:  obj
     }).then((result)=>{
-        cb({"result": result})
+        cb({result})
     },(error)=>{
         cb({"result":error})
     })
