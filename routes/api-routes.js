@@ -9,18 +9,37 @@ function createVendor(data,cb){
     })
 }
 
+function showVendor(id,cb){
+    id ? obj = {vendor_id : id}: obj={}
+    db.Vendor.findAll({
+        include: [{
+            model: db.Market,
+            as: "Market"
+        }],
+        where:  obj
+    }).then((result)=>{
+        cb({"result": result})
+    },(error)=>{
+        cb({"result":error})
+    })
+}
+
 module.exports =  function(app){
     app.post("/api/addfarmer/", (req, res) => {
-        console.log(req.body)
         createVendor(req.body,(result)=>{
+            res.json(result)
+        })
+    });
+    app.get("/api/viewfarmer/:id?", (req, res) => {
+        showVendor(req.params.id,(result)=>{
+            res.json(result)
+        })
+    });
+    app.get("/api/market/:id?", (req, res) => {
+        showVendor(req.params.id,(result)=>{
             res.json(result)
         })
     });
 
-    app.get("/api/viewfarmer/", (req, res) => {
-        console.log(req.body)
-        createVendor(req.body,(result)=>{
-            res.json(result)
-        })
-    });
+
 }
