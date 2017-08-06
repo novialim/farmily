@@ -1,3 +1,10 @@
+ $("#loginbtn").click(function() {
+     event.preventDefault();
+     // loginGH();
+     alert("HELLO!");
+ }); // End of sign on with GitHub
+
+
  // Initialize Firebase
  var config = {
      apiKey: "AIzaSyD1_SBIcTfWlYScyTdGhIq0NkN-3IpCL84",
@@ -16,8 +23,5 @@
 
  // loginbtn
 
- $("#loginbtn").on("click", function(event) {
-     event.preventDefault();
-     // loginGH();
-     alert("HELLO!");
- }); // End of sign on with GitHub
+
+ 
