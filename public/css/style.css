@@ -388,5 +388,14 @@ figure {
   margin-left: 0;
 }
 
+.card-translucent {
+  background: rgba(255, 255, 255, 0.8);
+}
 
+.fullopac {
+ background: rgba(255, 255, 255, 1);   
+}
 
+label {
+  color: black !important;
+}
