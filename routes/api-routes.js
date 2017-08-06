@@ -16,4 +16,11 @@ module.exports =  function(app){
             res.json(result)
         })
     });
+
+    app.get("/api/viewfarmer/", (req, res) => {
+        console.log(req.body)
+        createVendor(req.body,(result)=>{
+            res.json(result)
+        })
+    });
 }
