@@ -399,3 +399,9 @@ figure {
 label {
   color: black !important;
 }
+
+.bg-repeat {
+  background-repeat: repeat !important;
+  background-image: url("../images/wood.jpg");
+  width:100%;
+}
