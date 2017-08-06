@@ -27,6 +27,10 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey: 'vendor_id',
             targetKey: 'vendor_id'
         });
+        Review.belongsTo(models.User, {
+            foreignKey: 'user_id',
+            targetKey: 'user_id'
+        })
     }
     return Review;
 };
