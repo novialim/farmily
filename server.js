@@ -14,7 +14,15 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Set Handlebars.
 const exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+    helpers: {
+        // Helper function to offset index by one
+        incByOne: (value, options) => {
+            return parseInt(value) + 1;
+        }
+    }
+}));
 app.set("view engine", "handlebars");
 
 // Routes
@@ -23,7 +31,7 @@ require("./routes/api-routes.js")(app);
 
 app.use('/', router);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log("App listening on PORT " + port);
     });
