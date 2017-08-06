@@ -1,9 +1,10 @@
 const db = require("../models");
 const path = require("path");
+const markets = require("../models/data/marketData.js"); // Get market JSON
 
 module.exports = function (app) {
     app.get("/", (req, res) => {
-            res.render("index")
+        res.render("index");
     });
 
     app.get("/explore", (req, res) => {
@@ -11,13 +12,10 @@ module.exports = function (app) {
     });
 
     app.get("/addfarmer", (req, res) => {
-        res.render("addfarmer")
+        res.render("addfarmer", {markets: markets.data});
     });
 
-
-  
-
     app.get("/market", (req, res) => {
-        res.render("marketDetails")
+        res.render("marketDetails");
     });
 }
