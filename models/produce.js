@@ -13,7 +13,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Produce.associate = (models) => {
-        Produce.hasMany(models.Vendor, {
+        Produce.belongsToMany(models.Vendor, {
+            through: 'VendorProduce',
             foreignKey: 'produce_id'
         });
     }
