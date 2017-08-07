@@ -9,27 +9,12 @@ function createVendor(data, cb) {
     });
 }
 
-// Display vendor and its associated market
-function showVendor(id, cb) {
-    id ? obj = {vendor_id:id}: obj={};
-    db.Vendor.findAll({
+// Display Farmer or Market with their respective association
+function show_Market_Vendor_data(id,table,model,cb){
+    id ?  table === db.Market ? obj={market_id:id}: obj={vendor_id:id} : obj={};
+    table.findAll({
         include: [{
-            model: db.Market
-        }],
-        where:obj
-    }).then((result)=>{
-        cb({result});
-    },(error)=>{
-        cb({"result":error.toString()});
-    });
-}
-
-// Display market and its associated vendors
-function showMarket(id, cb) {
-    id ? obj = {market_id:id}: obj={};
-    db.Market.findAll({
-        include: [{
-            model: db.Vendor
+            model: model
         }],
         where:obj
     }).then((result)=>{
@@ -49,15 +34,21 @@ module.exports = function (app) {
 
     // View vendor details
     app.get("/api/viewfarmer/:id?", (req, res) => {
-        showVendor(req.params.id,(result)=>{
+        show_Market_Vendor_data(req.params.id,db.Vendor,db.Market,(result)=>{
             res.json(result);
         });
     });
 
     // View market details
     app.get("/api/viewmarket/:id?", (req, res) => {
-        showMarket(req.params.id,(result)=>{
+        show_Market_Vendor_data(req.params.id,db.Market,db.Vendor,(result)=>{
             res.json(result);
         });
     });
+
+    // Send a 404 page or Status
+    app.get('*', (req,res)=>{
+        res.status(404);
+        res.send("404")
+    })
 }
