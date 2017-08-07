@@ -1,5 +1,6 @@
 const db = require("../models");
 
+// Insert a new vendor
 function createVendor(data, cb) {
     db.Vendor.create(data).then(()=>{
         cb({"result": "success"})
@@ -8,18 +9,33 @@ function createVendor(data, cb) {
     });
 }
 
+// Display vendor and its associated market
 function showVendor(id, cb) {
-    id ? obj = {vendor_id : id}: obj={};
+    id ? obj = {vendor_id:id}: obj={};
     db.Vendor.findAll({
         include: [{
-            model: db.Market,
-            as: "Market"
+            model: db.Market
         }],
-        where:  obj
+        where:obj
     }).then((result)=>{
-        cb({result})
+        cb({result});
     },(error)=>{
-        cb({"result":error});
+        cb({"result":error.toString()});
+    });
+}
+
+// Display market and its associated vendors
+function showMarket(id, cb) {
+    id ? obj = {market_id:id}: obj={};
+    db.Market.findAll({
+        include: [{
+            model: db.Vendor
+        }],
+        where:obj
+    }).then((result)=>{
+        cb({result});
+    },(error)=>{
+        cb({"result":error.toString()});
     });
 }
 
@@ -39,8 +55,8 @@ module.exports = function (app) {
     });
 
     // View market details
-    app.get("/api/market/:id?", (req, res) => {
-        showVendor(req.params.id,(result)=>{
+    app.get("/api/viewmarket/:id?", (req, res) => {
+        showMarket(req.params.id,(result)=>{
             res.json(result);
         });
     });
