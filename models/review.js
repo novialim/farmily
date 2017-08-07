@@ -6,8 +6,8 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             allowNull: false
         },
-        vendor_text: {
-            type: DataTypes.STRING,
+        review_text: {
+            type: DataTypes.TEXT,
             allowNull: false
         },
         rating: {
