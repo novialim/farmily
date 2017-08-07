@@ -30,11 +30,13 @@ module.exports =  function(app){
             res.json(result)
         })
     });
+
     app.get("/api/viewfarmer/:id?", (req, res) => {
         showVendor(req.params.id,(result)=>{
             res.json(result)
         })
     });
+
     app.get("/api/market/:id?", (req, res) => {
         showVendor(req.params.id,(result)=>{
             res.json(result)
