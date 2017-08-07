@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         vendor_text: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true
         },
         market_id: {
