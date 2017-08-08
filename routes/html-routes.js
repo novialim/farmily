@@ -58,4 +58,12 @@ module.exports = function (app) {
     app.get("/market/:id", (req, res) => {
         res.render("marketDetails");
     });
+
+    app.get("/allfarmers", (req, res) => {
+        res.render("allfarmers");
+    });
+
+    app.get("/farmer", (req, res) => {
+        res.send("Worked /farmer");
+    });
 }
