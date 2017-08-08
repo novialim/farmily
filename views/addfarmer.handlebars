@@ -10,7 +10,7 @@
                 <div class="card-panel card-translucent">
                     <h4 class="header2">Add A Farmer</h4>
                     <div class="row textareawrapper fullopac">
-                        <form class="col s12 left-alert" id="addFarmerForm" action="/api/addfarmer/" method="post">
+                        <form name="addFarmerForm" class="col s12 left-alert" id="addFarmerForm" action="/api/addfarmer/" onsubmit="return validateForm()" method="post">
 
 
                             <div class="input-field row white-text validate">
@@ -123,3 +123,26 @@
        
     </div>
 </div>
+
+<script>
+  function validateForm() {
+    var vendorname = document.forms["addFarmerForm"]["vendor_name"].value;
+    var marketid = document.forms["addFarmerForm"]["market_id"].value;
+    var vendortext = document.forms["addFarmerForm"]["vendor_text"].value;
+
+    if (vendorname == "") {
+      // alert("Name must be filled out");
+      Materialize.toast("Please enter farmer's name", 4000);
+      return false;
+    }
+    else if (marketid == ""){
+      Materialize.toast("Don't forget to pick a farmers' market!", 4000);
+      return false;  
+    }
+    else if (vendortext == ""){
+      Materialize.toast("Let us know something about your favorite farmer!", 4000);
+      return false;    
+    }
+}
+
+</script>
