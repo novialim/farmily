@@ -1,129 +1,164 @@
 html {
     font-family: 'Open Sans', GillSans, Calibri, Trebuchet, sans-serif;
-  }
+}
 
 :target:before {
-content:"";
-display:block;
-height:90px; /* fixed header height*/
-margin:-90px 0 0; /* negative fixed header height */
+    content: "";
+    display: block;
+    height: 90px;
+    /* fixed header height*/
+    margin: -90px 0 0;
+    /* negative fixed header height */
 }
+
 
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-/* Styles */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    /* Styles */
 }
+
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-/* Styles */
+
+@media only screen and (min-width: 321px) {
+    /* Styles */
 }
+
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-/* Styles */
+
+@media only screen and (max-width: 320px) {
+    /* Styles */
 }
+
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Styles */
 }
+
 
 /* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-/* Styles */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Styles */
 }
 
+
 /* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-/* Styles */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Styles */
 }
+
+
 /**********
 iPad 3
 **********/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
+
 /* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-/* Styles */
+
+@media only screen and (min-width: 1224px) {
+    /* Styles */
 }
+
 
 /* Large screens ----------- */
-@media only screen  and (min-width : 1824px) {
-/* Styles */
+
+@media only screen and (min-width: 1824px) {
+    /* Styles */
 }
+
 
 /* iPhone 4 ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-/* Styles */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
 
 /* iPhone 5 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
 
 /* iPhone 6 ----------- */
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
 
-.explore-height {
-  height: 667px !important;
-}
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
+    .explore-height {
+        height: 667px !important;
+    }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
 
 /* iPhone 6+ ----------- */
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
 
 /* Samsung Galaxy S3 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
-/* Styles */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    /* Styles */
 }
+
 
 /* Samsung Galaxy S4 ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
+@media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
 }
+
 
 /* Samsung Galaxy S5 ----------- */
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
-/* Styles */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
 }
 
 
@@ -135,18 +170,17 @@ iPad 3
 }
 
 .strong {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 
-.mapborder
-{
-  border:1px solid #ffffff;  
-   margin-top:-30px; 
+.mapborder {
+    border: 1px solid #ffffff;
+    margin-top: -30px;
 }
 
 .imgpadding {
-  border:1px solid #d5d5d5;  
-  margin-top: 6px;
+    border: 1px solid #d5d5d5;
+    margin-top: 6px;
 }
 
 i.icon-grey {
@@ -154,228 +188,230 @@ i.icon-grey {
 }
 
 .reviews {
-  border:1px solid #ffffff;
+    border: 1px solid #ffffff;
 }
 
 .smallheight {
-  line-height: 120%;
+    line-height: 120%;
 }
 
 .smallrw {
-  margin-bottom: 9px;
+    margin-bottom: 9px;
 }
 
 .carousel .carousel-item {
-  width:250px !important;
+    width: 250px !important;
 }
 
 .carousel {
-  margin-top: -85px !important;
+    margin-top: -85px !important;
 }
 
 .userreviewct {
-  margin-left: 70px;
+    margin-left: 70px;
 }
 
 .avatar {
-  max-height: 50px;
+    max-height: 50px;
 }
 
 .reviewtxt {
-  line-height: 110%;
+    line-height: 110%;
 }
 
 .cardpaddng {
-  padding-top: 5px;
+    padding-top: 5px;
 }
 
 .farmimg {
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .farmeeheader {
-  padding-bottom: 5px !important;
-  margin-bottom: 0px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 0px !important;
 }
 
 .halfopac {
-  background: rgba(255, 255, 255, 0.6)
+    background: rgba(255, 255, 255, 0.6)
 }
 
 .rcorners {
-  border-radius: 25px;
+    border-radius: 25px;
 }
 
 .minborder {
-  padding: 7px !important;
+    padding: 7px !important;
 }
 
 .minpaddingside {
-  padding-left: 7px !important;
-  padding-right: 7px !important;
-  padding-top: 1px !important;
-  padding-bottom: 1px !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
 }
 
 .minmargin {
-  margin: 1px 7px 1px 7px !important;
+    margin: 1px 7px 1px 7px !important;
 }
 
 .updownpad {
-  margin: 7px 1px 7px 1px;
+    margin: 7px 1px 7px 1px;
 }
 
 .review-header-small {
-  font-size: 0.7em;
-  font-weight: bold;
-  color: #009688;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #009688;
 }
 
 .strong-text {
-  font-weight: bold !important;;
+    font-weight: bold !important;
+    ;
 }
 
 .text-ht-small {
-  line-height: 0.5em;
+    line-height: 0.5em;
 }
 
 .cardimg {
-  max-height: 150px;
+    max-height: 150px;
 }
 
 .farmAddress {
-  font-size: 0.6em;
+    font-size: 0.6em;
 }
 
 .textareawrapper {
-  border: 1px solid #808080;
-  border-radius: 5px;
-  padding: 8px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 8px;
 }
 
 .farmerimg {
-  max-height: 100px;
-  border-radius: 5px;
-  padding-top: 7px;
+    max-height: 100px;
+    border-radius: 5px;
+    padding-top: 7px;
 }
 
 #map {
-  height: 100%;
-  width: 100%;
-  top:0px;
-  left:0px;
-  position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
 }
 
 #sidemenuwrapper {
-  background-color: #FFFFFF;
-  /*border: 2px solid black;*/
-  position: absolute;
-  left: 10px;
-  top: 70px;
-  width: 35%;
-  height: 88%;
+    background-color: #FFFFFF;
+    /*border: 2px solid black;*/
+    position: absolute;
+    left: 10px;
+    top: 70px;
+    width: 35%;
+    height: 88%;
 }
 
 #sidemenuheaderPH {
-  background-color: #52c7b8;
-  height: 1.5em;
+    background-color: #52c7b8;
+    height: 1.5em;
 }
 
-#sidemenuheader > h4 {
-  font-weight: bolder;
-  padding: 0 0.5em;
-  letter-spacing: 2px;
+#sidemenuheader>h4 {
+    font-weight: bolder;
+    padding: 0 0.5em;
+    letter-spacing: 2px;
 }
 
 #sidemenucontent {
-  clear: left;
-  border-top: 1px solid rgba(82, 199, 184, .3);
-  overflow-y: scroll;
-  height: 73.5%;
-  line-height: 135%;
+    clear: left;
+    border-top: 1px solid rgba(82, 199, 184, .3);
+    overflow-y: scroll;
+    height: 73.5%;
+    line-height: 135%;
 }
 
 .sidemenudays {
-  float: left;
-  padding: 0.5em 1.2em;
-  width:14%; 
+    float: left;
+    padding: 0.5em 1.2em;
+    width: 14%;
 }
 
 .contentimg {
-  padding: 0;
-  width: 100%
+    padding: 0;
+    width: 100%
 }
 
 .content-detailimg {
-  padding: 0;
-  width: 100%
+    padding: 0;
+    width: 100%
 }
 
 figure {
-  margin: 0;
-  margin-bottom: 5px;
-  width: 100%;
-  float: left;
-  position: relative;
-
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    float: left;
+    position: relative;
 }
 
 .img-caption {
-  position: absolute;
-  top: -20px;  
-  width: 20px;
+    position: absolute;
+    top: -20px;
+    width: 20px;
 }
+
 
 /* mouse over link */
+
 .dayclick:hover {
     color: red;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.marketWrapper > *{
-  padding: 0.1em 2em;
+.marketWrapper>* {
+    padding: 0.1em 2em;
 }
 
 .marketHeader {
-  padding: 0 1.0em;
-  font-size: 1.3em;
-  font-weight: bolder;
-  color: #47ada0;
-  padding-bottom: 8px;
-  cursor:pointer;
+    padding: 0 1.0em;
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: #47ada0;
+    padding-bottom: 8px;
+    cursor: pointer;
 }
 
 .marketAddress {
-  font-weight: bold;
-  padding-bottom: 8px;
+    font-weight: bold;
+    padding-bottom: 8px;
 }
 
 .marketDays {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .marketDay {
- padding-bottom: 3px; 
+    padding-bottom: 3px;
 }
 
 .marketSN {
-  color: #E42229;
-  position: relative;
-  float: left;
-  font-size: 1.5em;
-  font-weight: bolder;
-  height: 4.5em;
-  width: 0.2em;
-  padding-left: 10px;
-  padding-right: 20px;
-  margin-right: 5px;
-  text-align: center;
-  vertical-align: middle;
+    color: #E42229;
+    position: relative;
+    float: left;
+    font-size: 1.5em;
+    font-weight: bolder;
+    height: 4.5em;
+    width: 0.2em;
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-right: 5px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .marketTime {
-  padding-left: 2.3em;
+    padding-left: 2.3em;
 }
 
 .btn-small {
@@ -384,24 +420,98 @@ figure {
     padding: 0 0.5rem;
 }
 
-.mapbackground{
-  margin-left: 0;
+.mapbackground {
+    margin-left: 0;
 }
 
 .card-translucent {
-  background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .fullopac {
- background: rgba(255, 255, 255, 1);   
+    background: rgba(255, 255, 255, 1);
 }
 
 label {
-  color: black !important;
+    color: black !important;
 }
 
 .bg-repeat {
-  background-repeat: repeat !important;
-  background-image: url("../images/wood.jpg");
-  width:100%;
+    background-repeat: repeat !important;
+    background-image: url("../images/wood.jpg");
+    width: 100%;
 }
+
+#exploreimg {
+    /*border: 1px solid grey;*/
+    border-radius: 25px;
+}
+
+.explorecolor {
+   background-color: #42c4ac;
+}
+
+.shift-y {
+    padding-top: 15px;
+}
+
+.reduce-y {
+    margin-bottom: 10px;
+}
+
+.top-margin {
+    margin-top: 2em;
+}
+
+
+
+
+/*Error CSS*/
+
+.input-field div.error {
+    position: relative;
+    top: -1rem;
+    left: 0rem;
+    font-size: 0.8rem;
+    color: #FF4081;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+.input-field label.active {
+    width: 100%;
+}
+
+.left-alert input[type=text]+label:after,
+.left-alert input[type=password]+label:after,
+.left-alert input[type=email]+label:after,
+.left-alert input[type=url]+label:after,
+.left-alert input[type=time]+label:after,
+.left-alert input[type=date]+label:after,
+.left-alert input[type=datetime-local]+label:after,
+.left-alert input[type=tel]+label:after,
+.left-alert input[type=number]+label:after,
+.left-alert input[type=search]+label:after,
+.left-alert textarea.materialize-textarea+label:after {
+    left: 0px;
+}
+
+.right-alert input[type=text]+label:after,
+.right-alert input[type=password]+label:after,
+.right-alert input[type=email]+label:after,
+.right-alert input[type=url]+label:after,
+.right-alert input[type=time]+label:after,
+.right-alert input[type=date]+label:after,
+.right-alert input[type=datetime-local]+label:after,
+.right-alert input[type=tel]+label:after,
+.right-alert input[type=number]+label:after,
+.right-alert input[type=search]+label:after,
+.right-alert textarea.materialize-textarea+label:after {
+    right: 70px;
+}
+
+
+/*End of Error Style*/
+
