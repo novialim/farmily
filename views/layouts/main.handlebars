@@ -54,6 +54,52 @@
             }
         });
     </script>
+
+    
+    <!-- Auth state listener -->
+        <script type="text/javascript">
+
+            if(sessionStorage.getItem("userKey")){
+                $('html').addClass('logged-in');
+            }
+            else{
+                $('html').removeClass('logged-in');
+                  sessionStorage.removeItem("userKey");
+                  sessionStorage.clear();
+            }
+
+            $('#signOut').on("click", function(){
+
+                firebase.auth().signOut().then(function() {
+                  // Sign-out successful.
+                  console.log("Bye");
+                  
+                  $('html').removeClass('logged-in');
+                  sessionStorage.removeItem("userKey");
+                  sessionStorage.clear();
+
+                }).catch(function(error) {
+                  // An error happened.
+                }); 
+            });
+
+            if (window.performance) {
+              // console.info("window.performance work's fine on this browser");
+            }
+            
+            if (performance.navigation.type == 1) {
+                // console.info( "This page is reloaded" );
+                
+                if(sessionStorage.getItem("userKey")){
+                    $('html').addClass('logged-in');
+                }
+            } else {
+                // console.info( "This page is not reloaded");
+            }
+
+        </script>
+
+
     {{> footer }}
 </body>
 
