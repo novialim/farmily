@@ -3,54 +3,51 @@
     <div class="background">
         <img src="images/bg5.jpg" alt="">
     </div>
-
-    <div class="container">
+    <div id="default-validation" class="container">
         <div class="row">
             <!-- Form with placeholder -->
             <div class="col s12 m12 l12">
                 <div class="card-panel card-translucent">
                     <h4 class="header2">Add A Farmer</h4>
                     <div class="row textareawrapper fullopac">
+                        <form class="col s12 left-alert" id="addFarmerForm" action="/api/addfarmer/" method="post">
 
-                        <form class="col s12" action="/api/addfarmer/" method="post">
-                            <div class="input-field row white-text">
-                                <label class="white-text"><h6></h6></label>
+
+                            <div class="input-field row white-text validate">
+                                <label class="white-text">
+                                    <h6></h6></label>
                                 <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
                                     <option value="" disabled selected>Which Farmer's Market?</option>
                                     {{>addfarmer/marketDropdown markets}}
                                 </select>
                             </div>
+
                             <div class="row">
                                 <div class="input-field col s12 m6 l6">
                                     <input placeholder="Farm Boy Produce" id="farmer_name" name="vendor_name" type="text">
-                                    <label for="farmer_name">Farmer's Name</label>
+                                    <label for="farmer_name" data-error="Please enter farmer's name." data-success="Perfect!">Farmer's Name</label>
                                 </div>
 
                                 <div class="input-field col s12 m6 l6">
-                                    <input placeholder="323 936 6363" id="contact" name="vendor_contact" type="text">
-                                    <label for="contact">Contact</label>
+                                    <input placeholder="323 936 6363" id="contact" name="vendor_contact" type="number">
+                                    <label for="contact" data-error="Please enter valid contact number." data-success="Woohoo!">Contact</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
-                  <textarea placeholder="In the outer aisles, you’ll find some of the most magnificent fruit you’ve ever seen – apples and oranges and melons and seasonal fruits are all fresh and just plain gorgeous. In the interior aisles, you’ll find great vegetables – potatoes and onions and lettuce and garlic –which are so good that a sizable contingent of local vegetarians won’t shop anywhere else."
-                            id="farmerdetail" name="vendor_text" class="materialize-textarea"></textarea>
+                                <div class="input-field col s12 validate">
+                                    <textarea placeholder="In the outer aisles, you’ll find some of the most magnificent fruit you’ve ever seen – apples and oranges and melons and seasonal fruits are all fresh and just plain gorgeous. In the interior aisles, you’ll find great vegetables – potatoes and onions and lettuce and garlic –which are so good that a sizable contingent of local vegetarians won’t shop anywhere else." id="farmerdetail" name="vendor_text" class="materialize-textarea"></textarea>
                                     <label for="farmerdetail">Tell Us More About This Farmer!</label>
                                 </div>
                             </div>
                             <div class="row">
-
-
                                 <!--   <div class="input-field col s12">
                                     <textarea placeholder="Your review helps others learn about great local farmers." id="message2" class="materialize-textarea"></textarea>
                                     <label for="message">Message</label>
                                   </div> -->
-
                                 <!--    <div class="col s12">
                                                <label>Operating Day</label>
                                                <input type="date" class="datepicker">
                                              </div>       -->
-
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
@@ -60,13 +57,10 @@
                                     </button>
                                 </div>
                             </div>
-
                         </form>
                     </div>
-
                 </div>
             </div>
-
             <!--Write review panel -->
             <!--           <div class="col s12 m12">
 
@@ -123,10 +117,9 @@
                         </div>
 
                       </div> -->
-
             <!-- End of Add Farmer panel -->
-
-
         </div>
+        
+       
     </div>
 </div>

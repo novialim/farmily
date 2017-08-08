@@ -248,6 +248,7 @@
       // Storing the value that is being shown in `currentRating`.
       currentRating = ratingVal;
 
+
       var numStarsToShow = ratingVal/step;
 
       // calculating the percentage of width of $ratedGroup with respect to its parent
@@ -903,6 +904,8 @@
       resultantRating = parseFloat(resultantRating);
 
       that.rating(resultantRating);
+
+      console.log(resultantRating);
     }
 
     function onInit(e, data) {
