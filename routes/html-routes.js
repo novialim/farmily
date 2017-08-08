@@ -28,6 +28,11 @@ module.exports = function (app) {
         res.render("allfarmers");
     });
 
+    app.get("/contribute", (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/contribute.html'));
+    });
+
+
     app.get("/farmer", (req, res) => {
         res.send("Worked /farmer");
     });
