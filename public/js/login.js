@@ -41,7 +41,7 @@ function loginGH(){
       console.log("userid 1 is: "+userId);
 
       // if user is successfully logged in...
-      // do something?
+      sessionStorage.setItem("userKey",userId);
 
     }).catch(function(error) {
       // Handle Errors here.
