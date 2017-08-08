@@ -55,6 +55,6 @@ module.exports = function (app) {
     // Send a 404 page or Status
     app.get('*', (req,res)=>{
         res.status(404);
-        res.send("404")
+        res.render("404");
     });
 }
