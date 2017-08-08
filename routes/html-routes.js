@@ -28,10 +28,6 @@ module.exports = function (app) {
     app.get('/allfarmers', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/allfarmers.html'));
     });
-
-    app.get('/addfarmer', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/addfarmer.html'));
-    });
     
     app.get('/explore', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/explore.html'));
