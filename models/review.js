@@ -1,3 +1,8 @@
+/*
+   Only reviews for the farmer / vendor
+ */
+
+
 module.exports = function (sequelize, DataTypes) {
     var Review = sequelize.define("Review", {
         review_id: {
@@ -19,10 +24,6 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Review.associate = (models) => {
-        Review.belongsTo(models.Market, {
-            foreignKey: 'market_id',
-            targetKey: 'market_id'
-        });
         Review.belongsTo(models.Vendor, {
             foreignKey: 'vendor_id',
             targetKey: 'vendor_id'
