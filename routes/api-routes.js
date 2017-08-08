@@ -11,7 +11,7 @@ function createVendor(data, cb) {
 
 // Display Farmer or Market with their respective association
 function show_Market_Vendor_data(id,table,model,cb){
-    id ?  table === db.Market ? obj={market_id:id}: obj={vendor_id:id} : obj={};
+    id ? table === db.Market ? obj={market_id:id}: obj={vendor_id:id} : obj={};
     table.findAll({
         include: [{
             model: model
@@ -19,7 +19,8 @@ function show_Market_Vendor_data(id,table,model,cb){
         where:obj
     }).then((result)=>{
         cb({result});
-    },(error)=>{
+    },(error)=>{2
+    
         cb({"result":error.toString()});
     });
 }
@@ -50,5 +51,5 @@ module.exports = function (app) {
     app.get('*', (req,res)=>{
         res.status(404);
         res.send("404")
-    })
+    });
 }
