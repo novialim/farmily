@@ -25,10 +25,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/writereview.html'));
     });
 
-    app.get('/allfarmers', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/allfarmers.html'));
-    });
-    
+
     app.get('/explore', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/explore.html'));
     });
@@ -47,7 +44,7 @@ module.exports = function (app) {
 
     //Query vendor
     app.get("/review", (req, res) => {
-        //res.render("review")
+       // res.render("review")
         res.sendFile(path.join(__dirname, '../public/review.html'));
     });
 
@@ -56,6 +53,7 @@ module.exports = function (app) {
     });
 
     app.get("/allfarmers", (req, res) => {
+        //res.sendFile(path.join(__dirname, '../public/allfarmers.html'));
         res.render("allfarmers");
     });
 
