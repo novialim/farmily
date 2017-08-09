@@ -22,7 +22,8 @@ module.exports = function (app) {
     });
 
     app.get('/write', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/writereview.html'));
+        // res.sendFile(path.join(__dirname, '../public/writereview.html'));
+        res.render("addreview");
     });
 
 
