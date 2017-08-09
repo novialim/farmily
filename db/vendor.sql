@@ -1,8 +1,8 @@
 /*
--- Query: SELECT * FROM r9j86xrrany9tm7r.Vendors
+-- Query: select * from Vendors
 LIMIT 0, 1000
 
--- Date: 2017-08-07 19:27
+-- Date: 2017-08-09 01:06
 */
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (1,'Farm Boy Produce','3239366363','In the outer aisles, you’ll find some of the most magnificent fruit you’ve ever seen – apples and oranges and melons and seasonal fruits are all fresh and just plain gorgeous. In the interior aisles, you’ll find great vegetables – potatoes and onions and lettuce and garlic –which are so good that a sizable contingent of local vegetarians won’t shop anywhere else.',2);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (2,'African Sisters Farm','','Continuing her family’s tradition from Zimbabwe, Idzai Mubaiwa grows scallions, carrots, broccoli and greens, beets, kale, Swiss chard, tomatoes, and celery on four plots within San Diego city limits.',13);
@@ -12,7 +12,9 @@ INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (6,'Heritage Family Farms','7607418471','Find delicious citrus, tropical guavas, passion fruit, avocados, amazing juice, and friendly smiles!',8);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (7,'Jackie’s Jams','6198845093','Real Fruit, Real Flavor\r\nIn the modern world of processed foods, flavor is often valued over content and quantity over quality.  Fed up with the unpronounceable ingredients and the ubiquitous disregard for consumer health, we at Jackie’s Jams hold the taste and ingredients of our product in equally high regard. ',13);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (8,'Kawano Farms','7608159434','Local farm operated by the Kawano family. Strawberries, raspberries, green beans, corn, carrots, beets, cauliflower, broccoli, watermelon, eggplant, cucumbers.',27);
-INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (9,'JR Organics','7604534144','100% Family Owned. 100% Certified Organic, 100% Local, 100% GMO Free\r\nGrowers of  quality, organic produce since 1986',NULL);
+INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (9,'JR Organics','7604534144','100% Family Owned. 100% Certified Organic, 100% Local, 100% GMO Free\r\nGrowers of  quality, organic produce since 1986',27);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (10,'Keys Creek Lavender Farm','7607423844','Locally grown lavender and lavender beauty products, food items and more.',13);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (11,'Mikolich Honey','9512951903','Bottled honey (various flavors), beeswax, and honey comb from a local San Diego family. Tiny honey bears, honey sticks and more available as great gifts.',13);
 INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (12,'5150 Nut Butter','6192440443','If someone ever tells you that you\'re putting too much 5150 Nut Butter on your bread, stop talking to them. You don\'t need that kind of negativity in your life. :P',27);
+INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (14,'Three Sons Farm','7606854873','Pasture raised broiler chickens and eggs from Ramona, CA. Three Sons Farm is focused on providing high-quality service and customer satisfaction - we will do everything we can to meet your expectations. With a variety of offerings to choose from, we\'re sure you\'ll be happy with our product. ',27);
+INSERT INTO `Vendors` (`vendor_id`,`vendor_name`,`vendor_contact`,`vendor_text`,`market_id`) VALUES (15,'Pudwill Berry Farms	','8059293736','Seasonal berries from this local farm in boxes of three baskets or sold individually. Sweeten up your day, naturally! ',13);

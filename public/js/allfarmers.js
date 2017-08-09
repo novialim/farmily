@@ -3,7 +3,7 @@ function populateData(data){
         $(".populate-farmer").append("<div class=\"col s12 m6\">\n" +
             "<div class=\"card horizontal\">\n" +
             "<div class=\"card-image\">\n" +
-            "<img src=\"images/farmer1.jpg\">\n" +
+            "<img src=\"images/farmer"+farmer.vendor_id+".jpg\">\n" +
             "</div>\n" +
             "<div class=\"card-stacked\">\n" +
             "<div class=\"card-content farmercard\">\n" +
@@ -26,8 +26,8 @@ function populateDataReview(data){
         $(".populate-farmer-review").append("<div class=\"col s6 m3\">\n" +
             "<div class=\"card small\">\n" +
             "<div class=\"card-image\">\n" +
-            "<img src=\"images/farmer1.jpg\">\n" +
-            `<span class=\"card-title\">${farmer.vendor_name}</span>\n` +
+            "<img class=\"darken-image\" src=\"images/farmer"+farmer.vendor_id+".jpg\">\n" +
+            `<span class=\"card-title\"><strong>${farmer.vendor_name}</strong></span>\n` +
             "</div>\n" +
             "<div class=\"card-content minborder\">\n" +
             `<p>${farmer.vendor_text}</p>\n` +
