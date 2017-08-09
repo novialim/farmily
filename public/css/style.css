@@ -463,7 +463,10 @@ label {
     margin-top: 2em;
 }
 
-
+.farmercard {
+    max-height: 190px;
+    overflow: hidden;
+}
 
 
 /*Error CSS*/

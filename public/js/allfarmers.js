@@ -6,7 +6,7 @@ function populateData(data){
             "<img src=\"images/farmer1.jpg\">\n" +
             "</div>\n" +
             "<div class=\"card-stacked\">\n" +
-            "<div class=\"card-content\">\n" +
+            "<div class=\"card-content farmercard\">\n" +
             `<h5>${farmer.vendor_name}</h5>\n` +
             `<p>${farmer.vendor_text}</p>\n` +
             "</div>\n" +
