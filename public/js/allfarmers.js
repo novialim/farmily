@@ -19,8 +19,7 @@ function populateData(data){
     })
 }
 
-// <button class="btn teal waves-effect waves-light" id="submitReview" type="submit" name="action">Submit <i class="material-icons right">send</i>
-//                                         </button>
+// <button class="btn teal waves-effect waves-light" id="reviewFarmer" type="submit" name="action">Start Review </button>
 
 function populateDataReview(data){
     data.map((farmer)=>{
