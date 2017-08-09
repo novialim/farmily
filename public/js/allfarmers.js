@@ -19,6 +19,7 @@ function populateData(data){
     })
 }
 
+// <button class="btn teal waves-effect waves-light" id="reviewFarmer" type="submit" name="action">Start Review </button>
 
 function populateDataReview(data){
     data.map((farmer)=>{
@@ -32,7 +33,7 @@ function populateDataReview(data){
             `<p>${farmer.vendor_text}</p>\n` +
             "</div>\n" +
             "<div class=\"card-action\">\n" +
-            "<div class=\"rateyo\" id=\"rateYo1\"></div>\n" +
+            "<div class=\"rateyo\"></div>\n" +
             "</div>\n" +
             "</div>\n" +
             "</div>")
