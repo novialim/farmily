@@ -563,6 +563,11 @@ label {
     padding-bottom: 20px;
 }
 
+.directionPos{
+    display: inline-flex;
+    vertical-align: middle;
+}
+
 
 /*Error CSS*/
 
