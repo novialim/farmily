@@ -35,19 +35,9 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/explore.html'));
     });
 
-<<<<<<< HEAD
     app.get('/farmer/:id', function (req, res) {
         // res.sendFile(path.join(__dirname, '../public/farmer.html'));
         res.render("farmerDetails");
-=======
-    app.get('/farmer', function (req, res) {
-        // res.sendFile(path.join(__dirname, '../public/farmer.html'));
-        res.render("farmerDetails");
-    });
-
-    app.get("/explore", (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/explore.html'));
->>>>>>> f6ce8465fce80c6d99692a1dc25df6a0cef0fc79
     });
 
     app.get("/addfarmer", (req, res) => {
