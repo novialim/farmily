@@ -11,6 +11,14 @@ html {
     /* negative fixed header height */
 }
 
+#indexHeader {
+    font-family: 'Dosis', sans-serif;
+    font-size: 8em;
+}
+
+.dosis {
+    font-family: 'Dosis', sans-serif;
+}
 
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -201,10 +209,6 @@ i.icon-grey {
 
 .carousel .carousel-item {
     width: 250px !important;
-}
-
-.carousel {
-    margin-top: -85px !important;
 }
 
 .userreviewct {
@@ -428,6 +432,10 @@ figure {
     background: rgba(255, 255, 255, 0.8);
 }
 
+.translucent {
+    background: rgba(0, 150, 136, 0.8);
+}
+
 .fullopac {
     background: rgba(255, 255, 255, 1);
 }
@@ -439,6 +447,12 @@ label {
 .bg-repeat {
     background-repeat: repeat !important;
     background-image: url("../images/wood.jpg");
+    width: 100%;
+}
+
+.bg3-repeat {
+    background-repeat: repeat !important;
+    background-image: url("../images/wood3.jpg");
     width: 100%;
 }
 
@@ -467,6 +481,7 @@ label {
     height: 195px;
     overflow: hidden;
 }
+
 
 .vendorshadow {
   color: white;
@@ -497,6 +512,45 @@ label {
 #farmerDetailsID {
     display: none;    
 }
+
+#farmerDetailsInfo {
+    position: relative;
+    border: 1px solid #D3D3D3;
+}
+
+.card-border-grey {
+    border: 1px solid #D3D3D3; 
+    border-radius: 25px;   
+}
+
+.carousel {
+    position: absolute;
+    top: 145px;
+    left: 142px;
+    
+}
+
+.mid-section {
+    overflow: hidden;
+}
+
+.mid-section-control{
+    height: 200px;
+}
+
+.card-content-btn {
+    padding-bottom: 10px !important;
+}
+
+.reduce-top {
+    padding-top: 6px !important;
+}
+
+.left-right-padding {
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
 
 /*Error CSS*/
 

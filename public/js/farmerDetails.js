@@ -19,7 +19,7 @@ $(document).ready(function() {
         if (farmer.result[0].vendor_contact !== "") {
             var farmerContact = farmer.result[0].vendor_contact;
 
-            var formattedFarmerContact = "(" + farmerContact.slice(1, 4) + ") " + farmerContact.slice(4, 7) + "-" + farmerContact.slice(7, 11);
+            var formattedFarmerContact = "(" + farmerContact.slice(0, 3) + ") " + farmerContact.slice(3, 6) + "-" + farmerContact.slice(6, 10);
             // $("#farmerDetailsContact").append(farmerContact+"\n");    
             $("#farmerDetailsContact").append(formattedFarmerContact);
         } else {
@@ -31,7 +31,7 @@ $(document).ready(function() {
         // $('#farmerDetailsID').val($.urlParam("id"));
 
         var latlong = farmer.result[0].Market.latitude +"," + farmer.result[0].Market.longitude;
-        $('#googlemapdir').attr('href','http://maps.google.com?q='+latlong);
+        $('#googlemapdir').attr('href','https://maps.google.com?q='+latlong);
 
     });
 

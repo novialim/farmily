@@ -1,18 +1,18 @@
 const db = require("../models");
 
 // Insert a new vendor
-function createVendor(data, cb) {
-    db.Vendor.create(data).then(()=>{
-        cb({"result": "success"})
-    },(error)=>{
-        cb({"result":error})
-    });
-}
+// function createVendor(data, cb) {
+//     db.Vendor.create(data).then(()=>{
+//         cb({"result": "success"})
+//     },(error)=>{
+//         cb({"result":error})
+//     });
+// }
 
 // Insert a new vendor
 function insertData(data,table, cb) {
-    table.create(data).then(()=>{
-        cb({"result": "success"})
+    table.create(data).then((res)=>{
+        cb(res.vendor_id)
     },(error)=>{
         cb({"result":error})
     });
@@ -37,14 +37,15 @@ function show_Market_Vendor_data(id,table,model,cb){
 module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
+        console.log(req.body)
         insertData(req.body,db.Vendor,(result)=>{
-            res.json(result);
+            res.redirect("/farmer?id="+result);
         });
     });
 
   app.post("/api/reviewfarmer/", (req, res) => {
         insertData(req.body,db.Review,(result)=>{
-            res.json(result);
+            res.redirect("/farmer?id="+req.body.vendor_id);
         });
 
     });
