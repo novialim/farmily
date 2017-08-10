@@ -9,6 +9,15 @@ function createVendor(data, cb) {
     });
 }
 
+// Insert a new vendor
+function insertData(data,table, cb) {
+    table.create(data).then(()=>{
+        cb({"result": "success"})
+    },(error)=>{
+        cb({"result":error})
+    });
+}
+
 // Display Farmer or Market with their respective association
 function show_Market_Vendor_data(id,table,model,cb){
     id ? table === db.Market ? obj={market_id:id}: obj={vendor_id:id} : obj={};
@@ -28,17 +37,15 @@ function show_Market_Vendor_data(id,table,model,cb){
 module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
-        createVendor(req.body,(result)=>{
+        insertData(req.body,db.Vendor,(result)=>{
             res.json(result);
         });
     });
     // SHOLD REVIEW MARKET DETAILS
     app.post("/api/reviewfarmer/", (req, res) => {
-        console.log(req.body)
-        // addReview(req.body,(result)=>{
-        //     res.json({"name":1});
-        // })
-        res.json({"name":1});
+        insertData(req.body,db.Review,(result)=>{
+            res.json(result);
+        });
 
     });
 
