@@ -64,8 +64,8 @@ module.exports = function (app) {
     // });
 
     // Display market details page
-    app.get("/market/:id", (req, res) => {
-        client.business(req.params.id).then(response => {
+    app.get("/market", (req, res) => {
+        client.business(req.query.yelp_id).then(response => {
             console.log(JSON.stringify(response, null,2));
             let market = response.jsonBody;
 
@@ -79,7 +79,8 @@ module.exports = function (app) {
 
             // Pass data object to handlebars
             let data = {
-                id: req.params.id,
+                id: req.query.id,
+                yelp_id: req.query.yelp_id,
                 title: market.name,
                 review_count: market.review_count,
                 photos: photos

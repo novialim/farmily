@@ -203,10 +203,6 @@ i.icon-grey {
     width: 250px !important;
 }
 
-.carousel {
-    margin-top: -85px !important;
-}
-
 .userreviewct {
     margin-left: 70px;
 }
@@ -442,6 +438,12 @@ label {
     width: 100%;
 }
 
+.bg3-repeat {
+    background-repeat: repeat !important;
+    background-image: url("../images/wood3.jpg");
+    width: 100%;
+}
+
 #exploreimg {
     /*border: 1px solid grey;*/
     border-radius: 5px;
@@ -467,6 +469,7 @@ label {
     height: 195px;
     overflow: hidden;
 }
+
 
 .vendorshadow {
   color: white;
@@ -497,6 +500,40 @@ label {
 #farmerDetailsID {
     display: none;    
 }
+
+#farmerDetailsInfo {
+    position: relative;
+    border: 1px solid #D3D3D3;
+}
+
+.card-border-grey {
+    border: 1px solid #D3D3D3; 
+    border-radius: 25px;   
+}
+
+.carousel {
+    position: absolute;
+    top: 145px;
+    left: 142px;
+    
+}
+
+.mid-section {
+    overflow: hidden;
+}
+
+.mid-section-control{
+    height: 200px;
+}
+
+.card-content-btn {
+    padding-bottom: 10px !important;
+}
+
+.reduce-top {
+    padding-top: 6px !important;
+}
+
 
 /*Error CSS*/
 
