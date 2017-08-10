@@ -1,10 +1,7 @@
 $(document).ready(function(){
 
 // $(document.body).on('click', '.findoutmore' ,function(){
-
-    console.log("farmer details reached!");
-    
-
+ 
         $.urlParam = function(name) {
             var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
             if (results == null) {
@@ -23,6 +20,7 @@ $(document).ready(function(){
             $("#farmerDetailsDay").append(farmer.result[0].Market.opening_day);
             $("#farmerDetailsHours").append(farmer.result[0].Market.openinghours);
 
+            // $('#farmerDetailsID').val($.urlParam("id"));
 
         });
     
