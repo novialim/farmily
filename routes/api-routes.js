@@ -33,6 +33,7 @@ module.exports = function (app) {
         });
     });
 
+    // Add new review
     app.post("/api/reviewfarmer/", (req, res) => {
         console.log(req.body)
         // addReview(req.body,(result)=>{
@@ -41,7 +42,6 @@ module.exports = function (app) {
         res.json({"name":1});
 
     });
-
 
     // View vendor details
     app.get("/api/viewfarmer/:id?", (req, res) => {
