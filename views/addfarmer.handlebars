@@ -18,7 +18,9 @@
                                     <h6></h6></label>
                                 <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
                                     <option value="" disabled selected>Which Farmer's Market?</option>
-                                    {{>addfarmer/marketDropdown markets}}
+                                    {{#each markets}}
+                                        <option value="{{incByOne @index}}">{{market_name}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
 
