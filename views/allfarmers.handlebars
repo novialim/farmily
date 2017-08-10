@@ -6,6 +6,23 @@
       </div>
 
     <div class="container">
+
+        <div class="preloader-background">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row populate-farmer">
 
             <!--<div class="col s12 m6">-->
@@ -116,3 +133,13 @@
     <li class="waves-effect"><a href="#!">5</a></li>
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 </ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    $('.preloader-background').delay(1300).fadeOut('slow');
+    
+    $('.preloader-wrapper')
+        .delay(1300)
+        .fadeOut();
+    });
+</script>
