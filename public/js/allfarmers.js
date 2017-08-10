@@ -23,10 +23,12 @@ function populateData(data){
 
 function populateDataReview(data){
     data.map((farmer)=>{
-        $(".populate-farmer-review").append("<div class=\"col s6 m3\">\n" +
+        $(".populate-farmer-review").append(
+            `<a href="/write?id=${farmer.vendor_id}">`+
+            "<div class=\"col s6 m3\">\n" +
             "<div class=\"card small\">\n" +
             "<div class=\"card-image\">\n" +
-            "<img class=\"darken-image\" src=\"images/farmer"+farmer.vendor_id+".jpg\">\n" +
+            `<img class=\"darken-image\" src=\"images/farmer${farmer.vendor_id}.jpg\">\n` +
             `<span class=\"card-title\"><strong>${farmer.vendor_name}</strong></span>\n` +
             "</div>\n" +
             "<div class=\"card-content minborder\">\n" +
@@ -36,7 +38,7 @@ function populateDataReview(data){
             "<div class=\"rateyo\"></div>\n" +
             "</div>\n" +
             "</div>\n" +
-            "</div>")
+            "</div></a>")
 
     })
 
