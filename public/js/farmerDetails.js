@@ -33,6 +33,9 @@ $(document).ready(function() {
         var latlong = farmer.result[0].Market.latitude +"," + farmer.result[0].Market.longitude;
         $('#googlemapdir').attr('href','https://maps.google.com?q='+latlong);
 
+        $('#farmerDetailsReview').attr('href','api/viewfarmer/'+$.urlParam("id"));
+    
+
     });
 
 
