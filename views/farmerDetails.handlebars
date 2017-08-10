@@ -155,14 +155,63 @@
 
 
 <script type="text/javascript" src="js/farmerDetails.js"></script>    
-<script>
+
+<!-- Magnific Popup core JS file -->
+<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+
+
+<script type="text/javascript">
 $(document).ready(function(){
-    console.log("farmer ID is: "+$.urlParam("id"));
+    // console.log("farmer ID is: "+$.urlParam("id"));
 
     var firstimg = '<a class="carousel-item"><img src="images/farmer'+$.urlParam("id")+'.jpg"></a>';
     
     for(var i=0; i<5; i++){
         $('.carousel').prepend(firstimg);
     }
-});
+
+    // google map get direction popup
+    $('#googlemapdir').magnificPopup({
+      type: 'iframe',
+      
+      
+      iframe: {
+        patterns: {
+          gmaps: {
+              index: '//maps.google.',
+              src: '%id%&output=embed'
+          }
+        }
+      }
+      
+    });
+
+
+}); // End of document ready
+
+
+
+
+    
+       
+      //   index: 'dailymotion.com',
+        
+      //   id: function(url) {        
+      //       var m = url.match(/^.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/);
+      //       if (m !== null) {
+      //           if(m[4] !== undefined) {
+                  
+      //               return m[4];
+      //           }
+      //           return m[2];
+      //       }
+      //       return null;
+      //   },
+        
+      //   src: 'http://www.dailymotion.com/embed/video/%id%'
+        
+      // }
+   
 </script>
+
+
