@@ -33,6 +33,12 @@ $(document).ready(function() {
         var latlong = farmer.result[0].Market.latitude +"," + farmer.result[0].Market.longitude;
         $('#googlemapdir').attr('href','https://maps.google.com?q='+latlong);
 
+        // https://www.google.com/maps/dir//32.796963,-117.25367/@32.7969589,-117.2558768,17z/data=!3m1!4b1
+
+        // $('#googlemapdir').attr('href',"https://www.google.com/maps/embed/v1/directions?key=AIzaSyDyCoY7jwP299fZw-jX6JMWRS9_tYKAE_A&origin=\"\"&destination="+latlong+"");        
+
+        // $('#googlemapdir').attr('href','https://www.google.com/maps/directions//'+latlong+"/@"+latlong+",17z");        
+
         $('.farmerDetailsReview').attr('href','//' + location.host + '/write?id='+$.urlParam("id"));
         console.log();
 
