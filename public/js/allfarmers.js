@@ -24,7 +24,7 @@ function populateData(data){
 function populateDataReview(data){
     data.map((farmer)=>{
         $(".populate-farmer-review").append(
-            `<a href="/write/${farmer.vendor_id}">`+
+            `<a href="/write?id=${farmer.vendor_id}">`+
             "<div class=\"col s6 m3\">\n" +
             "<div class=\"card small\">\n" +
             "<div class=\"card-image\">\n" +

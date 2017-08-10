@@ -21,7 +21,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/testform.html'));
     });
 
-    app.get('/write/:id', function (req, res) {
+    app.get('/write', function (req, res) {
         // res.sendFile(path.join(__dirname, '../public/writereview.html'));
         res.render("addreview");
     });
