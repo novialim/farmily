@@ -494,6 +494,10 @@ label {
     display: none;
 }
 
+#farmerDetailsID {
+    display: none;    
+}
+
 /*Error CSS*/
 
 .input-field div.error {

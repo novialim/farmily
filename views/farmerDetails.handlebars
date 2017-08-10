@@ -68,17 +68,18 @@
                             </div>
                         </div> --}}
                     </div>
+
+                    {{!-- <form><input type="text" id="farmerDetailsID" /></form> --}}
                     <!-- scrolling images with mouse over effect -->
                     <div class="col s12 m9 l9">
                         <div class="carousel">
 
-                        {{!-- images/farmer"+farmer.vendor_id+".jpg --}}
-                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/1"></a>
+    {{!--                         <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/1"></a>
                             <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/2"></a>
                             <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/3"></a>
                             <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/4"></a>
                             <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/5"></a>
-                        </div>
+     --}}                    </div>
                     </div>
                 </div>
                 <div class="row reviews">
@@ -155,9 +156,13 @@
 
 <script type="text/javascript" src="js/farmerDetails.js"></script>    
 <script>
-    
-    // $(document.body).on('click', '.findoutmore' ,function(){
+$(document).ready(function(){
+    console.log("farmer ID is: "+$.urlParam("id"));
 
-    // });
-    // // element.addEventListener("click", function(){ myFunction(p1, p2); });
+    var firstimg = '<a class="carousel-item"><img src="images/farmer'+$.urlParam("id")+'.jpg"></a>';
+    
+    for(var i=0; i<5; i++){
+        $('.carousel').prepend(firstimg);
+    }
+});
 </script>
