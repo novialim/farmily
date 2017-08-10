@@ -11,6 +11,10 @@ html {
     /* negative fixed header height */
 }
 
+#indexHeader {
+    font-family: 'Dosis', sans-serif;
+    font-size: 8em;
+}
 
 
 /* Smartphones (portrait and landscape) ----------- */
