@@ -905,7 +905,7 @@
 
       that.rating(resultantRating);
 
-      console.log(resultantRating);
+      // console.log(resultantRating);
     }
 
     function onInit(e, data) {
