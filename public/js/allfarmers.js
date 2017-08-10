@@ -11,7 +11,7 @@ function populateData(data){
             `<p>${farmer.vendor_text}</p>\n` +
             "</div>\n" +
             "<div class=\"card-action\">\n" +
-            "<a href=\'/farmer/"+farmer.vendor_id+"\'>Find out more</a>\n" +
+            "<a href=\'/farmer?id="+farmer.vendor_id+"\'>Find out more</a>\n" +
             "</div>\n" +
             "</div>\n" +
             "</div>\n" +
