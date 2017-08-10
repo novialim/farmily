@@ -442,9 +442,9 @@ label {
     width: 100%;
 }
 
-.bg2-repeat {
+.bg3-repeat {
     background-repeat: repeat !important;
-    background-image: url("../images/wood2.jpg");
+    background-image: url("../images/wood3.jpg");
     width: 100%;
 }
 
