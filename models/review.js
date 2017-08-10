@@ -11,11 +11,19 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             allowNull: false
         },
+        vendor_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        user_name: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
         review_text: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        rating: {
+        rateYoInput: {
             type: DataTypes.INTEGER,
             allowNull: true
         }

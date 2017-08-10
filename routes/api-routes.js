@@ -32,7 +32,7 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-
+    // SHOLD REVIEW MARKET DETAILS
     app.post("/api/reviewfarmer/", (req, res) => {
         console.log(req.body)
         // addReview(req.body,(result)=>{
