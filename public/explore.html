@@ -909,7 +909,7 @@
                     let marketLatLng = marketdata[j].latitude + "," + marketdata[j].longitude
 
                     let marketBtn = $("<div>");
-                    marketBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a><a target="_blank" class="waves-effect waves-light teal btn btn-small" href="https://maps.google.com?q=${marketLatLng}">&nbsp;&nbsp;Get Directions&nbsp;&nbsp;</a>`);
+                    marketBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a><a target="_blank" class="waves-effect waves-light teal btn btn-small directionPos" href="https://maps.google.com?q=${marketLatLng}"><i class="material-icons">directions</i>&nbsp;Directions</a>`);
 
                     // let googleMapBtn = $("<div>");
                     // googleMapBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>`);
