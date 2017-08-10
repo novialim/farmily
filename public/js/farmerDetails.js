@@ -12,9 +12,12 @@ $(document).ready(function(){
     $.get( "../api/viewfarmer/"+$.urlParam("id"), function( farmer ) {
         console.log(farmer.result);
         console.log(farmer.result[0].Market.address_txt);
-        $(".farmerName").append(farmer.result[0].vendor_name);
-        $("#farmerAddress").append(farmer.result[0].Market.address_txt);
-        $("#farmerContact").append(farmer.result[0].Market.contact);
+        $(".farmerDetailsName").append(farmer.result[0].vendor_name);
+        $("#farmerDetailsAddress").append(farmer.result[0].Market.address_txt);
+        $("#farmerDetailsContact").append(farmer.result[0].vendor_contact);
+        $("#farmerDetailsDay").append(farmer.result[0].Market.opening_day);
+        $("#farmerDetailsHours").append(farmer.result[0].Market.openinghours);
+               
         
     });
 

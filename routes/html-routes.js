@@ -59,9 +59,9 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/contribute.html'));
     });
 
-    app.get("/farmer", (req, res) => {
-        res.send("Worked /farmer");
-    });
+    // app.get("/farmer", (req, res) => {
+    //     res.send("Worked /farmer");
+    // });
 
     // Display market details page
     app.get("/market/:id", (req, res) => {
