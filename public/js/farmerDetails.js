@@ -31,7 +31,7 @@ $(document).ready(function() {
         // $('#farmerDetailsID').val($.urlParam("id"));
 
         var latlong = farmer.result[0].Market.latitude +"," + farmer.result[0].Market.longitude;
-        $('#googlemapdir').attr('href','http://maps.google.com?q='+latlong);
+        $('#googlemapdir').attr('href','https://maps.google.com?q='+latlong);
 
     });
 
