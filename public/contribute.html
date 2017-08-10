@@ -1,75 +1,65 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Contribute</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16" />
-
-
     <link rel="stylesheet" href="css/startup-materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link href="css/condition.css" rel="stylesheet">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <body>
+</head>
 
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-solid-transition">
-      <div class="nav-wrapper">
-       <a href="/" class="brand-logo valign-wrapper"><img class="responsive-img" src="images/logo/farmilywhitehoriV2.png"></a>
-        <!-- <a href="/" class="brand-logo"><i class="icon-diamond"></i>Farmily</a> -->
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          
-          <li><a href="/aboutus">What We Do?</a></li>
-
-
-
-          <!-- <li><a class="dropdown-button" href="#!" data-activates="pages" data-constrainWidth="false" data-belowOrigin="true">Explore Markets<i class="material-icons right">arrow_drop_down</i></a></li> -->
-
-          <li><a href="/explore">Explore Markets</a></li>
-          <li><a href="/allfarmers">Farmers</a></li>
-          <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
-          <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
-          <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
-        </ul>
-
-        <ul id="pages" class="dropdown-content">
-          <li><a href="#MarketMap">All Markets</a></li>
-          <li><a href="/">Farmers</a></li>
-        </ul>
-
-        <ul id="addpages" class="dropdown-content">
-          <li><a href="/addfarmer">Add Farmer</a></li>
-          <li><a href="/review">Review Farmer</a></li>
-        </ul>        
-
-        <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons white-text">menu</i></a>
-      </div>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo valign-wrapper"><img class="responsive-img" src="images/logo/farmilywhitehoriV2.png"></a>
+            <!-- <a href="/" class="brand-logo"><i class="icon-diamond"></i>Farmily</a> -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/aboutus">What We Do?</a></li>
+                <!-- <li><a class="dropdown-button" href="#!" data-activates="pages" data-constrainWidth="false" data-belowOrigin="true">Explore Markets<i class="material-icons right">arrow_drop_down</i></a></li> -->
+                <li><a href="/explore">Explore Markets</a></li>
+                <li><a href="/allfarmers">Farmers</a></li>
+                <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+                <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn" id="loginbtn">&nbsp;&nbsp;Login&nbsp;&nbsp;</a></li>
+                <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut" id="signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
+            </ul>
+            <ul id="pages" class="dropdown-content">
+                <li><a href="#MarketMap">All Markets</a></li>
+                <li><a href="/">Farmers</a></li>
+            </ul>
+            <ul id="addpages" class="dropdown-content">
+                <li><a href="/addfarmer">Add Farmer</a></li>
+                <li><a href="/review">Review Farmer</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse right"><i class="material-icons white-text">menu</i></a>
+        </div>
     </nav>
     <ul id="slide-out" class="side-nav">
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li class="bold">
-            <a class="collapsible-header waves-effect waves-teal active">Farmily</a>
-          </li>
-        </ul>
-      </li>
-      <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
-      <li><a class="waves-effect waves-teal" href="/aboutus">What We Do?</a></li>
-      <li><a class="waves-effect waves-teal" href="/explore">Explore Markets</a></li>
-      <li><a class="waves-effect waves-teal" href="/allfarmers">Farmers</a></li>
-      <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
-      <li><a class="waves-effect waves-teal" href="/contribute">Contribute</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header waves-effect waves-teal active">Farmily</a>
+                </li>
+            </ul>
+        </li>
+        <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn">&nbsp;&nbsp;Login&nbsp;&nbsp;</a></li>
+        <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut" id="signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
+        <li><a class="waves-effect waves-teal" href="/aboutus">What We Do?</a></li>
+        <li><a class="waves-effect waves-teal" href="/explore">Explore Markets</a></li>
+        <li><a class="waves-effect waves-teal" href="/allfarmers">Farmers</a></li>
+        <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
+        <li><a class="waves-effect waves-teal" href="/contribute">Contribute</a></li>
     </ul>
-
-
-<!--   <div class="section header">
+    <!--   <div class="section header">
       <div class="background">
         <img src="images/bg1.jpg" alt="">
       </div>
@@ -85,50 +75,44 @@
 
  -->
     <div class="title-transition section white">
-      <div class="background">
-        <img src="images/bg3.jpg" alt="">
-      </div>
-
-      <div class="container full-height valign-wrapper">
-      <div class="row">
-<!--         <div class="col s8 offset-s2 m6 offset-m3 blog-title fade-transition">
+        <div class="background">
+            <img src="images/bg3.jpg" alt="">
+        </div>
+        <div class="container full-height valign-wrapper">
+            <div class="row">
+                <!--         <div class="col s8 offset-s2 m6 offset-m3 blog-title fade-transition">
           <h1 class="white-text">Something Interesting</h1>
           <span class="date">January 31, 2016</span>
         </div> -->
-
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card halfopac">
-            <div class="card-content white-text">
-              <span class="card-title black-text"><strong>Add Farmer</strong></span>
-              <img class="responsive-img rcorners" src="images/addfarmer.jpg">
-              <p class="black-text">Add your favorite farmer and support them!</p>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card halfopac">
+                            <div class="card-content white-text">
+                                <span class="card-title black-text"><strong>Add Farmer</strong></span>
+                                <img class="responsive-img rcorners" src="images/addfarmer.jpg">
+                                <p class="black-text">Add your favorite farmer and support them!</p>
+                            </div>
+                            <div class="card-action">
+                                <a class="black-text" href="/addfarmer">Add Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card halfopac">
+                            <div class="card-content white-text">
+                                <span class="card-title black-text"><strong>Review Farmer</strong></span>
+                                <img class="responsive-img rcorners" src="images/reviewfarmer.jpg">
+                                <p class="black-text">Review your favorite farmer and support them!</p>
+                            </div>
+                            <div class="card-action">
+                                <a class="black-text" href="/review">Start Review</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-action">
-              <a  class="black-text" href="/addfarmer">Add Now</a>
-            </div>
-          </div>
         </div>
-      
-        <div class="col s12 m6">
-          <div class="card halfopac">
-            <div class="card-content white-text">
-              <span class="card-title black-text"><strong>Review Farmer</strong></span>
-              <img class="responsive-img rcorners" src="images/reviewfarmer.jpg">
-              <p class="black-text">Review your favorite farmer and support them!</p>
-            </div>
-            <div class="card-action">
-              <a class="black-text" href="/review">Start Review</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        
-      </div>
     </div>
-    </div>
-
     <!-- <div class="section white full-height">
       <div class="row valign">
         <div class="col s8 offset-s2 m6 offset-m3 blog-body">
@@ -243,15 +227,13 @@ Flexitarian pickled cardigan humblebrag. Crucifix fingerstache four dollar toast
     </div>
  -->
     <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col s6 m6">
-            <img class="materialize-logo" src="images/logo/footerfarmilygreen.png" alt="">
-            <p>Made with love by <a href="https://github.com/jhuynh85" target="_blank">Joseph Huynh</a> | <a href="https://github.com/Goosetaculous" target="_blank">Goose aka Joseph Aranez</a> | <a href="https://github.com/novialim" target="_blank">Novia Lim</a></p>
-          </div>
-
-
-      <!--     <div class="col s6 m6">
+        <div class="container">
+            <div class="row">
+                <div class="col s6 m6">
+                    <img class="materialize-logo" src="images/logo/footerfarmilygreen.png" alt="">
+                    <p>Made with love by <a href="https://github.com/jhuynh85" target="_blank">Joseph Huynh</a> | <a href="https://github.com/Goosetaculous" target="_blank">Goose aka Joseph Aranez</a> | <a href="https://github.com/novialim" target="_blank">Novia Lim</a></p>
+                </div>
+                <!--     <div class="col s6 m6">
             <h5>About</h5>
             <ul>
               <li><a href="#!">Blog</a></li>
@@ -267,34 +249,76 @@ Flexitarian pickled cardigan humblebrag. Crucifix fingerstache four dollar toast
               <li><a href="#!">Email</a></li>
             </ul>
           </div> -->
-          <div class="col s6 m6">
-            <h5>Contact</h5>
-            <ul>
-<!--               <li><a href="#!">Twitter</a></li>
+                <div class="col s6 m6">
+                    <h5>Contact</h5>
+                    <ul>
+                        <!--               <li><a href="#!">Twitter</a></li>
               <li><a href="#!">Facebook</a></li> -->
-              <li><a href="https://github.com/novialim/farmily" target="_blank">Github</a></li>
-            </ul>
-          </div>
+                        <li><a href="https://github.com/novialim/farmily" target="_blank">Github</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-
-
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
-
     <!-- External libraries -->
     <script src="js/imagesloaded.pkgd.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src="js/ScrollMagic.min.js"></script>
     <script src="js/animation.gsap.min.js"></script>
-
     <!-- Initialization script -->
     <script src="js/startup.js"></script>
     <script src="js/init.js"></script>
 
+    <!-- firebase login -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="js/login.js"></script>
+
+        <script type="text/javascript">
+
+    // <!-- Auth state listener -->
+
+    if (sessionStorage.getItem("userKey")) {
+        $('html').addClass('logged-in');
+    } else {
+        $('html').removeClass('logged-in');
+        sessionStorage.removeItem("userKey");
+        sessionStorage.clear();
+    }
+
+    $('#signOut').on("click", function() {
+
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            console.log("Bye");
+
+            $('html').removeClass('logged-in');
+            sessionStorage.removeItem("userKey");
+            sessionStorage.clear();
+
+        }).catch(function(error) {
+            // An error happened.
+        });
+    });
+
+    if (window.performance) {
+        // console.info("window.performance work's fine on this browser");
+    }
+
+    if (performance.navigation.type == 1) {
+        // console.info( "This page is reloaded" );
+
+        if (sessionStorage.getItem("userKey")) {
+            $('html').addClass('logged-in');
+        }
+    } else {
+        // console.info( "This page is not reloaded");
+    }
     </script>
-  </body>
+    
+</body>
+
 </html>
