@@ -1,0 +1,152 @@
+<div class="section header white full-height">
+        <div class="background bg-repeat">
+            <img class="bg-repeat" alt="">
+            <!-- <img class="responsive-img" src="images/bg4.jpg" alt=""> -->
+        </div>
+        <nav>
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <a class="breadcrumb"></a>
+                    <a href="/allfarmers" class="breadcrumb">Farmers</a>
+                    <a class="breadcrumb farmerName"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col m6 l6">
+                        <div class="row">
+                            <h4 class="farmerName" class="strong"></h4>
+                            <div class="rating">
+                                <!-- to calculate average review rating and update accordingly -->
+                                <span class="rating-static rating-45"><span class="userreviewct">123</span><span>&nbsp;reviews</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m6 l6">
+                        <p class="center-align">
+                            <a class="waves-effect waves-light btn teal"><i class="material-icons left">star</i>Review</a>
+                            <a class="waves-effect waves-light btn teal"><i class="material-icons left">photo_camera</i>Add Photo</a>
+                            <a class="waves-effect waves-light btn teal"><i class="material-icons left">screen_share</i>Share</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End of header row -->
+                <div class="row text-grey text-darken-3 center-align smallrw">
+                    <div class="col s12 m3 l3 center-align mapborder card-panel white leftsection smallheight">
+                        <img class="googlemap imgpadding responsive-img" src="images/mapplaceholder.png" alt="">
+                        <!-- farmer map and address details -->
+                        <div class="row smallrw">
+                            <div class="col m3 l3 right-align"><i class="material-icons icon-grey">place</i>
+                            </div>
+                            <div class="col m9 l9 left-align">
+                                <span id="farmerAddress"> {{!-- <b>7330 Clairemont Mesa Blvd <br>
+                    Ste A106<br>
+                    San Diego, CA 92111</b><br>
+                    Kearny Mesa --}}
+                  </span>
+                            </div>
+                        </div>
+                        <div class="row smallrw">
+                            <div class="col m3 l3 right-align"><i class="material-icons icon-grey">directions</i>
+                            </div>
+                            <div class="col m9 l9 left-align">
+                                Get Directions
+                            </div>
+                        </div>
+                        <div class="row smallrw">
+                            <div class="col m3 l3 right-align"><i class="material-icons icon-grey">phone</i>
+                            </div>
+                            <div class="col m9 l9 left-align" id="farmerContact"></div>
+                        </div>
+                        <div class="row smallrw">
+                            <div class="col m3 l3 right-align"><i class="material-icons icon-grey">favorite</i>
+                            </div>
+                            <div class="col m9 l9 left-align">
+                                Apples, Pears, Apricots
+                            </div>
+                        </div>
+                    </div>
+                    <!-- scrolling images with mouse over effect -->
+                    <div class="col s12 m9 l9">
+                        <div class="carousel">
+                            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/300/300/food/1"></a>
+                            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/300/300/food/2"></a>
+                            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/300/300/food/3"></a>
+                            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/300/300/food/4"></a>
+                            <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/300/300/food/5"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row reviews">
+                    <div class="col s12 m12">
+                        <h4><span class="red-text">Recommended Reviews</span> for <span class="farmerName"></span></h4>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m9">
+                            <div class="card grey lighten-4">
+                                <div class="card-content black-text">
+                                    <span class="card-title">We Need Your Support!</span>
+                                    <p>Support family farmers, support Farmers! Protect the environment. Nourish yourself. We like to know what you think!</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                                <div class="card-action center-align">
+                                    <a href="#">Start your review of <span class="farmerName"></span>.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m3 l3">
+                            <div class="card white">
+                                <div class="card-content black-text center-align">
+                                    <span class="card-title">Stall Information</span>
+                                </div>
+                                <div class="card-action">
+                                    <p class="red-text strong">Hours</p>
+                                    <p class="black-text"><span class="strong">Wed:</span>&nbsp;&nbsp;<span>3:00PM - 5:00PM</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <div class="card white">
+                                <div class="card-content black-text center-align">
+                                    <span class="card-title">
+                      <img class="avatar responsive-img" src="images/avatar/avatarf01.png" alt="">
+                      <h6>Ashley H.</h6>
+                    </span>
+                                </div>
+                                <div class="card-action">
+                                    <p class="black-text reviewtxt">Outstanding farmers market. I arrived around 9:30 am and the market was in full swing. Parking wasn't too much of a challenge. I was able to find street parking on Cleveland & Richmond. I then had to walk only one block and was in the middle of the market. The market is three full city blocks down Normal Street from Lincoln Ave to University Avenue. </p>
+                                    <p class="black-text reviewtxt">The entire south end of the market (from Harvey Milk to University) is all hot food items. I tried the Brazilian Guys hash brown sandwich with chorizo, eggs and cheese filling. It was surprisingly pretty yummy. Each sandwich takes about seven minutes to make so have your patience.
+                                        <br>
+                                        <p class="black-text reviewtxt">On the north end of the market is fresh fruit and vegetables. So many items to purchase from eggs, nuts, honey, and other healthy items. The majority of the vendors have samples. Bargain shop as the prices are different. On the east side of street is produce while the west is breads, flowers clothing, hummus, fish, essential oils. Make sure to bring your reusable bags with you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="card white">
+                                <div class="card-content black-text center-align">
+                                    <span class="card-title">
+                      <img class="avatar responsive-img" src="images/avatar/avatarf05.png" alt="">
+                      <h6>Jennifer S.</h6>
+                    </span>
+                                </div>
+                                <div class="card-action">
+                                    <p class="black-text reviewtxt">HEY HEYOutstanding farmers market. I arrived around 9:30 am and the market was in full swing. Parking wasn't too much of a challenge. I was able to find street parking on Cleveland & Richmond. I then had to walk only one block and was in the middle of the market. The market is three full city blocks down Normal Street from Lincoln Ave to University Avenue. </p>
+                                    <p class="black-text reviewtxt">The entire south end of the market (from Harvey Milk to University) is all hot food items. I tried the Brazilian Guys hash brown sandwich with chorizo, eggs and cheese filling. It was surprisingly pretty yummy. Each sandwich takes about seven minutes to make so have your patience.
+                                        <br>
+                                        <p class="black-text reviewtxt">On the north end of the market is fresh fruit and vegetables. So many items to purchase from eggs, nuts, honey, and other healthy items. The majority of the vendors have samples. Bargain shop as the prices are different. On the east side of street is produce while the west is breads, flowers clothing, hummus, fish, essential oils. Make sure to bring your reusable bags with you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  End of row reviews -->
+            </div>
+        </div>
+        <!-- End of container -->
+        
+    </div>
+

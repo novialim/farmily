@@ -32,7 +32,8 @@ module.exports = function (app) {
     });
 
     app.get('/farmer', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/farmer.html'));
+        // res.sendFile(path.join(__dirname, '../public/farmer.html'));
+        res.render("farmerDetails");
     });
 
     app.get("/explore", (req, res) => {
@@ -63,7 +64,7 @@ module.exports = function (app) {
     });
 
 
-    app.get("/farmer", (req, res) => {
-        res.send("Worked /farmer");
-    });
+    // app.get("/farmer", (req, res) => {
+    //     res.send("Worked /farmer");
+    // });
 }
