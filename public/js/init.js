@@ -1,7 +1,5 @@
 (function($){
   $(function(){
-
-
     // Plugin initialization
     $('.carousel.carousel-slider').carousel({fullWidth: true});
     $('.carousel').carousel();

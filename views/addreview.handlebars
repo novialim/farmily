@@ -32,7 +32,7 @@
                                             <div class="textareawrapper">
                                                 <div class="rateyo" id="rateYo1"></div>
                                                 <div class="divider updownpad"></div>
-                                            
+                                                <input class="uid" type="hidden" name="user_id" value="Norway">
                                                 <textarea name="review_text" id="reviewtext" class="materialize-textarea" placeholder="Your review helps others learn about great local farmers."></textarea>
                                             </div>
 
@@ -74,8 +74,13 @@
         </div>
     </div>
     <script>
-    function validateReviewForm() {
+    var b = document.querySelector("input");
+    b.setAttribute("value", sessionStorage.getItem("userKey"));
 
+
+
+
+    function validateReviewForm() {
         console.log("hello!");
 
         var reviewText = document.forms["addReview"]["review_text"].value;

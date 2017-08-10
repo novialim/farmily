@@ -1,14 +1,12 @@
+
 <div class="section white full-height">
     <div class="background">
         <img src="images/bg3.jpg" alt="">
     </div>
-
     <div class="container">
-        <div class="row">
-
+        <div class="row populate-farmer-review">
             <!-- Row one -->
             <div class="col s6 m3">
-
                 <div class="card small">
                     <div class="card-image">
                         <img src="images/farmer1.jpg">
@@ -16,141 +14,46 @@
                     </div>
                     <div class="card-content minborder">
                         <p>Connelly Farms grows seasonal fruits and veggies and provides them to local customers from "the Farm" stand in Ramona. They also have our "Farm" stand bags available.</p>
-
                     </div>
                     <div class="card-action">
                         <!-- <a href="#">This is a link</a> -->
                         <div class="rateyo" id="rateYo1"></div>
-
                     </div>
                 </div>
-
             </div>
-            <div class="col s6 m3">
-
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col s6 m3">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col s6 m3">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Row two -->
-            <div class="col s6 m3">
-
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col s6 m3">
-
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col s6 m3">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col s6 m3">
-                <div class="card small">
-                    <div class="card-image">
-                        <img src="http://materializecss.com/images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content minborder">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <div class="rateyo"></div>
-                    </div>
-                </div>
-
-            </div>
-
-
-
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+
+<!-- External libraries -->
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/ScrollMagic.min.js"></script>
+<script src="js/animation.gsap.min.js"></script>
+
 <script type="text/javascript" src="js/jquery.rateyo.js"></script>
+
+<!-- Initialization script -->
+<script src="js/startup.js"></script>
+<script src="js/init.js"></script>
+
+<!-- Custom Script -->
+<!--<script src="js/app.js" type="text/javascript"></script>-->
+
+<script>
+
+    $(function () {
+
+        $(".rateyo").rateYo({
+            halfStar: true
+        });
+    });
+    $("#rateYo1").rateYo()
+            .on("rateyo.set", function (e, data) {
+                window.location = "../write"
+            });
+
+</script>
