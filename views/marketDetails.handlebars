@@ -19,10 +19,10 @@
             <div class="row">
                 <div class="col m6 l6">
                     <div class="row">
-                        <h4 class="strong">{{market_name}}</h4>
+                        <h4 class="strong" id="market_name">{{title}}</h4>
                         <div class="rating">
                             <!-- to calculate average review rating and update accordingly -->
-                            <span class="rating-static rating-45"><span class="userreviewct">123</span><span>&nbsp;reviews</span></span>
+                            <span class="rating-static rating-45"><span class="userreviewct" id="review_count">{{review_count}}</span><span>&nbsp;reviews</span></span>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="col m9 l9 left-align">
-                            <span> {{address_google}}</span>
+                            <span id="address_google">address_google</span>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@
                             <i class="material-icons icon-grey">directions</i>
                         </div>
                         <div class="col m9 l9 left-align">
-                            Get Directions
+                            <span id="google_directions">Get Directions</span>
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@
                             <i class="material-icons icon-grey">phone</i>
                         </div>
                         <div class="col m9 l9 left-align">
-                            {{contact}}
+                            <span id="contact">contact</span>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@
                             <i class="material-icons icon-grey">favorite</i>
                         </div>
                         <div class="col m9 l9 left-align">
-                            Apples, Pears, Apricots
+                            <span id="produce">produce1, produce2, produce3</span>
                         </div>
                     </div>
                 </div>
@@ -81,11 +81,14 @@
                 <!-- scrolling images with mouse over effect -->
                 <div class="col s12 m9 l9">
                     <div class="carousel">
-                        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/300/300/food/1"></a>
+                        {{#each photos}}
+                            <a class="carousel-item" href="#" onclick="return false;"><img src="{{this}}"</a>
+                        {{/each}} 
+                         {{!-- <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/300/300/food/1"></a>
                         <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/300/300/food/2"></a>
                         <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/300/300/food/3"></a>
                         <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/300/300/food/4"></a>
-                        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/300/300/food/5"></a>
+                        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/300/300/food/5"></a>  --}}
                     </div>
                 </div>
             </div>
@@ -269,7 +272,13 @@
       </div>
  -->
     </div>
+</div>
 
-</div>
-</div>
-</div>
+<script>
+    $.get("/api/viewmarket/{{id}}", (result) =>{ 
+        console.log(result);
+    })
+    .fail((err)=> {
+
+    });
+</script>

@@ -41,14 +41,13 @@ module.exports = function (app) {
             res.json(result);
         });
     });
-    // SHOLD REVIEW MARKET DETAILS
-    app.post("/api/reviewfarmer/", (req, res) => {
+
+  app.post("/api/reviewfarmer/", (req, res) => {
         insertData(req.body,db.Review,(result)=>{
             res.json(result);
         });
 
     });
-
 
     // View vendor details
     app.get("/api/viewfarmer/:id?", (req, res) => {
