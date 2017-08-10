@@ -35,6 +35,11 @@ module.exports = function (app) {
 
     // Add new review
     app.post("/api/reviewfarmer/", (req, res) => {
+        console.log(req.body)
+        // addReview(req.body,(result)=>{
+        //     res.json({"name":1});
+        // })
+        res.json({"name":1});
 
     });
 
