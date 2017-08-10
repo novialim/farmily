@@ -442,6 +442,12 @@ label {
     width: 100%;
 }
 
+.bg2-repeat {
+    background-repeat: repeat !important;
+    background-image: url("../images/wood2.jpg");
+    width: 100%;
+}
+
 #exploreimg {
     /*border: 1px solid grey;*/
     border-radius: 5px;
