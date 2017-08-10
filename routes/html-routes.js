@@ -35,7 +35,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/explore.html'));
     });
 
-    app.get('/farmer/:id', function (req, res) {
+    app.get('/farmer', function (req, res) {
         // res.sendFile(path.join(__dirname, '../public/farmer.html'));
         res.render("farmerDetails");
     });
