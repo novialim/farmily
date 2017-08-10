@@ -558,6 +558,11 @@ label {
     z-index: 99;
 }
 
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 
 /*Error CSS*/
 
