@@ -75,9 +75,13 @@
             </div>
         </div>
     </div>
+    <script src="js/allreviews.js" type="text/javascript"></script>
+
     <script>
 
-    document.getElementsByClassName("uid").setAttribute("value", sessionStorage.getItem("userKey"));
+    if(sessionStorage.getItem("userKey")!=""){
+        $(".uid").attr("value", sessionStorage.getItem("userKey"));
+    }
 
     function validateReviewForm() {
         var reviewText = document.forms["addReview"]["review_text"].value;

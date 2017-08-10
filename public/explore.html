@@ -906,8 +906,13 @@
 
                     let id = marketdata[j].market_id;
                     let yelp_id = marketdata[j].yelp_id;
+                    let marketLatLng = marketdata[j].latitude + "," + marketdata[j].longitude
+
                     let marketBtn = $("<div>");
-                    marketBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>`);
+                    marketBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a><a target="_blank" class="waves-effect waves-light teal btn btn-small directionPos" href="https://maps.google.com?q=${marketLatLng}"><i class="material-icons">directions</i>&nbsp;Directions</a>`);
+
+                    // let googleMapBtn = $("<div>");
+                    // googleMapBtn.html(`<a class="waves-effect waves-light teal btn btn-small" href="/market?id=${id}&yelp_id=${yelp_id}">&nbsp;&nbsp;Visit Market&nbsp;&nbsp;</a>`);
                     
                     marketWrapper.append(marketSN);
                     marketWrapper.append(marketHeader);
@@ -915,6 +920,7 @@
                     marketWrapper.append(market_Day);
                     marketWrapper.append(market_Time);
                     marketWrapper.append(marketBtn);
+                    // marketWrapper.append(googleMapBtn);
                     marketWrapper.append("<br><br>");
                     $('#content-detailimg').append(marketWrapper);
                 }

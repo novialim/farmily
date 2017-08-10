@@ -526,8 +526,7 @@ label {
 .carousel {
     position: absolute;
     top: 145px;
-    left: 142px;
-    
+    left: 142px;  
 }
 
 .mid-section {
@@ -549,6 +548,24 @@ label {
 .left-right-padding {
     padding-left: 34px;
     padding-right: 34px;
+}
+
+#googlemapdir {
+    z-index: 99;
+}
+
+.leftsection{
+    z-index: 99;
+}
+
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.directionPos{
+    display: inline-flex;
+    vertical-align: middle;
 }
 
 
