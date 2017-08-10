@@ -1,13 +1,13 @@
 const db = require("../models");
 
 // Insert a new vendor
-function createVendor(data, cb) {
-    db.Vendor.create(data).then(()=>{
-        cb({"result": "success"})
-    },(error)=>{
-        cb({"result":error})
-    });
-}
+// function createVendor(data, cb) {
+//     db.Vendor.create(data).then(()=>{
+//         cb({"result": "success"})
+//     },(error)=>{
+//         cb({"result":error})
+//     });
+// }
 
 // Insert a new vendor
 function insertData(data,table, cb) {
@@ -38,14 +38,14 @@ module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
         insertData(req.body,db.Vendor,(result)=>{
-            res.json(result);
+            res.send(result);
         });
     });
 
   app.post("/api/reviewfarmer/", (req, res) => {
         console.log(req.body)
         insertData(req.body,db.Review,(result)=>{
-            res.json(result);
+            res.redirect("/farmer?id="+req.body.vendor_id);
         });
 
     });
