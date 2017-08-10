@@ -513,6 +513,10 @@ label {
     display: none;    
 }
 
+#allFarmerCount {
+    display: none;        
+}
+
 #farmerDetailsInfo {
     position: relative;
     border: 1px solid #D3D3D3;
