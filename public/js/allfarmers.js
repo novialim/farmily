@@ -1,6 +1,9 @@
 function populateData(data){
+
+    var farmerCount = data.length;
+
     data.map((farmer)=>{
-        $(".populate-farmer").append("<div class=\"col s12 m6\">\n" +
+        $(".populate-farmer").append("<div class=\"allfarmer col s12 m6\">\n" +
             "<div class=\"card horizontal\">\n" +
             "<div class=\"card-image\">\n" +
             "<img src=\"images/farmer"+farmer.vendor_id+".jpg\">\n" +
@@ -17,6 +20,39 @@ function populateData(data){
             "</div>\n" +
             "</div>\n")
     })
+
+        var pageSize = 8;
+
+        $(".pagination").append('<li class="active waves-effect"><a>1</a></li>');
+
+        var totalPages = Math.ceil(farmerCount / pageSize);
+        console.log(totalPages)
+
+        for(var i=2; i<=totalPages; i++){
+            $(".pagination").append('<li class="waves-effect"><a>'+i+'</a></li>');            
+        } 
+        
+        $(".pagination").append('<li class="waves-effect"><a><i class="material-icons">chevron_right</i></a></li>');                
+        
+        showPage = function(page) {
+            $(".allfarmer").hide();
+            $(".allfarmer").each(function(n) {
+                if (n >= pageSize * (page - 1) && n < pageSize * page)
+                    $(this).show();
+            });        
+        }
+
+        showPage(1);
+
+        $("#pagin li a").click(function() {
+            $("#pagin li").removeClass("active");
+            $(this).closest('li').addClass("active");
+            showPage(parseInt($(this).text())) 
+        });
+            
+
+    
+
 }
 
 // <button class="btn teal waves-effect waves-light" id="reviewFarmer" type="submit" name="action">Start Review </button>
