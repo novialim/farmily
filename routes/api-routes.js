@@ -43,6 +43,7 @@ module.exports = function (app) {
     });
 
   app.post("/api/reviewfarmer/", (req, res) => {
+        console.log(req.body)
         insertData(req.body,db.Review,(result)=>{
             res.json(result);
         });
