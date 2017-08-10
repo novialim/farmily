@@ -87,16 +87,10 @@
             // alert("Name must be filled out");
             Materialize.toast("Let us know what you think about this farmer!", 4000);
             return false;
-        } 
-
-        // if (reviewText == "") {
-        //     // alert("Name must be filled out");
-        //     Materialize.toast("Let us know what you think about this farmer!", 4000);
-        //     return false;
-        // } else if (vendorRating == 0) {
-        //     Materialize.toast("Don't forget to give a rating!", 4000);
-        //     return false;
-        // }
+        } else if (vendorRating == 0) {
+            Materialize.toast("Don't forget to give a rating!", 4000);
+            return false;
+        }
     }
     </script>
 
