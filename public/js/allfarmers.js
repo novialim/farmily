@@ -39,6 +39,16 @@ function populateDataReview(data){
             "</div>")
 
     })
+
+    
+
+    $(".rateyo").rateYo({
+                    rating: 3.5
+                });
+
+
+
+    
 }
 
 

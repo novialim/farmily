@@ -490,6 +490,10 @@ label {
     filter: brightness(50%);
 }
 
+#rateYoInput {
+    display: none;
+}
+
 /*Error CSS*/
 
 .input-field div.error {
