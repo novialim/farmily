@@ -8,7 +8,7 @@
                 <div class="col s12">
                     <a class="breadcrumb"></a>
                     <a href="/allfarmers" class="breadcrumb">Farmers</a>
-                    <a class="breadcrumb farmerName"></a>
+                    <a class="breadcrumb farmerDetailsName"></a>
                 </div>
             </div>
         </nav>
@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col m6 l6">
                         <div class="row">
-                            <h4 class="farmerName" class="strong"></h4>
+                            <h4 class="farmerDetailsName" class="strong"></h4>
                             <div class="rating">
                                 <!-- to calculate average review rating and update accordingly -->
                                 <span class="rating-static rating-45"><span class="userreviewct">123</span><span>&nbsp;reviews</span></span>
@@ -41,7 +41,7 @@
                             <div class="col m3 l3 right-align"><i class="material-icons icon-grey">place</i>
                             </div>
                             <div class="col m9 l9 left-align">
-                                <span id="farmerAddress"> {{!-- <b>7330 Clairemont Mesa Blvd <br>
+                                <span id="farmerDetailsAddress"> {{!-- <b>7330 Clairemont Mesa Blvd <br>
                     Ste A106<br>
                     San Diego, CA 92111</b><br>
                     Kearny Mesa --}}
@@ -58,7 +58,7 @@
                         <div class="row smallrw">
                             <div class="col m3 l3 right-align"><i class="material-icons icon-grey">phone</i>
                             </div>
-                            <div class="col m9 l9 left-align" id="farmerContact"></div>
+                            <div class="col m9 l9 left-align" id="farmerDetailsContact"></div>
                         </div>
                         <div class="row smallrw">
                             <div class="col m3 l3 right-align"><i class="material-icons icon-grey">favorite</i>
@@ -71,17 +71,19 @@
                     <!-- scrolling images with mouse over effect -->
                     <div class="col s12 m9 l9">
                         <div class="carousel">
-                            <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/300/300/food/1"></a>
-                            <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/300/300/food/2"></a>
-                            <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/300/300/food/3"></a>
-                            <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/300/300/food/4"></a>
-                            <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/300/300/food/5"></a>
+
+                        {{!-- images/farmer"+farmer.vendor_id+".jpg --}}
+                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/1"></a>
+                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/2"></a>
+                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/3"></a>
+                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/4"></a>
+                            <a class="carousel-item"><img src="https://lorempixel.com/300/300/food/5"></a>
                         </div>
                     </div>
                 </div>
                 <div class="row reviews">
                     <div class="col s12 m12">
-                        <h4><span class="red-text">Recommended Reviews</span> for <span class="farmerName"></span></h4>
+                        <h4><span class="red-text">Recommended Reviews</span> for <span class="farmerDetailsName"></span></h4>
                     </div>
                     <div class="row">
                         <div class="col s12 m9">
@@ -92,7 +94,7 @@
                                     <p>&nbsp;</p>
                                 </div>
                                 <div class="card-action center-align">
-                                    <a href="#">Start your review of <span class="farmerName"></span>.</a>
+                                    <a href="#">Start your review of <span class="farmerDetailsName"></span>.</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +105,7 @@
                                 </div>
                                 <div class="card-action">
                                     <p class="red-text strong">Hours</p>
-                                    <p class="black-text"><span class="strong">Wed:</span>&nbsp;&nbsp;<span>3:00PM - 5:00PM</span></p>
+                                    <p class="black-text"><span class="strong" id="farmerDetailsDay"></span>:&nbsp;&nbsp;<span id="farmerDetailsHours"></span></p>
                                 </div>
                             </div>
                         </div>
