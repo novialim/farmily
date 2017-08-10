@@ -65,7 +65,7 @@ module.exports = function (app) {
 
     // Display market details page
     app.get("/market/:id", (req, res) => {
-        client.business('gary-danko-san-francisco').then(response => {
+        client.business(req.params.id).then(response => {
             console.log(JSON.stringify(response, null,2));
             let market = response.jsonBody;
 
