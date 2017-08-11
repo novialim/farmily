@@ -77,8 +77,12 @@
  -->
     <!-- Start of content-->
     <div class="section white full-height">
-        <div class="background">
+        <!--         <div class="background">
             <img src="images/bg6.jpg" alt="">
+        </div> -->
+        <div class="background bg-repeat">
+            <img class="bg-repeat" alt="">
+            <!-- <img class="responsive-img" src="images/bg4.jpg" alt=""> -->
         </div>
         <div class="container">
             <div class="row">
@@ -100,19 +104,15 @@
                         </div>
                         <div class="card-content minborder full-height minpaddingside">
                             <div class="row">
-
                                 <form name="addReview" class="col s12 left-alert" id="addReview" action="/api/addfarmer/" onsubmit="return validateReviewForm()" method="post">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="label">Your Review</div>
-
                                             <div class="textareawrapper">
                                                 <div class="rateyo" id="rateYo1"></div>
                                                 <div class="divider updownpad"></div>
-                                            
                                                 <textarea name="review_text" id="reviewtext" class="materialize-textarea" placeholder="Your review helps others learn about great local farmers."></textarea>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="input-field col s12">
@@ -152,8 +152,6 @@
     </div>
     <script>
     function validateReviewForm() {
-
-        console.log("hello!");
 
         var reviewText = document.forms["addReview"]["review_text"].value;
         var vendorRating = document.forms["addReview"]["rateyo1"].value;
@@ -201,7 +199,6 @@
     <!-- Initialization script -->
     <script src="js/startup.js"></script>
     <script src="js/init.js"></script>
-
     <script>
     $(function() {
 
@@ -216,9 +213,7 @@
 
     });
     </script>
-
-        <script type="text/javascript">
-
+    <script type="text/javascript">
     // <!-- Auth state listener -->
 
 
