@@ -56,7 +56,7 @@ module.exports = function (app) {
     app.get("/market", (req, res) => {
         // Check if request valid
         if (req.query.id===undefined || req.query.yelp_id===undefined){
-            res.status(400).send("400: BAD REQUEST!");
+            res.status(400).render(400);
 
         } else {
             yelpData.getYelpData(req.query.yelp_id, req.query.id ,(result)=>{

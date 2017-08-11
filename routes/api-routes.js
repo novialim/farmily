@@ -89,5 +89,8 @@ module.exports = function (app) {
     app.get('*', (req,res)=>{
         res.status(404);
         res.render("404");
+
+        res.status(400).render(400);
+
     });
 }
