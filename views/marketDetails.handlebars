@@ -16,13 +16,13 @@
 
     <div class="container">
         <div class="card-panel">
-            <div class="row">
+            <div class="row marketDetailRow">
                 <div class="col m12 l12">
                     <div class="row">
                         <h4 class="strong" id="market_name">{{title}}</h4>
                         <div class="rating">
                             <!-- v2 to calculate average review rating and update accordingly -->
-                            <a href="https://www.yelp.com/biz/{{id}}" target="_blank"><span class="userreviewct" id="review_count">{{review_count}}</span><span>&nbsp;reviews</span></a>
+                            <a id="yelprating" href="https://www.yelp.com/biz/{{id}}" target="_blank"><span class="userreviewct" id="review_count">{{review_count}}</span><span>&nbsp;reviews</span></a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="col s12 m9 l9">
                     <div class="carousel">
                         {{#each photos}}
-                            <a class="carousel-item" href="#" onclick="return false;"><img src="{{this}}"></a>
+                            <a class="carousel-item" onclick="return false;"><img src="{{this}}"></a>
                         {{/each}} 
                     </div>
                 </div>

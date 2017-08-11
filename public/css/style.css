@@ -207,6 +207,13 @@ i.icon-grey {
     margin-bottom: 9px;
 }
 
+.carousel {
+    position: absolute;
+    top: 145px;
+    left: 142px;  
+    z-index: 1;
+}
+
 .carousel .carousel-item {
     width: 250px !important;
 }
@@ -537,10 +544,21 @@ label {
     border-radius: 25px;   
 }
 
-.carousel {
-    position: absolute;
-    top: 145px;
-    left: 142px;  
+#yelprating {
+    position: relative;
+    z-index: 99;    
+}
+
+#review_count {
+    z-index: 99;    
+}
+
+.marketDetailRow {
+    z-index: 99;    
+}
+
+.userreviewct {
+    z-index: 99;    
 }
 
 .mid-section {
