@@ -37,3 +37,9 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 
 #### Team Member: Goose aka Joseph Aranez
 
+* Created models
+* Started the api and html routes
+* Created post routes for adding data to database
+* Displayed Farmer reviews
+* Exported yelpUtility module 
+* Simple Unit testing
