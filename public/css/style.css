@@ -222,6 +222,11 @@ i.icon-grey {
 .reviewtxt {
     line-height: 120%;
     height: 120px;
+    overflow: auto;
+}
+
+.reviewSection{
+    padding: 0px 15px !important;
 }
 
 .cardpaddng {

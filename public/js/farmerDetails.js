@@ -64,7 +64,7 @@ $(document).ready(function() {
                     `<h6 class="userName">${elem.user_name}</h6>` +
                      `<div class=\"rateyo userRateYo\" id=\"rateYo${elem.review_id}\"></div>` +
                     '</span></div>' +
-                    '<div class="card-action">' +
+                    '<div class="card-action reviewSection">' +
                     `<p class="black-text reviewtxt">${elem.review_text}</p>` +
                     '</div></div></div>');
             })
