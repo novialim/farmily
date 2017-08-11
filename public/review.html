@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/startup-materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery.rateyo.min.css" />
+    <link href="css/condition.css" rel="stylesheet">
+    
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -29,7 +31,8 @@
                 <li><a href="/allfarmers">Farmers</a></li>
                 <li><a href="https://goo.gl/JybG5Y" target="_blank">Alexa</a></li>
                 <li><a class="dropdown-button" href="/contribute" data-activates="addpages" data-constrainWidth="false" data-belowOrigin="true">Contribute<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+                <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn" id="loginbtn">&nbsp;&nbsp;Login&nbsp;&nbsp;</a></li>
+                <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut" id="signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
             </ul>
             <ul id="pages" class="dropdown-content">
                 <li><a href="#MarketMap">All Markets</a></li>
@@ -50,7 +53,8 @@
                 </li>
             </ul>
         </li>
-        <li class="waves-effect waves-light"><a class="waves-effect waves-light btn" href="index-2.html">&nbsp;&nbsp;Login/Signup&nbsp;&nbsp;</a></li>
+        <li class="waves-effect waves-light"><a class="waves-effect waves-light btn loginbtn">&nbsp;&nbsp;Login&nbsp;&nbsp;</a></li>
+        <li class="waves-effect waves-light"><a class="waves-effect waves-light btn signOut" id="signOut">&nbsp;&nbsp;Sign Out&nbsp;&nbsp;</a></li>
         <li><a class="waves-effect waves-teal" href="/aboutus">What We Do?</a></li>
         <li><a class="waves-effect waves-teal" href="/explore">Explore Markets</a></li>
         <li><a class="waves-effect waves-teal" href="/allfarmers">Farmers</a></li>
@@ -131,6 +135,11 @@
     <script src="js/init.js"></script>
     <!-- Custom Script -->
     <script src="js/app.js" type="text/javascript"></script>
+
+    <!-- firebase login -->
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="js/login.js"></script>
+
     <script>
     $(document).ready(function() {
 
@@ -147,6 +156,47 @@
 
         });
     });
+    </script>
+    <script type="text/javascript">
+    // <!-- Auth state listener -->
+
+
+    if (sessionStorage.getItem("userKey")) {
+        $('html').addClass('logged-in');
+    } else {
+        $('html').removeClass('logged-in');
+        sessionStorage.removeItem("userKey");
+        sessionStorage.clear();
+    }
+
+    $('#signOut').on("click", function() {
+
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            console.log("Bye");
+
+            $('html').removeClass('logged-in');
+            sessionStorage.removeItem("userKey");
+            sessionStorage.clear();
+
+        }).catch(function(error) {
+            // An error happened.
+        });
+    });
+
+    if (window.performance) {
+        // console.info("window.performance work's fine on this browser");
+    }
+
+    if (performance.navigation.type == 1) {
+        // console.info( "This page is reloaded" );
+
+        if (sessionStorage.getItem("userKey")) {
+            $('html').addClass('logged-in');
+        }
+    } else {
+        // console.info( "This page is not reloaded");
+    }
     </script>
 </body>
 

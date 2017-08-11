@@ -6,113 +6,39 @@
       </div>
 
     <div class="container">
-        <div class="row populate-farmer">
 
-            <!--<div class="col s12 m6">-->
-
-                <!--<div class="card horizontal">-->
-                    <!--<div class="card-image">-->
-                        <!--<img src="images/farmer1.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="card-stacked">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5>Farm Boy Produce</h5>-->
-                            <!--<p>Farm Boy Produce grows seasonal fruits and veggies and provides... </p>-->
-                        <!--</div>-->
-                        <!--<div class="card-action">-->
-                            <!--<a href="/farmer">Find out more</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
-            <!--&lt;!&ndash; Row two &ndash;&gt;-->
-            <!--<div class="col s12 m6">-->
-
-                <!--<div class="card horizontal">-->
-                    <!--<div class="card-image">-->
-                        <!--<img src="images/farmer1.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="card-stacked">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5>Farm Boy Produce</h5>-->
-                            <!--<p>Farm Boy Produce grows seasonal fruits and veggies and provides... </p>-->
-                        <!--</div>-->
-                        <!--<div class="card-action">-->
-                            <!--<a href="/farmer">Find out more</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
-
-            <!--<div class="col s12 m6">-->
-
-                <!--<div class="card horizontal">-->
-                    <!--<div class="card-image">-->
-                        <!--<img src="images/farmer1.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="card-stacked">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5>Farm Boy Produce</h5>-->
-                            <!--<p>Farm Boy Produce grows seasonal fruits and veggies and provides... </p>-->
-                        <!--</div>-->
-                        <!--<div class="card-action">-->
-                            <!--<a href="/farmer">Find out more</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
-
-            <!--&lt;!&ndash; Row three &ndash;&gt;-->
-            <!--<div class="col s12 m6">-->
-
-                <!--<div class="card horizontal">-->
-                    <!--<div class="card-image">-->
-                        <!--<img src="images/farmer1.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="card-stacked">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5>Farm Boy Produce</h5>-->
-                            <!--<p>Farm Boy Produce grows seasonal fruits and veggies and provides... </p>-->
-                        <!--</div>-->
-                        <!--<div class="card-action">-->
-                            <!--<a href="/farmer">Find out more</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
-
-            <!--<div class="col s12 m6">-->
-
-                <!--<div class="card horizontal">-->
-                    <!--<div class="card-image">-->
-                        <!--<img src="images/farmer1.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="card-stacked">-->
-                        <!--<div class="card-content">-->
-                            <!--<h5>Farm Boy Produce</h5>-->
-                            <!--<p>Farm Boy Produce grows seasonal fruits and veggies and provides... </p>-->
-                        <!--</div>-->
-                        <!--<div class="card-action">-->
-                            <!--<a href="/farmer">Find out more</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-            <!--</div>-->
+        <div class="preloader-background">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-green-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="row populate-farmer"></div>
     </div>
 </div>
 
-<ul class="pagination center-align">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+<ul class="pagination center-align" id="pagin">
+    <li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>
+    
 </ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    $('.preloader-background').delay(1300).fadeOut('slow');
+    
+    $('.preloader-wrapper')
+        .delay(1300)
+        .fadeOut();
+    });
+
+</script>

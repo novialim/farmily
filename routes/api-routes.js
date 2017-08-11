@@ -34,6 +34,17 @@ function show_Market_Vendor_data(id,table,model,cb){
     });
 }
 
+// Show Review
+function showReviews(id,cb){
+    db.Review.findAll({
+        where: { vendor_id : id }
+    }).then((result)=>{
+        cb({result})
+    },(error)=>{
+        cb({"result":error.toString()});
+    });
+}
+
 module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
@@ -43,12 +54,22 @@ module.exports = function (app) {
         });
     });
 
-  app.post("/api/reviewfarmer/", (req, res) => {
+    app.post("/api/reviewfarmer/", (req, res) => {
+        console.log(req.body)
         insertData(req.body,db.Review,(result)=>{
             res.redirect("/farmer?id="+req.body.vendor_id);
         });
 
     });
+
+    // View reviews
+    app.get("/api/viewreview/:id", (req, res) => {
+        showReviews(req.params.id,(result)=>{
+            res.json(result)
+        })
+
+    });
+
 
     // View vendor details
     app.get("/api/viewfarmer/:id?", (req, res) => {

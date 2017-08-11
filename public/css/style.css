@@ -513,6 +513,10 @@ label {
     display: none;    
 }
 
+#allFarmerCount {
+    display: none;        
+}
+
 #farmerDetailsInfo {
     position: relative;
     border: 1px solid #D3D3D3;
@@ -526,8 +530,7 @@ label {
 .carousel {
     position: absolute;
     top: 145px;
-    left: 142px;
-    
+    left: 142px;  
 }
 
 .mid-section {
@@ -549,6 +552,24 @@ label {
 .left-right-padding {
     padding-left: 34px;
     padding-right: 34px;
+}
+
+#googlemapdir {
+    z-index: 99;
+}
+
+.leftsection{
+    z-index: 99;
+}
+
+.page-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.directionPos{
+    display: inline-flex;
+    vertical-align: middle;
 }
 
 
@@ -601,3 +622,17 @@ label {
 
 /*End of Error Style*/
 
+
+.preloader-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(207, 211, 211, 0.6);
+    
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+}
