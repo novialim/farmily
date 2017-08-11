@@ -34,11 +34,11 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 - - -
 
 #### Team Member: Joseph Huynh
-* Handlebars setup - Created initial layouts, views and partials
+* Handlebars setup - Initial layouts, views and partials
 * Sequelize setup
 * Sequelize model associations
 * Yelp API implementation
-* Market details page
+* Market details back-end
 - - -
 
 #### Team Member: Goose aka Joseph Aranez
