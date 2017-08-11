@@ -65,30 +65,36 @@ module.exports = function (app) {
 
     // Display market details page
     app.get("/market", (req, res) => {
-        client.business(req.query.yelp_id).then(response => {
-            console.log(JSON.stringify(response, null,2));
-            let market = response.jsonBody;
+        // Check if request valid
+        if (req.query.id===undefined || req.query.yelp_id===undefined){
+            res.status(400).send("400: BAD REQUEST!");
+        }
+        else {
+            client.business(req.query.yelp_id).then(response => {
+                console.log(JSON.stringify(response, null, 2));
+                let market = response.jsonBody;
 
-            // Load placeholder photos if market has no Yelp photos
-            let photos = market.photos;
-            if (photos.length === 0){
-                for (let i=1; i<=5; i++){
-                    photos.push("https://lorempixel.com/300/300/food/"+i);
+                // Load placeholder photos if market has no Yelp photos
+                let photos = market.photos;
+                if (photos.length === 0) {
+                    for (let i = 1; i <= 5; i++) {
+                        photos.push("https://lorempixel.com/300/300/food/" + i);
+                    }
                 }
-            }
 
-            // Pass data object to handlebars
-            let data = {
-                id: req.query.id,
-                yelp_id: req.query.yelp_id,
-                title: market.name,
-                review_count: market.review_count,
-                photos: photos
-            }
+                // Pass data object to handlebars
+                let data = {
+                    id: req.query.id,
+                    yelp_id: req.query.yelp_id,
+                    title: market.name,
+                    review_count: market.review_count,
+                    photos: photos
+                }
 
-            res.render("marketDetails", data);
-        }).catch(e => {
-            console.log(e);
-        });
+                res.render("marketDetails", data);
+            }).catch(e => {
+                console.log(e);
+            });
+        }
     });
 }

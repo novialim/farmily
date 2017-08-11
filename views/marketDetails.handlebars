@@ -26,13 +26,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col m6 l6">
-                    <p class="center-align">
-                        <a class="waves-effect waves-light btn teal"><i class="material-icons left">star</i>Review</a>
-                        <a class="waves-effect waves-light btn teal"><i class="material-icons left">photo_camera</i>Add Photo</a>
-                        <a class="waves-effect waves-light btn teal"><i class="material-icons left">screen_share</i>Share</a>
-                    </p>
-                </div>
             </div>
             <!-- End of header row -->
 
@@ -55,7 +48,7 @@
                             <i class="material-icons icon-grey">directions</i>
                         </div>
                         <div class="col m9 l9 left-align">
-                            <span id="google_directions">Get Directions</span>
+                            <a href="#" id="google_directions"><span >Get Directions</span></a>
                         </div>
                     </div>
 
@@ -84,11 +77,6 @@
                         {{#each photos}}
                             <a class="carousel-item" href="#" onclick="return false;"><img src="{{this}}"</a>
                         {{/each}} 
-                         {{!-- <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/300/300/food/1"></a>
-                        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/300/300/food/2"></a>
-                        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/300/300/food/3"></a>
-                        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/300/300/food/4"></a>
-                        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/300/300/food/5"></a>  --}}
                     </div>
                 </div>
             </div>
@@ -124,7 +112,7 @@
                             </div>
                             <div class="card-action">
                                 <p class="red-text strong">Hours</p>
-                                <p class="black-text"></p><span class="strong">Wed:</span>&nbsp;&nbsp;<span>3:00PM - 5:00PM</span></p>
+                                <p class="black-text" id="openinghours"><span class="strong">Wed:</span>&nbsp;&nbsp;<span>3:00PM - 5:00PM</span></p>
                             </div>
                         </div>
 
@@ -134,132 +122,135 @@
                 <div class="col s12 m12">
                     <h4><span class="red-text">Your Favorite Farmers</span></h4>
                 </div>
+                
+                <section id="vendors">
 
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farm Boy Produce</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Outstanding produce! I arrived around 9:30 am and the market was in full swing. Parking wasn't
-                                    too much of a challenge. I was able to find street parking on Cleveland & Richmond. I
-                                    then had to walk only one block and was in the middle of the market. The market is three
-                                    full city blocks down Normal Street from Lincoln Ave to University Avenue.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farm Boy Produce</a>
+                    <!-- row 1 -->
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farm Boy Produce</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>Outstanding produce! I arrived around 9:30 am and the market was in full swing. Parking wasn't
+                                        too much of a challenge. I was able to find street parking on Cleveland & Richmond. I
+                                        then had to walk only one block and was in the middle of the market. The market is three
+                                        full city blocks down Normal Street from Lincoln Ave to University Avenue.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farm Boy Produce</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farmer 2</span>
-                            </div>
-                            <div class="card-content">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farmer 2</a>
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farmer 2</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farmer 2</a>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-
-                <!-- row 2 -->
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farmer 3</span>
-                            </div>
-                            <div class="card-content">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farmer 3</a>
+                    <!-- row 2 -->
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farmer 3</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farmer 3</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farmer 4</span>
-                            </div>
-                            <div class="card-content">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farmer 4</a>
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farmer 4</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farmer 4</a>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-
-                <!-- row 3 -->
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farmer 5</span>
-                            </div>
-                            <div class="card-content">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farmer 5</a>
+                    <!-- row 3 -->
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farmer 5</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farmer 5</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col s12 m6">
-                        <div class="card medium">
-                            <div class="card-image">
-                                <img src="images/farmboyproduce.jpg">
-                                <span class="card-title">Farmer 6</span>
-                            </div>
-                            <div class="card-content">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#">Link to Farmer 6</a>
+                        <div class="col s12 m6">
+                            <div class="card medium">
+                                <div class="card-image">
+                                    <img src="images/farmboyproduce.jpg">
+                                    <span class="card-title">Farmer 6</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">Link to Farmer 6</a>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
-
-
+                </section>
             </div>
         </div>
         <!-- End of container -->
@@ -275,10 +266,56 @@
 </div>
 
 <script>
-    $.get("/api/viewmarket/{{id}}", (result) =>{ 
-        console.log("Market JSON:", result);
+    $.get("/api/viewmarket/{{id}}", (result) => { 
+        let market = result.result[0];
+        let vendorsArr = market.Vendors;
+        console.log("Market JSON:", market);
+
+        // Populate fields with market data
+        $('#address_google').text(market.address_google);
+        $('#contact').text(market.contact);
+        $('#google_directions').attr('href', "https://maps.google.com?q="+encodeURIComponent(market.address_google));
+        $('#openinghours').html(`<span class="strong">${market.opening_day}</span>&nbsp;&nbsp;<span>${market.openinghours}</span>`);
+
+        // Populate vendor section
+        $('#vendors').empty();
+         for (let i=0; i<vendorsArr.length; i++){
+            let vendor = vendorsArr[i];
+
+            // Vendor image div
+            let vendorImg = $('<div>').addClass('card-image');
+            vendorImg.append($('<img>').attr('src', `images/farmer${vendor.vendor_id}.jpg`));
+            vendorImg.append($('<span>').addClass('card-title').text(vendor.vendor_name));
+        
+            // Vendor text div
+            let vendorText = $('<div>').addClass('card-content');
+            vendorText.append($('<p>').text(vendor.vendor_text));
+
+            // Vendor link
+            let vendorLink = $('<div>').addClass('card-action');
+            vendorLink.append($('<a>').attr('href', '/farmer?id='+vendor.vendor_id).text('MORE INFO'));
+
+            // Start new row if index is even
+            if (i%2===0){            
+                // Create row div                
+                let row = $('<div>').addClass('row')
+                    .append($('<div>').addClass('col s12 m6')
+                        .append($('<div>').addClass('card medium')
+                            .append(vendorImg, vendorText, vendorLink)));
+                
+                $('#vendors').append(row);
+            }
+
+            // Add to bottom row if index is odd
+            else {
+                let elem = $('#vendors').children().last();
+                elem.append($('<div>').addClass('col s12 m6')
+                    .append($('<div>').addClass('card medium')
+                        .append(vendorImg, vendorText, vendorLink)));
+            }
+        } 
     })
     .fail((err)=> {
-
+        console.log("Error:", err);
     });
 </script>
