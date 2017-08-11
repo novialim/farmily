@@ -16,19 +16,12 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 #### Implementation:
 
 * Front-end Development (MaterializeCSS, jQuery, CSS)
-    
-* Google Firebase Authentification
-    
+* Google Firebase Authentification   
 * Authentification session storage
-
-* Explore interactive Farmers' Market with Google Map 
-
-* Develop and Handlebars JavaScript templating for pages (Add farmer, top farmers, farmer detail)
-
+* Farmers' Market interactive explore page front/back-end integration with Google Map 
+* Front/back end integration and Handlebars JavaScript templating for pages (Add farmer, top farmers, farmer detail)
 * Implemented star rating system, Google embed map using iframe, pagination, preloader, smooth scrolling
-
 * Alexa SDK
-
 * Presentation slides
 
 - - -
