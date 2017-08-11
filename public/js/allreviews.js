@@ -35,15 +35,11 @@ $(document).ready(function() {
                 "</p>" +
                 "<div class=\"divider updownpad\"></div>\n")
         }
-
-
-
     }
 
     function setRating(vendor) {
 
         for (var j = 0; j < vendor.length; j++) {
-            console.log("RATED RATING IS: " +vendor[j].rateYoInput);
             var rateYoRating = vendor[j].rateYoInput;
             var rateYoCt = j+1;
             $(`#rateYo`+vendor[j].review_id).rateYo({

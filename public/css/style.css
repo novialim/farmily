@@ -220,7 +220,8 @@ i.icon-grey {
 }
 
 .reviewtxt {
-    line-height: 110%;
+    line-height: 120%;
+    height: 120px;
 }
 
 .cardpaddng {
@@ -572,6 +573,25 @@ label {
     vertical-align: middle;
 }
 
+.farmerDetailsContent {
+    padding-bottom: 0px !important;
+}
+
+.userAvatar {
+     display: inline-block;
+}
+
+.userName {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+}
+
+.userRateYo {
+    clear: both;
+    left: 50px;
+    top: -30px;   
+}
 
 /*Error CSS*/
 

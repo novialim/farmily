@@ -12,8 +12,8 @@ $(document).ready(function() {
     }
 
     $.get("../api/viewfarmer/" + $.urlParam("id"), function(farmer) {
-        console.log(farmer.result);
-        console.log(farmer.result[0].Market.address_txt);
+        // console.log(farmer.result);
+        // console.log(farmer.result[0].Market.address_txt);
         $(".farmerDetailsName").append(farmer.result[0].vendor_name);
         $("#farmerDetailsAddress").append(farmer.result[0].Market.address_txt);
         if (farmer.result[0].vendor_contact !== "") {
@@ -43,6 +43,54 @@ $(document).ready(function() {
         console.log();
 
     });
+
+    $.get("../api/viewreview/" + $.urlParam("id"), function(farmer) {
+        populateFarmerDetailPage(farmer.result, $.urlParam("id"))
+    });
+
+    function populateFarmerDetailPage(vendor, id) {
+
+        console.log("populateFarmerDetailPage reached");
+
+        if (vendor.length > 0) {
+            vendor.forEach((elem) => {
+
+                $('.farmerDetailsCard').append("" +
+                    '<div class="col s12 m6 l6">' +
+                    '<div class="card transparent card-border-grey">' +
+                    '<div class="farmerDetailsContent card-content black-text3">' +
+                    '<span class="card-title">' +
+                    '<img class="userAvatar avatar responsive-img" src="images/avatar/avatar.png" alt="">' +
+                    `<h6 class="userName">${elem.user_name}</h6>` +
+                     `<div class=\"rateyo userRateYo\" id=\"rateYo${elem.review_id}\"></div>` +
+                    '</span></div>' +
+                    '<div class="card-action">' +
+                    `<p class="black-text reviewtxt">${elem.review_text}</p>` +
+                    '</div></div></div>');
+            })
+
+            setRating(vendor);
+
+        } else {
+            $('.farmerDetailsCard').append("" +
+                "<p class=\"reviewtxt\">" +
+                `<i>Be the first reviewer!</i>` +
+                "</p>" +
+                "<div class=\"divider updownpad\"></div>\n")
+        }
+    }
+
+    function setRating(vendor) {
+
+        for (var j = 0; j < vendor.length; j++) {
+            
+            var rateYoRating = vendor[j].rateYoInput;
+            var rateYoCt = j+1;
+            $(`#rateYo`+vendor[j].review_id).rateYo({
+                rating: rateYoRating
+            });
+        }
+    }
 
 
 });
