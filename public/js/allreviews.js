@@ -1,6 +1,6 @@
 $(document).ready(function() {
     function populateReviewPage(vendor, id) {
-        let vendor_name =  vendor[0].vendor_name
+        let vendor_name = vendor[0].vendor_name
         $('#farmerName').append(vendor_name)
         $('.review-side-panel').append(vendor_name)
         $('#farmerAddress').append(vendor[0].Market.address_txt)
@@ -14,23 +14,42 @@ $(document).ready(function() {
     }
 
 
-    function populateReviewspanel(vendor, id){
-        if( vendor.length > 0){
-            vendor.forEach((elem)=>{
+    function populateReviewspanel(vendor, id) {
+        if (vendor.length > 0) {
+            vendor.forEach((elem) => {
                 $('.farmerReviews').append("" +
-                    "<p class=\"reviewtxt\">" +
-                    `${elem.review_text}....<i>${elem.user_name}</i>`+
-                    "</p>"+
-                    "<div class=\"divider updownpad\"></div>\n")
+                    `<div class=\"rateyo\" id=\"rateYo${elem.review_id}\"></div>` +
+                    "<div><p class=\"reviewtxt\">" +
+                    `<i>${elem.user_name}</i> - ` +
+                    `${elem.review_text}` +
+                    "</p></div>" +
+                    "<div class=\"divider updownpad\"></div>\n");
             })
-        }else{
+
+            setRating(vendor);
+
+        } else {
             $('.farmerReviews').append("" +
                 "<p class=\"reviewtxt\">" +
-                `<i>Be the first one</i>`+
-                "</p>"+
+                `<i>Be the first one</i>` +
+                "</p>" +
                 "<div class=\"divider updownpad\"></div>\n")
         }
 
+
+
+    }
+
+    function setRating(vendor) {
+
+        for (var j = 0; j < vendor.length; j++) {
+            console.log("RATED RATING IS: " +vendor[j].rateYoInput);
+            var rateYoRating = vendor[j].rateYoInput;
+            var rateYoCt = j+1;
+            $(`#rateYo`+vendor[j].review_id).rateYo({
+                rating: rateYoRating
+            });
+        }
     }
 
 
