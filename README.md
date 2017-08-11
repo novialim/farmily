@@ -27,6 +27,8 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 
 * Implemented star rating system, Google embed map using iframe, pagination, preloader, smooth scrolling
 
+* Alexa SDK
+
 * Presentation slides
 
 - - -
