@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         user_name: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: true
         },
         review_text: {
