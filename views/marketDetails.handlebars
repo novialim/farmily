@@ -31,7 +31,7 @@
 
             <div class="row text-grey text-darken-3 center-align smallrw">
                 <div class="col s12 m3 l3 center-align mapborder card-panel white leftsection smallheight" id="marketDetailsInfo">
-                    <img class="googlemap imgpadding responsive-img" src="images/mapplaceholder.png" alt="">
+                    <img class="googlemap imgpadding responsive-img" id="google_static_map" alt="Google static map">
 
                     <!-- farmer map and address details -->
                     <div class="row smallrw">
@@ -109,8 +109,10 @@
         // Populate fields with market data
         $('#address_google').text(market.address_google);
         $('#contact').text(market.contact);
-        $('#google_directions').attr('href', "https://maps.google.com?q=" + encodeURIComponent(market.address_google));
+        // $('#google_directions').attr('href', "https://maps.google.com?q=" + encodeURIComponent(market.address_google));
         $('#openinghours').html(`<span class="strong">${market.opening_day}</span>:&nbsp;<span>${market.openinghours}</span>`);
+        $('#google_static_map').attr('src', `https://maps.googleapis.com/maps/api/staticmap?zoom=16&markers=color:red%7C${encodeURIComponent(market.address_google)}&size=264x129&key=AIzaSyDafs0nDO15dK34o_uDc3fnUQiefdv0Aec`);
+
 
         let vendorList = market.Vendors;
         // $('.vendors').empty();
