@@ -1,7 +1,8 @@
 $(document).ready(function() {
     function populateReviewPage(vendor, id) {
-        console.log(vendor)
-        $('#farmerName').append(vendor[0].vendor_name)
+        let vendor_name =  vendor[0].vendor_name
+        $('#farmerName').append(vendor_name)
+        $('.review-side-panel').append(vendor_name)
         $('#farmerAddress').append(vendor[0].Market.address_txt)
 
         // console.log("->",vendor[0].vendor_contact)
@@ -16,6 +17,23 @@ $(document).ready(function() {
     }
 
 
+// <p class="reviewtxt">review 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ... <a href="#">read more</a></p>
+//     <div class="divider updownpad"></div>
+    function populateReviewspanel(vendor, id){
+        vendor.forEach((elem)=>{
+            $('.farmerReviews').append("" +
+                "<p class=\"reviewtxt\">" +
+                `${elem.review_text}....${elem.review_username}`+
+                // "<a href=\"#\">read more</a></p>\n" +
+                "</p>"+
+                "<div class=\"divider updownpad\"></div>\n")
+
+        })
+        console.log(vendor)
+
+    }
+
+
     $.urlParam = function(name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
@@ -26,9 +44,13 @@ $(document).ready(function() {
     }
 
     $.get("../api/viewfarmer/" + $.urlParam("id"), function(farmer) {
-
         populateReviewPage(farmer.result, $.urlParam("id"))
     });
+
+    $.get("../api/viewreview/" + $.urlParam("id"), function(farmer) {
+        populateReviewspanel(farmer.result, $.urlParam("id"))
+    });
+
 
 });
 
