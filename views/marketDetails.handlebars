@@ -75,10 +75,11 @@
                 <div class="col s12 m9 l9">
                     <div class="carousel">
                         {{#each photos}}
-                            <a class="carousel-item" href="#" onclick="return false;"><img src="{{this}}"</a>
+                            <a class="carousel-item" href="#" onclick="return false;"><img src="{{this}}"></a>
                         {{/each}} 
                     </div>
                 </div>
+
             </div>
 
             {{!-- <div class="row reviews"></div> --}}
@@ -112,14 +113,14 @@
         $('#openinghours').html(`<span class="strong">${market.opening_day}</span>:&nbsp;<span>${market.openinghours}</span>`);
 
         let vendorList = market.Vendors;
-        $('#vendors').empty();
+        // $('.vendors').empty();
         // Display vendor info
         if (vendorList.length > 0){
             displayMarketVendors(vendorList);
         } 
         // Display default message if no vendor data
         else {            
-            $('#vendors').append('&nbsp;&nbsp;&nbsp;No vendor information available. Be the first to add a vendor!');
+            $('.vendors').append('&nbsp;&nbsp;&nbsp;No vendor information available. Be the first to add a vendor!');
         }
     })
     .fail((err)=> {

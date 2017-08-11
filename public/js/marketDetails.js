@@ -1,6 +1,6 @@
 function displayMarketVendors(vendorsArr) {
     // Populate vendor section
-    $('#vendors').empty();
+    // $('.vendors').empty();
     for (let i = 0; i < vendorsArr.length; i++) {
         let vendor = vendorsArr[i];
 
