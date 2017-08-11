@@ -11,6 +11,7 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 * Project planning & prototyping
 * Drive team to complete project according to pre-defined timeline 
 * Data consolidation & preparation
+* Graphics, logo design and art direction
 
 #### Implementation:
 
@@ -23,6 +24,8 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 * Explore interactive Farmers' Market with Google Map 
 
 * Handlebars JavaScript templating for pages (Add farmer, top farmers, farmer detail)
+
+* Implemented star rating system, Google embed map using iframe, pagination, preloader, smooth scrolling
 
 * Presentation slides
 
