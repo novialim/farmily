@@ -212,7 +212,7 @@ i.icon-grey {
 }
 
 .userreviewct {
-    margin-left: 70px;
+    margin-left: 3px;
 }
 
 .avatar {
@@ -523,7 +523,7 @@ label {
     display: none;        
 }
 
-#farmerDetailsInfo {
+#farmerDetailsInfo, #marketDetailsInfo {
     position: relative;
     border: 1px solid #D3D3D3;
 }
@@ -596,6 +596,10 @@ label {
     clear: both;
     left: 50px;
     top: -30px;   
+}
+
+.smMargin {
+    margin:3px;
 }
 
 /*Error CSS*/

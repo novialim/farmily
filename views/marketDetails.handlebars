@@ -17,12 +17,12 @@
     <div class="container">
         <div class="card-panel">
             <div class="row">
-                <div class="col m6 l6">
+                <div class="col m12 l12">
                     <div class="row">
                         <h4 class="strong" id="market_name">{{title}}</h4>
                         <div class="rating">
-                            <!-- to calculate average review rating and update accordingly -->
-                            <span class="rating-static rating-45"><span class="userreviewct" id="review_count">{{review_count}}</span><span>&nbsp;reviews</span></span>
+                            <!-- v2 to calculate average review rating and update accordingly -->
+                            <span class="userreviewct" id="review_count">{{review_count}}</span><span>&nbsp;reviews</span>
                         </div>
                     </div>
                 </div>
@@ -30,43 +30,43 @@
             <!-- End of header row -->
 
             <div class="row text-grey text-darken-3 center-align smallrw">
-                <div class="col s12 m3 l3 center-align mapborder card-panel white leftsection smallheight">
+                <div class="col s12 m3 l3 center-align mapborder card-panel white leftsection smallheight" id="marketDetailsInfo">
                     <img class="googlemap imgpadding responsive-img" src="images/mapplaceholder.png" alt="">
 
                     <!-- farmer map and address details -->
                     <div class="row smallrw">
-                        <div class="col m3 l3 right-align"><i class="material-icons icon-grey">place</i>
+                        <div class="col m2 l2 right-align"><i class="material-icons icon-grey">place</i>
                         </div>
 
-                        <div class="col m9 l9 left-align">
-                            <span id="address_google">address_google</span>
+                        <div class="col m10 l10 left-align">
+                            <span id="address_google"></span>
                         </div>
                     </div>
 
-                    <div class="row smallrw">
+{{!--                     <div class="row smallrw">
                         <div class="col m3 l3 right-align">
                             <i class="material-icons icon-grey">directions</i>
                         </div>
                         <div class="col m9 l9 left-align">
                             <a href="#" id="google_directions"><span >Get Directions</span></a>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row smallrw">
-                        <div class="col m3 l3 right-align">
+                        <div class="col m2 l2 right-align">
                             <i class="material-icons icon-grey">phone</i>
                         </div>
-                        <div class="col m9 l9 left-align">
-                            <span id="contact">contact</span>
+                        <div class="col m10 l10 left-align">
+                            <span id="contact"></span>
                         </div>
                     </div>
 
-                    <div class="row smallrw">
-                        <div class="col m3 l3 right-align">
-                            <i class="material-icons icon-grey">favorite</i>
+                    <div class="row smallrw directionPos valign-wrapper">
+                        <div class="col m2 l2 right-align">
+                            <i class="material-icons icon-grey">today</i>
                         </div>
-                        <div class="col m9 l9 left-align">
-                            <span id="produce">produce1, produce2, produce3</span>
+                        <div class="col m10 l10 left-align">
+                            <p class="black-text smMargin" id="openinghours"><span class="strong">Wed:</span>&nbsp;&nbsp;<span>3:00PM - 5:00PM</span></p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="row reviews">
-                <div class="col s12 m12">
+                {{!-- <div class="col s12 m12">
                     <h4><span class="red-text">Top Produce</span></h4>
                 </div>
 
@@ -118,7 +118,7 @@
 
                     </div>
                 </div>
-
+ --}}
                 <div class="col s12 m12">
                     <h4><span class="red-text">Your Favorite Farmers</span></h4>
                 </div>
@@ -275,7 +275,7 @@
         $('#address_google').text(market.address_google);
         $('#contact').text(market.contact);
         $('#google_directions').attr('href', "https://maps.google.com?q=" + encodeURIComponent(market.address_google));
-        $('#openinghours').html(`<span class="strong">${market.opening_day}</span>&nbsp;&nbsp;<span>${market.openinghours}</span>`);
+        $('#openinghours').html(`<span class="strong">${market.opening_day}</span>:&nbsp;<span>${market.openinghours}</span>`);
 
         let vendorList = market.Vendors;
         $('#vendors').empty();
@@ -285,7 +285,7 @@
         } 
         // Display default message if no vendor data
         else {            
-            $('#vendors').text('No vendor information available. Be the first to add a vendor!');
+            $('#vendors').append('&nbsp;&nbsp;&nbsp;No vendor information available. Be the first to add a vendor!');
         }
     })
     .fail((err)=> {
