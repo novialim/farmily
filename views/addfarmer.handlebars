@@ -17,7 +17,7 @@
                                 <label class="white-text">
                                     <h6></h6></label>
                                 <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
-                                    <option value="" disabled selected>Which Farmer's Market?</option>
+                                    <option value="" disabled="disabled">Which Farmer's Market?</option>
                                     {{#each markets}}
                                         <option value="{{incByOne @index}}">{{market_name}}</option>
                                     {{/each}}
@@ -42,14 +42,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <!--   <div class="input-field col s12">
-                                    <textarea placeholder="Your review helps others learn about great local farmers." id="message2" class="materialize-textarea"></textarea>
-                                    <label for="message">Message</label>
-                                  </div> -->
-                                <!--    <div class="col s12">
-                                               <label>Operating Day</label>
-                                               <input type="date" class="datepicker">
-                                             </div>       -->
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
