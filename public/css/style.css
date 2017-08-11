@@ -488,6 +488,10 @@ label {
     overflow: hidden;
 }
 
+.marketcard {
+    height: 195px;
+    overflow: auto;
+}
 
 .vendorshadow {
   color: white;
