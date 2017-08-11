@@ -1,13 +1,10 @@
 const db = require("../models");
 const path = require("path");
 const markets = require("../models/data/marketData.js"); // Get market JSON
-const yelp = require('yelp-fusion');
-const YELP_TOKEN = 'q9ldndMa5N13LwNksXrDhs4o7-SCPOC8el-mOaG_QjKTQfO5M5rdakH-XhcHzDMpF1D10Lefns2pRR_v_mX67BbTBwGzEiuMrYBfworQcTPzOuymFbbhlhuw8QwtWXYx';
-
-// Initialize yelp client
-const client = yelp.client(YELP_TOKEN);
+const yelpData = require("./yelpUtility")
 
 module.exports = function (app) {
+    // homepage
     app.get("/", (req, res) => {
         res.render("index");
     });
@@ -20,10 +17,6 @@ module.exports = function (app) {
 
     app.get('/contribute', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/contribute.html'));
-    });
-
-    app.get('/form', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/testform.html'));
     });
 
     app.get('/write', function (req, res) {
@@ -59,42 +52,16 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/contribute.html'));
     });
 
-    // app.get("/farmer", (req, res) => {
-    //     res.send("Worked /farmer");
-    // });
-
     // Display market details page
     app.get("/market", (req, res) => {
         // Check if request valid
         if (req.query.id===undefined || req.query.yelp_id===undefined){
             res.status(400).send("400: BAD REQUEST!");
-        }
-        else {
-            client.business(req.query.yelp_id).then(response => {
-                console.log(JSON.stringify(response, null, 2));
-                let market = response.jsonBody;
 
-                // Load placeholder photos if market has no Yelp photos
-                let photos = market.photos;
-                if (photos.length === 0) {
-                    for (let i = 1; i <= 5; i++) {
-                        photos.push("https://lorempixel.com/300/300/food/" + i);
-                    }
-                }
-
-                // Pass data object to handlebars
-                let data = {
-                    id: req.query.id,
-                    yelp_id: req.query.yelp_id,
-                    title: market.name,
-                    review_count: market.review_count,
-                    photos: photos
-                }
-
-                res.render("marketDetails", data);
-            }).catch(e => {
-                console.log(e);
-            });
+        } else {
+            yelpData.getYelpData(req.query.yelp_id, req.query.id ,(result)=>{
+                res.render("marketDetails", result);
+            })
         }
     });
 }
