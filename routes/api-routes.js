@@ -70,7 +70,6 @@ module.exports = function (app) {
 
     });
 
-
     // View vendor details
     app.get("/api/viewfarmer/:id?", (req, res) => {
         show_Market_Vendor_data(req.params.id,db.Vendor,db.Market,(result)=>{
@@ -85,10 +84,13 @@ module.exports = function (app) {
         });
     });
 
-    // Send a 404 page or Status
-    app.get('*', (req,res)=>{
-        res.status(404);
-        res.render("404");
+    // Redirect here to show 400 status
+    app.get('/400', (req, res) => {
+        res.status(400).render('400', {title: "400: Bad Request"});
+    });
 
+    // Send a 404 page or Status
+    app.get('*', (req, res) => {
+        res.status(404).render("404", {title: "404: Not Found"});
     });
 }

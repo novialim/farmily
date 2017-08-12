@@ -102,13 +102,19 @@
 
 <script src="js/marketDetails.js"></script>
 <script>
-    $.get("/api/viewmarket/{{id}}", (result) => { 
+    $.get("/api/viewmarket/{{id}}", (result) => {
+        // Validate id and yelp_id
+        if (result.length===0 || (result.result[0].yelp_id !== "{{yelp_id}}")){
+            window.location.href = "/400";
+        }
+
         let market = result.result[0];        
         console.log("Market JSON:", market);
 
         // Populate fields with market data
         $('#address_google').text(market.address_google);
         $('#contact').text(market.contact);
+        $('#yelprating').attr('href', 'https://www.yelp.com/biz/'+market.yelp_id);
         // $('#google_directions').attr('href', "https://maps.google.com?q=" + encodeURIComponent(market.address_google));
         $('#openinghours').html(`<span class="strong">${market.opening_day}</span>:&nbsp;<span>${market.openinghours}</span>`);
         $('#google_static_map').attr('src', `https://maps.googleapis.com/maps/api/staticmap?zoom=16&markers=color:red%7C${encodeURIComponent(market.address_google)}&size=264x129&key=AIzaSyDafs0nDO15dK34o_uDc3fnUQiefdv0Aec`);
