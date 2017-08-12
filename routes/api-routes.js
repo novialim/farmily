@@ -1,13 +1,5 @@
 const db = require("../models");
 
-// Insert a new vendor
-// function createVendor(data, cb) {
-//     db.Vendor.create(data).then(()=>{
-//         cb({"result": "success"})
-//     },(error)=>{
-//         cb({"result":error})
-//     });
-// }
 
 // Insert a new vendor
 function insertData(data,table, cb) {
@@ -20,8 +12,13 @@ function insertData(data,table, cb) {
 
 // Display Farmer or Market with their respective association
 function show_Market_Vendor_data(id,table,model,cb){
+    let colName
+    table === db.Market ?  colName = "market_name" :  colName = "vendor_name"
     id ? table === db.Market ? obj={market_id:id}: obj={vendor_id:id} : obj={};
     table.findAll({
+        order: [
+            [colName, 'ASC'],
+        ],
         include: [{
             model: model
         }],
@@ -33,6 +30,7 @@ function show_Market_Vendor_data(id,table,model,cb){
         cb({"result":error.toString()});
     });
 }
+
 
 // Show Review
 function showReviews(id,cb){
@@ -48,14 +46,12 @@ function showReviews(id,cb){
 module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
-        console.log(req.body)
         insertData(req.body,db.Vendor,(result)=>{
             res.redirect("/farmer?id="+result);
         });
     });
 
     app.post("/api/reviewfarmer/", (req, res) => {
-        console.log(req.body)
         insertData(req.body,db.Review,(result)=>{
             res.redirect("/farmer?id="+req.body.vendor_id);
         });

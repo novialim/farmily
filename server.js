@@ -14,13 +14,13 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Set Handlebars.
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({
-    defaultLayout: "main",
-    helpers: {
-        // Helper function to offset index by one
-        incByOne: (value, options) => {
-            return parseInt(value) + 1;
-        }
-    }
+    defaultLayout: "main"
+    // helpers: {
+    //     // Helper function to offset index by one
+    //     incByOne: (value, options) => {
+    //         return parseInt(value) + 1;
+    //     }
+    // }
 }));
 app.set("view engine", "handlebars");
 
