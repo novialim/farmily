@@ -21,7 +21,7 @@ function populateData(data){
             "</div>\n")
     })
 
-        var pageSize = 8;
+        var pageSize = 6;
 
         $(".pagination").append('<li class="active waves-effect"><a>1</a></li>');
 
