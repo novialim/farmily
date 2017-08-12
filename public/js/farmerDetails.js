@@ -17,6 +17,9 @@ $(document).ready(function() {
             window.location.href = "/400";
         }
 
+        // Set document title to vendor name
+        $(document).attr("title", farmer.result[0].vendor_name);
+    
         // console.log(farmer.result);
         // console.log(farmer.result[0].Market.address_txt);
         $(".farmerDetailsName").append(farmer.result[0].vendor_name);
