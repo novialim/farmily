@@ -12,6 +12,11 @@ $(document).ready(function() {
     }
 
     $.get("../api/viewfarmer/" + $.urlParam("id"), function(farmer) {
+        // Check if result is valid, otherwise redirect to 400 page
+        if (farmer.result.length===0){
+            window.location.href = "/400";
+        }
+
         // console.log(farmer.result);
         // console.log(farmer.result[0].Market.address_txt);
         $(".farmerDetailsName").append(farmer.result[0].vendor_name);

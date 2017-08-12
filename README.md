@@ -18,8 +18,8 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 #### Implementation:
 
 * Front-end Development (MaterializeCSS, jQuery, CSS)
-* Google Firebase Authentification   
-* Authentification session storage
+* Google Firebase Authentication   
+* Authentication session storage
 * Farmers' Market interactive explore page front/back-end integration with Google Map 
 * Front/back end integration and Handlebars JavaScript templating for pages (Add farmer, top farmers, farmer detail)
 * Implemented star rating system, Google embed map using iframe, pagination, preloader, smooth scrolling
@@ -35,6 +35,7 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 * Initial route controller setup
 * Yelp API implementation
 * Market details front/back-end integration
+* Google Static Maps integration
 - - -
 
 #### Team Member: Goose aka Joseph Aranez
