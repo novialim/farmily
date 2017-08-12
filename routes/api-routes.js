@@ -1,6 +1,5 @@
 const db = require("../models");
 
-
 // Insert a new vendor
 function insertData(data,table, cb) {
     table.create(data).then((res)=>{
@@ -30,7 +29,6 @@ function show_Market_Vendor_data(id,table,model,cb){
         cb({"result":error.toString()});
     });
 }
-
 
 // Show Review
 function showReviews(id,cb){

@@ -5,9 +5,9 @@ const markets2 = require("../models/data/marketData2");
 const yelpData = require("./yelpUtility")
 
 module.exports = function (app) {
-    // homepage
+    // Home page
     app.get("/", (req, res) => {
-        res.render("index");
+        res.sendFile(path.join(__dirname, '../public/index.html'));
     });
 
     // About us
@@ -20,20 +20,24 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, '../public/contribute.html'));
     });
 
+    // Add a review
     app.get('/write', function (req, res) {
         // res.sendFile(path.join(__dirname, '../public/writereview.html'));
-        res.render("addreview");
+        res.render("addreview", {title: 'Add a Review'});
     });
 
+    // View map of markets
     app.get('/explore', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/explore.html'));
     });
 
+    // View vendor details
     app.get('/farmer', function (req, res) {
         // res.sendFile(path.join(__dirname, '../public/farmer.html'));
         res.render("farmerDetails");
     });
 
+    // Add a new vendor
     app.get("/addfarmer", (req, res) => {
         let arr=[]
         markets2.getAllMarket((result)=>{
@@ -44,24 +48,24 @@ module.exports = function (app) {
                 })
             })
             console.log(arr)
-            res.render("addfarmer", {markets:arr});
+            res.render("addfarmer", {
+                title: 'Add a Farmer',
+                markets: arr
+            });
         })
         // res.render("addfarmer", {markets: markets.data});
     });
 
-    //Query vendor
+    // Query vendor
     app.get("/review", (req, res) => {
         // res.render("review")
         res.sendFile(path.join(__dirname, '../public/review.html'));
     });
 
+    // View all vendors
     app.get("/allfarmers", (req, res) => {
         //res.sendFile(path.join(__dirname, '../public/allfarmers.html'));
-        res.render("allfarmers");
-    });
-
-    app.get("/contribute", (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/contribute.html'));
+        res.render("allfarmers", {title: 'Farmers'});
     });
 
     // Display market details page
