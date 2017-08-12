@@ -46,14 +46,12 @@ function showReviews(id,cb){
 module.exports = function (app) {
     // Add vendor
     app.post("/api/addfarmer/", (req, res) => {
-        console.log(req.body)
         insertData(req.body,db.Vendor,(result)=>{
             res.redirect("/farmer?id="+result);
         });
     });
 
     app.post("/api/reviewfarmer/", (req, res) => {
-        console.log(req.body)
         insertData(req.body,db.Review,(result)=>{
             res.redirect("/farmer?id="+req.body.vendor_id);
         });

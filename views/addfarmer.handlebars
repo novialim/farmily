@@ -19,7 +19,7 @@
                                 <select data-placeholder="" id="pickmarket" name="market_id" class="chosen-select">
                                     <option value="" disabled="disabled">Which Farmer's Market?</option>
                                     {{#each markets}}
-                                        <option value="{{incByOne @index}}">{{market_name}}</option>
+                                        <option value="{{id}}">{{market_name}}</option>
                                     {{/each}}
                                 </select>
                             </div>
