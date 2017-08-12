@@ -1,6 +1,7 @@
 const db = require("../models");
 const path = require("path");
-const markets = require("../models/data/marketData.js"); // Get market JSON
+//const markets = require("../models/data/marketData.js"); // Get market JSON
+const markets2 = require("../models/data/marketData2");
 const yelpData = require("./yelpUtility")
 
 module.exports = function (app) {
@@ -34,7 +35,18 @@ module.exports = function (app) {
     });
 
     app.get("/addfarmer", (req, res) => {
-        res.render("addfarmer", {markets: markets.data});
+        let arr=[]
+        markets2.getAllMarket((result)=>{
+            result.forEach((market)=>{
+                arr.push({
+                    "id": market.market_id,
+                    "market_name": market.market_name
+                })
+            })
+            console.log(arr)
+            res.render("addfarmer", {markets:arr});
+        })
+        // res.render("addfarmer", {markets: markets.data});
     });
 
     //Query vendor
