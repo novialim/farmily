@@ -5,6 +5,20 @@ From spectacular beaches to golden sunny weather, San Diego is also home to more
 
 ![Farmily](https://github.com/novialim/farmily/blob/master/public/Farmily.gif)
 
+##  Technologies and Framework:
+* Node.js and Express
+* MySQL Db with Sequelize ORM
+* GET/POST 
+* Handlebars
+* Google Map
+* Firebase Auth - Session persistence
+* Yelp API
+* Testing with Mocha and Chai
+* MaterializeCSS
+* Alexa SDK
+
+- - -
+
 ### Team Member Contributions - 
 
 #### Project Manager: Novia Lim
