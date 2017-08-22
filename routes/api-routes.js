@@ -24,8 +24,7 @@ function show_Market_Vendor_data(id,table,model,cb){
         where:obj
     }).then((result)=>{
         cb({result});
-    },(error)=>{2
-    
+    },(error)=>{
         cb({"result":error.toString()});
     });
 }
